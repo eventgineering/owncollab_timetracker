@@ -1,3 +1,5 @@
+<p><button id="hello">click me</button></p>
+
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if note}}
         <div class="input"><textarea>{{ event.notes }}</textarea></div>
