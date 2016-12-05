@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <info>
-    <id>ownnotes</id>
+    <id>owncollab_timetracker</id>
     <name>ownCollab TimeTracker</name>
     <description>This app helps you tracking your working time</description>
     <licence>AGPL</licence>
