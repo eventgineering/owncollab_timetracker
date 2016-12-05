@@ -1,24 +1,22 @@
 <?php
  namespace OCA\OwnCollab_TimeTracker\Controller;
 
- use Exception;
-
  use OCP\IRequest;
- use OCP\AppFramework\Http;
  use OCP\AppFramework\Http\DataResponse; 
  use OCP\AppFramework\Controller;
 
- use OCA\OwnNotes\Db\Event;
- use OCA\OwnNotes\Db\EventMapper;
+ use OCA\OwnCollab_TimeTracker\Service\EventService;
 
  class EventController extends Controller {
 
-     private $mapper;
+     private $service;
      private $userId;
 
-     public function __construct($AppName, IRequest $request, NoteMapper $mapper, $UserId){
+     use Errors;
+
+     public function __construct($AppName, IRequest $request, EventService $service, $UserId){
          parent::__construct($AppName, $request);
-         $this->mapper = $mapper;
+         $this->service = $service;
          $this->userId = $UserId;
      }
 
@@ -26,7 +24,7 @@
       * @NoAdminRequired
       */
      public function index() {
-         return new DataResponse($this->mapper->findAll($this->userId));
+        return new DataResponse($this->service->findAll($this->userId));
      }
 
      /**
@@ -35,11 +33,10 @@
       * @param int $id
       */
      public function show($id) {
-         try {
-             return new DataResponse($this->mapper->find($id, $this->userId));
-         } catch(Exception $e) {
-             return new DataResponse([], Http::STATUS_NOT_FOUND);
-         }
+
+        return $this->handleNotFound(function () use ($id) {
+            return $this->service->find($id, $this->userId);
+        });
      }
 
      /**
@@ -52,14 +49,7 @@
       * @param string $project
       */
      public function create($start, $end, $notes, $client, $project) {
-         $event = new Event();
-         $event->setStart($start);
-         $event->setEnd($end);
-         $event->setNotes($notes);
-         $event->setClient($client);
-         $event->setProject($project);
-         $event->setUserId($this->userId);
-         return new DataResponse($this->mapper->insert($event));
+        return $this->service->create($start, $end, $notes, $client, $project, $this->userId);
      }
 
      /**
@@ -74,18 +64,10 @@
       * @param string $project
       */
      public function update($id, $user, $start, $end, $notes, $client, $project) {
-         try {
-             $event = $this->mapper->find($id, $this->userId);
-         } catch(Exception $e) {
-             return new DataResponse([], Http::STATUS_NOT_FOUND);
-         }
-         $event->setStart($start);
-         $event->setEnd($end);
-         $event->setNotes($notes);
-         $event->setClient($client);
-         $event->setProject($project);
-         $event->setUserId($this->userId);
-         return new DataResponse($this->mapper->update($event));
+
+        return $this->handleNotFound(function () use ($id, $start, $end, $notes, $client, $project) {
+            return $this->service->update($id, $start, $end, $notes, $client, $project, $this->userId);
+        });
      }
 
      /**
@@ -94,13 +76,9 @@
       * @param int $id
       */
      public function destroy($id) {
-         try {
-             $event = $this->mapper->find($id, $this->userId);
-         } catch(Exception $e) {
-             return new DataResponse([], Http::STATUS_NOT_FOUND);
-         }
-         $this->mapper->delete($event);
-         return new DataResponse($event);
+        return $this->handleNotFound(function () use ($id) {
+            return $this->service->delete($id, $this->userId);
+        });
      }
 
  }
