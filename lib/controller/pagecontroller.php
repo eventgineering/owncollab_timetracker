@@ -7,8 +7,9 @@
 
  class PageController extends Controller {
 
-     public function __construct($AppName, IRequest $request){
+     public function __construct($AppName, IRequest $request, $UserId){
          parent::__construct($AppName, $request);
+         $this->userId = $UserId;
      }
 
      /**
@@ -16,7 +17,7 @@
       * @NoCSRFRequired
       */
      public function index() {
-         $params = ['user' => $this->userId];
+		 $params = ['user' => $this->userId];
          return new TemplateResponse('owncollab_timetracker', 'main');
      }
 
