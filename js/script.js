@@ -8,6 +8,9 @@
  * @copyright andy 2016
  */
 
+<?php
+script('owncollab_timetracker', 'handlebars');
+
 (function ($, OC) {
 
 	$(document).ready(function () {
