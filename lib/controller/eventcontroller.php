@@ -5,7 +5,7 @@
  use OCP\AppFramework\Http\DataResponse; 
  use OCP\AppFramework\Controller;
 
- use OCA\OwnCollab_TimeTracker\Lib\Service\EventService;
+ use OCA\OwnCollab_TimeTracker\Service\EventService;
 
  class EventController extends Controller {
 
