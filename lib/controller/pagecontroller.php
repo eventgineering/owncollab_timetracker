@@ -9,7 +9,6 @@
 
      public function __construct($AppName, IRequest $request){
          parent::__construct($AppName, $request);
-         $this->userId = $UserId;
      }
 
      /**
