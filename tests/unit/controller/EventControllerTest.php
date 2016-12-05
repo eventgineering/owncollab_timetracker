@@ -18,7 +18,7 @@ class EventControllerTest extends PHPUnit_Framework_TestCase {
 
     public function setUp() {
         $this->request = $this->getMockBuilder('OCP\IRequest')->getMock();
-        $this->service = $this->getMockBuilder('OCA\OwnCollab_TimeTracker\Service\EventService')
+        $this->service = $this->getMockBuilder('OCA\OwnCollab_TimeTracker\Lib\Service\EventService')
             ->disableOriginalConstructor()
             ->getMock();
         $this->controller = new EventController(
