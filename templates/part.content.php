@@ -1,6 +1,6 @@
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if event}}
-        	<div class="expirationDateContainer">
+        	<div class="expirationDateContainer {{#unless isExpirationSet}}visible{{/unless}}">
 			<label for="expirationDate" class="hidden-visually" value="{{expirationDate}}">{{expirationLabel}}</label>
 			<input id="expirationDate" class="datepicker" type="text" placeholder="{{expirationDatePlaceholder}}" value="{{expirationValue}}" />
 			</div>
