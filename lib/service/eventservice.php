@@ -50,7 +50,7 @@ class EventService {
          $event->setNotes($notes);
          $event->setClient($client);
          $event->setProject($project);
-         $event->setUserId($this->userId);
+         $event->setUserId($this->$userId);
          return $this->mapper->insert($event);
      }
 
