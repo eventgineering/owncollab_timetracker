@@ -192,7 +192,7 @@ View.prototype = {
     }
 };
 
-var events = new Events(OC.generateUrl('/apps/owncollab_timeracker/events'));
+var events = new Events(OC.generateUrl('/apps/owncollab_timetracker/events'));
 var view = new View(events);
 events.loadAll().done(function () {
     view.render();
