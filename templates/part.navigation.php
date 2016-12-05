@@ -1,5 +1,4 @@
 <!-- translation strings -->
-	<li><a href="#">First level entry</a></li>
 <div style="display:none" id="new-event-string"><?php p($l->t('New event')); ?></div>
 
 <script id="navigation-tpl" type="text/x-handlebars-template">

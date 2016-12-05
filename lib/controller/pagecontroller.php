@@ -16,6 +16,7 @@
       * @NoCSRFRequired
       */
      public function index() {
+         $params = ['user' => $this->userId];
          return new TemplateResponse('owncollab_timetracker', 'main');
      }
 
