@@ -1,5 +1,5 @@
 <?php
-namespace OCA\OwCollab_TimeTracker\Db;
+namespace OCA\OwnCollab_TimeTracker\Db;
 
 use OCP\IDb;
 use OCP\AppFramework\Db\Mapper;
