@@ -13,7 +13,6 @@
             <option value="1">Project 1</option>
             <option value="2">Project 2</option>
         </select>
-        <?php p($_['user']) ?>
         </p>
         <div class="input"><textarea>{{ event.notes }}</textarea></div>
         <div class="save"><button><?php p($l->t('Save')); ?></button></div>
