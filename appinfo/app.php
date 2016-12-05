@@ -9,7 +9,7 @@
  * @copyright andy 2016
  */
 
-namespace OCA\OwnNotes\AppInfo;
+namespace OCA\OwnCollab_TimeTracker\AppInfo;
 
 use OCP\AppFramework\App;
 

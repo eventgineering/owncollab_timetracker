@@ -1,6 +1,6 @@
 <?php
 /**
- * ownCloud - ownnotes
+ * ownCloud - OwnCollab_TimeTracker
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
@@ -9,7 +9,7 @@
  * @copyright andy 2016
  */
 
-namespace OCA\OwnNotes\AppInfo;
+namespace OCA\OwnCollab_TimeTracker\AppInfo;
 
 use OCP\AppFramework\App;
 
