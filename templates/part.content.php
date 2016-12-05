@@ -1,8 +1,8 @@
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if event}}
     <p>
-        <input type="text" name="start" id="start">
-        <input type="text" name="end" id="end">
+        <input type="text" name="start" id="start" placeholder="start date">
+        <input type="text" name="end" id="end" placeholder="end date">
         <select id="client" name="client">
             <option value="0" selected>Select Client</option>
             <option value="1">Client 1</option>
