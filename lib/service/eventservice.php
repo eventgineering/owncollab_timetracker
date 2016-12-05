@@ -1,5 +1,3 @@
-hello
-
 <?php
 namespace OCA\OwnCollab_TimeTracker\Service;
 
