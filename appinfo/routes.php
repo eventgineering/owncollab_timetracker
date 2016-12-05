@@ -18,6 +18,9 @@
  * it's instantiated in there
  */
 return [
+        'resources' => [
+        'event' => ['url' => '/events']
+    ],
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
 	   ['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
