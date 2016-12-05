@@ -6,8 +6,8 @@
  use OCP\AppFramework\Controller;
 
  class PageController extends Controller {
-	private $userId;
-     public function __construct($AppName, IRequest $request, $UserId){
+
+     public function __construct($AppName, IRequest $request){
          parent::__construct($AppName, $request);
          $this->userId = $UserId;
      }
@@ -17,7 +17,6 @@
       * @NoCSRFRequired
       */
      public function index() {
-		 $params = ['user' => $this->userId];
          return new TemplateResponse('owncollab_timetracker', 'main');
      }
 

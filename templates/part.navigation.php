@@ -5,7 +5,7 @@
     <li id="new-event"><a href="#"><?php p($l->t('Add event')); ?></a></li>
     {{#each notes}}
         <li class="event with-menu {{#if active}}active{{/if}}"  data-id="{{ id }}">
-            <a href="#">{{ title }}</a>
+            <a href="#">{{ project }}</a>
             <div class="app-navigation-entry-utils">
                 <ul>
                     <li class="app-navigation-entry-utils-menu-button svg"><button></button></li>
