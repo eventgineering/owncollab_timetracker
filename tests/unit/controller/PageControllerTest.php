@@ -25,7 +25,7 @@ class PageControllerTest extends PHPUnit_Framework_TestCase {
 		$request = $this->getMockBuilder('OCP\IRequest')->getMock();
 
 		$this->controller = new PageController(
-			'ownnotes', $request, $this->userId
+			'owncollab_timetracker', $request, $this->userId
 		);
 	}
 

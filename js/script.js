@@ -16,7 +16,7 @@
 		});
 
 		$('#echo').click(function () {
-			var url = OC.generateUrl('/apps/ownnotes/echo');
+			var url = OC.generateUrl('/apps/owncollab_timetracker/echo');
 			var data = {
 				echo: $('#echo-content').val()
 			};

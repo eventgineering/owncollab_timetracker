@@ -24,13 +24,13 @@ class AppTest extends TestCase {
 
     public function setUp() {
         parent::setUp();
-        $app = new App('ownnotes');
+        $app = new App('owncollab_timetracker');
         $this->container = $app->getContainer();
     }
 
     public function testAppInstalled() {
         $appManager = $this->container->query('OCP\App\IAppManager');
-        $this->assertTrue($appManager->isInstalled('ownnotes'));
+        $this->assertTrue($appManager->isInstalled('owncollab_timetracker'));
     }
 
 }
