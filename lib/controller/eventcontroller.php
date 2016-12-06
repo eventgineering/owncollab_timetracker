@@ -7,7 +7,7 @@ use OCP\AppFramework\Controller;
 
 use OCA\OwnCollab_TimeTracker\Service\NoteService;
 
-class NoteController extends Controller {
+class EventController extends Controller {
 
     private $service;
     private $userId;

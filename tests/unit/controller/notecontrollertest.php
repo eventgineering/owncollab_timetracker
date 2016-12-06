@@ -9,7 +9,7 @@ use OCP\AppFramework\Http\DataResponse;
 use OCA\OwnCollab_TimeTracker\Service\NotFoundException;
 
 
-class NoteControllerTest extends PHPUnit_Framework_TestCase {
+class EventControllerTest extends PHPUnit_Framework_TestCase {
 
     protected $controller;
     protected $service;
@@ -21,7 +21,7 @@ class NoteControllerTest extends PHPUnit_Framework_TestCase {
         $this->service = $this->getMockBuilder('OCA\OwnCollab_TimeTracker\Service\NoteService')
             ->disableOriginalConstructor()
             ->getMock();
-        $this->controller = new NoteController(
+        $this->controller = new EventController(
             'owncollab_timetracker', $this->request, $this->service, $this->userId
         );
     }
