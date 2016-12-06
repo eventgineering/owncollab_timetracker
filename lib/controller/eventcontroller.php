@@ -44,11 +44,11 @@ class EventController extends Controller {
      *
      * @param string $title
      * @param string $content
-     * @param string $startts
+     * @param string $start
      * @param string $endts
      */
-    public function create($title, $content, $startts, $endts) {
-        return $this->service->create($title, $content, $startts, $endts, $this->userId);
+    public function create($title, $content, $start, $endts) {
+        return $this->service->create($title, $content, $start, $endts, $this->userId);
     }
 
     /**
@@ -57,12 +57,12 @@ class EventController extends Controller {
      * @param int $id
      * @param string $title
      * @param string $content
-     * @param string $startts
+     * @param string $start
      * @param string $endts
      */
-    public function update($id, $title, $content, $startts, $endts) {
-        return $this->handleNotFound(function () use ($id, $title, $content, $startts, $endts) {
-            return $this->service->update($id, $title, $content, $startts, $endts, $this->userId);
+    public function update($id, $title, $content, $start, $endts) {
+        return $this->handleNotFound(function () use ($id, $title, $content, $start, $endts) {
+            return $this->service->update($id, $title, $content, $start, $endts, $this->userId);
         });
     }
 

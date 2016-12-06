@@ -125,11 +125,11 @@ Events.prototype = {
         });
         return deferred.promise();
     },
-    updateActive: function (title, content, startts, endts) {
+    updateActive: function (title, content, start, endts) {
         var event = this.getActive();
         event.title = title;
         event.content = content;
-        event.startts = startts;
+        event.start = start;
         event.endts = endts;
 
 
@@ -161,10 +161,10 @@ View.prototype = {
         $('#app-content button').click(function () {
             var content = textarea.val();
             var title = content.split('\n')[0]; // first line is the title
-	    var startts = $('#startts').val();
+	        var start = $('#start').val();
             var endts = $('#endts').val();
 
-            self._events.updateActive(title, content, startts, endts).done(function () {
+            self._events.updateActive(title, content, start, endts).done(function () {
                 self.render();
             }).fail(function () {
                 alert('Could not update event, not found');
@@ -184,7 +184,7 @@ View.prototype = {
             var event = {
                 title: translations.newEvent,
                 content: 'content here . . .',
-		startts: '01.01.2016 00:00:00',
+		start: '01.01.2016 00:00:00',
 		endts: '01.01.2016 00:00:01'
             };
 
