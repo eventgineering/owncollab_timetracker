@@ -22,7 +22,7 @@ class NoteControllerTest extends PHPUnit_Framework_TestCase {
             ->disableOriginalConstructor()
             ->getMock();
         $this->controller = new NoteController(
-            'ownnotes', $this->request, $this->service, $this->userId
+            'owncollab_timetracker', $this->request, $this->service, $this->userId
         );
     }
 

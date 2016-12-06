@@ -1,5 +1,5 @@
 /**
- * ownCloud - ownnotes
+ * ownCloud - owncollab_timetracker
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
@@ -16,7 +16,7 @@
 		});
 
 		$('#echo').click(function () {
-			var url = OC.generateUrl('/apps/ownnotes/echo');
+			var url = OC.generateUrl('/apps/owncollab_timetracker/echo');
 			var data = {
 				echo: $('#echo-content').val()
 			};
@@ -229,7 +229,7 @@ View.prototype = {
     }
 };
 
-var notes = new Notes(OC.generateUrl('/apps/ownnotes/notes'));
+var notes = new Notes(OC.generateUrl('/apps/owncollab_timetracker/notes'));
 var view = new View(notes);
 notes.loadAll().done(function () {
     view.render();

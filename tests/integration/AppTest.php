@@ -1,6 +1,6 @@
 <?php
 /**
- * ownCloud - ownnotes
+ * ownCloud - owncollab_timetracker
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
@@ -24,13 +24,13 @@ class AppTest extends TestCase {
 
     public function setUp() {
         parent::setUp();
-        $app = new App('ownnotes');
+        $app = new App('owncollab_timetracker');
         $this->container = $app->getContainer();
     }
 
     public function testAppInstalled() {
         $appManager = $this->container->query('OCP\App\IAppManager');
-        $this->assertTrue($appManager->isInstalled('ownnotes'));
+        $this->assertTrue($appManager->isInstalled('owncollab_timetracker'));
     }
 
 }
