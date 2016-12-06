@@ -183,9 +183,8 @@ View.prototype = {
             console.log('placeholder end value:', $('#end').attr('placeholder'));
             console.log(' end value:', end);
 
-           // var content = textarea.val();
             var title = content.split('\n')[0]; // first line is the title
-
+            
 
             self._events.updateActive(title, content, start, end).done(function () {
                 self.render();
@@ -208,7 +207,7 @@ View.prototype = {
                 title: translations.newEvent,
                 content: 'content here . . .',
 		        start: '01.01.2016 00:00:00',
-		        end_ph: '01.01.2016 00:00:01'
+		        end.attr('placeholder'): '01.01.2016 00:00:01'
             };
 
             self._events.create(event).done(function() {
