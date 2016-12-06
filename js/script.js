@@ -236,9 +236,10 @@ View.prototype = {
         $('#app-navigation .event > a').click(function () {
             var id = parseInt($(this).parent().data('id'), 10);
             self._events.load(id);
+            if (event.start!=''){$('#start').val(event.start);}
             self.render();
             $('#editor textarea').focus();
-            if (event.start!=''){$('#start').val(event.start);}
+
         });
     },
     render: function () {
