@@ -1,20 +1,20 @@
 <?php
-namespace OCA\OwnCollab_TimeTracker\Service;
+namespace OCA\OwnNotes\Service;
 
 use Exception;
 
 use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\AppFramework\Db\MultipleObjectsReturnedException;
 
-use OCA\OwnCollab_TimeTracker\Db\Event;
-use OCA\OwnCollab_TimeTracker\Db\EventMapper;
+use OCA\OwnNotes\Db\Note;
+use OCA\OwnNotes\Db\NoteMapper;
 
 
-class EventService {
+class NoteService {
 
     private $mapper;
 
-    public function __construct(EventMapper $mapper){
+    public function __construct(NoteMapper $mapper){
         $this->mapper = $mapper;
     }
 
@@ -43,36 +43,35 @@ class EventService {
             $this->handleException($e);
         }
     }
-     public function create($start, $end, $notes, $client, $project, $userId) {
-         $event = new Event();
-         $event->setStart($start);
-         $event->setEnd($end);
-         $event->setNotes($notes);
-         $event->setClient($client);
-         $event->setProject($project);
-         $event->setUserId($this->$userId);
-         return $this->mapper->insert($event);
-     }
 
-     public function update($id, $user, $start, $end, $notes, $client, $project, $userId) {
-         try {
-             $event = $this->mapper->find($id, $userId);
-             $event->setStart($start);
-             $event->setEnd($end);
-             $event->setNotes($notes);
-             $event->setClient($client);
-             $event->setProject($project);
-             return $this->mapper->update($event);
-         }  catch(Exception $e) {
+    public function create($title, $content, $startts, $endts, $userId) {
+        $note = new Note();
+        $note->setTitle($title);
+        $note->setContent($content);
+        $note->setStartts($starts);
+        $note->setEndts($endts);
+        $note->setUserId($userId);
+        return $this->mapper->insert($note);
+    }
+
+    public function update($id, $title, $content, $startts, $endts, $userId) {
+        try {
+            $note = $this->mapper->find($id, $userId);
+            $note->setTitle($title);
+            $note->setContent($content);
+            $note->setStartts($startts);
+            $note->setEndts($endts);
+            return $this->mapper->update($note);
+        } catch(Exception $e) {
             $this->handleException($e);
         }
-     }
+    }
 
     public function delete($id, $userId) {
         try {
-            $event = $this->mapper->find($id, $userId);
-            $this->mapper->delete($event);
-            return $event;
+            $note = $this->mapper->find($id, $userId);
+            $this->mapper->delete($note);
+            return $note;
         } catch(Exception $e) {
             $this->handleException($e);
         }

@@ -4,7 +4,7 @@
     <overwrite>false</overwrite>
     <charset>utf8</charset>
     <table>
-        <name>*dbprefix*owncollab_timetracker_events</name>
+        <name>*dbprefix*ownnotes_notes</name>
         <declaration>
             <field>
                 <name>id</name>
@@ -16,6 +16,13 @@
                 <length>8</length>
             </field>
             <field>
+                <name>title</name>
+                <type>text</type>
+                <length>200</length>
+                <default></default>
+                <notnull>true</notnull>
+            </field>
+            <field>
                 <name>user_id</name>
                 <type>text</type>
                 <length>200</length>
@@ -23,60 +30,26 @@
                 <notnull>true</notnull>
             </field>
             <field>
-                <name>start</name>
-                <type>text</type>
-                <length>20</length>
-                <default></default>
-                <notnull>true</notnull>
-            </field>
-            <field>
-                <name>end</name>
-                <type>text</type>
-                <length>20</length>
-                <default></default>
-                <notnull>true</notnull>
-            </field>
-            <field>
-                <name>notes</name>
+                <name>content</name>
                 <type>clob</type>
                 <default></default>
                 <notnull>true</notnull>
             </field>
             <field>
-                <name>client</name>
+                <name>startts</name>
                 <type>text</type>
-                <length>40</length>
+		<length>20</length>
                 <default></default>
                 <notnull>true</notnull>
             </field>
             <field>
-                <name>project</name>
+                <name>endts</name>
                 <type>text</type>
-                <length>40</length>
+                <length>20</length>
                 <default></default>
                 <notnull>true</notnull>
             </field>
-	   <index>
-           	<name>id_index</name>
-           	<field>
-                   <name>id</name>
-                   <sorting>ascending</sorting>
-           	</field>
-	   </index>
-   	   <index>
-           	<name>start_index</name>
-           	<field>
-                   <name>start</name>
-                   <sorting>ascending</sorting>
-           	</field>
-	   </index>
-	   <index>
-           	<name>user_index</name>
-		<field>
-		   <name>user_id</name>
-                   <sorting>ascending</sorting>
-           	</field>
-	   </index>
+
         </declaration>
     </table>
 </database>

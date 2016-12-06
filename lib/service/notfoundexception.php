@@ -1,4 +1,4 @@
 <?php
-namespace OCA\OwnCollab_TimeTracker\Service;
+namespace OCA\OwnNotes\Service;
 
 class NotFoundException extends ServiceException {}

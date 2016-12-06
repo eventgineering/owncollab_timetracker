@@ -1,6 +1,6 @@
 <?php
 /**
- * ownCloud - OwnCollab_TimeTracker
+ * ownCloud - ownnotes
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
@@ -9,7 +9,7 @@
  * @copyright andy 2016
  */
 
-namespace OCA\OwnCollab_TimeTracker\Controller;
+namespace OCA\OwnNotes\Controller;
 
 use PHPUnit_Framework_TestCase;
 
@@ -25,7 +25,7 @@ class PageControllerTest extends PHPUnit_Framework_TestCase {
 		$request = $this->getMockBuilder('OCP\IRequest')->getMock();
 
 		$this->controller = new PageController(
-			'owncollab_timetracker', $request, $this->userId
+			'ownnotes', $request, $this->userId
 		);
 	}
 
@@ -36,6 +36,12 @@ class PageControllerTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(['user' => 'john'], $result->getParams());
 		$this->assertEquals('main', $result->getTemplateName());
 		$this->assertTrue($result instanceof TemplateResponse);
+	}
+
+
+	public function testEcho() {
+		$result = $this->controller->doEcho('hi');
+		$this->assertEquals(['echo' => 'hi'], $result->getData());
 	}
 
 

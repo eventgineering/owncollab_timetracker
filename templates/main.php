@@ -1,7 +1,7 @@
 <?php
-script('owncollab_timetracker', 'handlebars');
-script('owncollab_timetracker', 'script');
-style('owncollab_timetracker', 'style');
+script('ownnotes', 'handlebars');
+script('ownnotes', 'script');
+style('ownnotes', 'style');
 ?>
 
 <div id="app">

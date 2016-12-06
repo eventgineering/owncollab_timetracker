@@ -1,13 +1,13 @@
 <?php
 
-namespace OCA\OwnCollab_TimeTracker\Controller;
+namespace OCA\OwnNotes\Controller;
 
 use Closure;
 
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\DataResponse;
 
-use OCA\OwnCollab_TimeTracker\Service\NotFoundException;
+use OCA\OwnNotes\Service\NotFoundException;
 
 
 trait Errors {
