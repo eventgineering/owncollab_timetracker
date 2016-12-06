@@ -2,12 +2,6 @@
 
 <p><button id="hello">click me</button></p>
 
-    <div class="tbl">
-
-        <div class="tbl_cell width25 valign_top">
-            <?php print_unescaped($this->inc("part.content.list")); ?>
-        </div>
-
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if note}}
 	<p>
@@ -24,5 +18,5 @@
         <div class="input"><textarea disabled></textarea></div>
         <div class="save"><button disabled><?php p($l->t('Save')); ?></button></div>
     {{/if}}
-</script>    </div>
+</script>
 <div id="editor"></div>
