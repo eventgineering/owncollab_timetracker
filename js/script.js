@@ -159,6 +159,7 @@ View.prototype = {
         var textarea = $('#app-content textarea');
         var self = this;
         $('#app-content button').click(function () {
+            console.log('placeholder start value:', $('#start').attr('placeholder'));
             var content = textarea.val();
             var title = content.split('\n')[0]; // first line is the title
 	        var start = $('#start').val();
