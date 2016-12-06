@@ -236,6 +236,7 @@ View.prototype = {
         $('#app-navigation .event > a').click(function () {
             var id = parseInt($(this).parent().data('id'), 10);
             self._events.load(id);
+            console.log(self._events);
             if (self._events.start != ''){$('#start').val(self._events.start);}
             self.render();
             $('#editor textarea').focus();
