@@ -5,7 +5,7 @@ use OCP\IRequest;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Controller;
 
-use OCA\OwnCollab_TimeTracker\Service\NoteService;
+use OCA\OwnCollab_TimeTracker\Service\EventService;
 
 class EventController extends Controller {
 
@@ -15,7 +15,7 @@ class EventController extends Controller {
     use Errors;
 
     public function __construct($AppName, IRequest $request,
-                                NoteService $service, $UserId){
+                                EventService $service, $UserId){
         parent::__construct($AppName, $request);
         $this->service = $service;
         $this->userId = $UserId;

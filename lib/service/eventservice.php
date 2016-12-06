@@ -10,7 +10,7 @@ use OCA\OwnCollab_TimeTracker\Db\Note;
 use OCA\OwnCollab_TimeTracker\Db\EventMapper;
 
 
-class NoteService {
+class EventService {
 
     private $mapper;
 

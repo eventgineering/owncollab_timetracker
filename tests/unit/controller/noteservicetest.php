@@ -7,7 +7,7 @@ use OCP\AppFramework\Db\DoesNotExistException;
 
 use OCA\OwnCollab_TimeTracker\Db\Note;
 
-class NoteServiceTest extends PHPUnit_Framework_TestCase {
+class EventServiceTest extends PHPUnit_Framework_TestCase {
 
     private $service;
     private $mapper;
@@ -17,7 +17,7 @@ class NoteServiceTest extends PHPUnit_Framework_TestCase {
         $this->mapper = $this->getMockBuilder('OCA\OwnCollab_TimeTracker\Db\EventMapper')
             ->disableOriginalConstructor()
             ->getMock();
-        $this->service = new NoteService($this->mapper);
+        $this->service = new EventService($this->mapper);
     }
 
     public function testUpdate() {
