@@ -53,7 +53,6 @@ Events.prototype = {
             if (event.id === id) {
                 event.active = true;
                 self._activeEvent = event;
-                if (event.start != ''){console.log('existing value');}
             } else {
                 event.active = false;
             }
@@ -205,9 +204,11 @@ View.prototype = {
             var event = {
                 title: translations.newEvent,
                 content: 'content here . . .',
-		        start: today,
-		        end: now
+		        start: '',
+		        end: ''
             };
+	start.placeholder=today;
+	end.placeholder=today;
 
             self._events.create(event).done(function() {
                 self.render();
