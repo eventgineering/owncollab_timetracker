@@ -8,7 +8,7 @@
         <input type="text" name="start" id="start" placeholder="{{ event.start }}">
         <input type="text" name="end" id="end" placeholder="{{ event.end }}">
 	</p>
-        <div class="input"><textarea>{{ event.content }}</textarea></div>
+        <div class="input"><textarea placeholder="{{ event.content }}"></textarea></div>
         <div class="save"><button><?php p($l->t('Save')); ?></button></div>
     {{else}}
 	<p>

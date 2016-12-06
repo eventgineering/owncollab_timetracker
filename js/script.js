@@ -171,13 +171,19 @@ View.prototype = {
             else{
                 var end = $('#end').val();
             }
+            if (textarea.val()==''){
+                var content = textarea.attr('placeholder');
+            }
+            else{
+                var content = textarea.val();
+            }
 
             console.log('placeholder start value:', $('#start').attr('placeholder'));
             console.log(' start value:', start);
             console.log('placeholder end value:', $('#end').attr('placeholder'));
             console.log(' end value:', end);
 
-            var content = textarea.val();
+           // var content = textarea.val();
             var title = content.split('\n')[0]; // first line is the title
 
 
@@ -201,8 +207,8 @@ View.prototype = {
             var event = {
                 title: translations.newEvent,
                 content: 'content here . . .',
-		start: '01.01.2016 00:00:00',
-		end: '01.01.2016 00:00:01'
+		        start: '01.01.2016 00:00:00',
+		        end: '01.01.2016 00:00:01'
             };
 
             self._events.create(event).done(function() {
