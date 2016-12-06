@@ -165,14 +165,17 @@ View.prototype = {
             else{
                 var start = $('#start').val();
             }
-            if ($('#end').val()==''){
-                var start = $('#end').attr('placeholder');
+            if $('#end'){
+                var end = $('#end').val();
             }
             else{
-                var end = $('#end').val();
+                var start = $('#end').attr('placeholder');
             }
             console.log('placeholder start value:', $('#start').attr('placeholder'));
             console.log(' start value:', start);
+            console.log('placeholder end value:', $('#end').attr('placeholder'));
+            console.log(' end value:', end);
+
             var content = textarea.val();
             var title = content.split('\n')[0]; // first line is the title
 
