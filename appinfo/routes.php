@@ -19,7 +19,7 @@
  */
 return [
     'resources' => [
-        'note' => ['url' => '/oc_timetracker']
+        'note' => ['url' => '/owncollab_timetracker']
     ],
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
