@@ -1,20 +1,9 @@
-<ul>
-	<li><a href="#">First level entry</a></li>
-	<li>
-		<a href="#">First level container</a>
-		<ul>
-			<li><a href="#">Second level entry</a></li>
-			<li><a href="#">Second level entry</a></li>
-		</ul>
-	</li>
-</ul>
+
 <!-- translation strings -->
 <div style="display:none" id="new-event-string"><?php p($l->t('New event')); ?></div>
 <<<<<<< HEAD
     <li id="new-event"><a href="#"><?php p($l->t('Add event')); ?></a></li>
 <ul></ul>
-=======
-
 <script id="navigation-tpl" type="text/x-handlebars-template">
     <li id="new-event"><a href="#"><?php p($l->t('Add event')); ?></a></li>
     {{#each events}}
@@ -36,5 +25,3 @@
 </script>
 
 <ul></ul>
-
->>>>>>> parent of 543a847... changed content style
