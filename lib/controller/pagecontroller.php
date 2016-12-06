@@ -38,7 +38,7 @@ class PageController extends Controller {
 	 */
 	public function index() {
 		$params = ['user' => $this->userId];
-		return new TemplateResponse('ownnotes', 'main', $params);  // templates/main.php
+		return new TemplateResponse('owncollab_timetracker', 'main', $params);  // templates/main.php
 	}
 
 	/**

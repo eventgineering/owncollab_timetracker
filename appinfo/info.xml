@@ -5,8 +5,8 @@
     <description>My first ownCloud app</description>
     <licence>AGPL</licence>
     <author>andy</author>
-    <version>0.0.4</version>
-    <namespace>OwnNotes</namespace>
+    <version>0.0.5</version>
+    <namespace>ownCollab_TimeTracker</namespace>
     <category>other</category>
     <dependencies>
         <owncloud min-version="9.1" max-version="9.1"/>
