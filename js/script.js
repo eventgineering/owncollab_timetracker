@@ -165,6 +165,12 @@ View.prototype = {
             else{
                 var start = $('#start').val();
             }
+            if ($('#end').val()==''){
+                var start = $('#end').attr('placeholder');
+            }
+            else{
+                var end = $('#end').val();
+            }
             console.log('placeholder start value:', $('#start').attr('placeholder'));
             console.log(' start value:', start);
             var content = textarea.val();
