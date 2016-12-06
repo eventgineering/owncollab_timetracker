@@ -10,3 +10,4 @@
 </ul>
 <!-- translation strings -->
 <div style="display:none" id="new-note-string"><?php p($l->t('New note')); ?></div>
+<ul></ul>
