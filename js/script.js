@@ -160,13 +160,16 @@ View.prototype = {
         var self = this;
         $('#app-content button').click(function () {
             if ($('#start').attr('placeholder')==''){
-                $('#start').val()=$('#start').attr('placeholder');
+                var start = $('#start').attr('placeholder');
+            }
+            else{
+                var start = $('#start').val();
             }
             console.log('placeholder start value:', $('#start').attr('placeholder'));
-            console.log('placeholder start value:', $('#start').attr('placeholder'));
+            console.log(' start value:', start;
             var content = textarea.val();
             var title = content.split('\n')[0]; // first line is the title
-	        var start = $('#start').val();
+
             var end = $('#end').val();
 
             self._events.updateActive(title, content, start, end).done(function () {
