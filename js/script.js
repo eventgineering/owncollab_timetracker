@@ -208,7 +208,7 @@ View.prototype = {
                 title: translations.newEvent,
                 content: 'content here . . .',
 		        start: '01.01.2016 00:00:00',
-		        end: '01.01.2016 00:00:01'
+		        end_ph: '01.01.2016 00:00:01'
             };
 
             self._events.create(event).done(function() {
