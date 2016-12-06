@@ -45,23 +45,23 @@ class NoteService {
     }
 
     public function create($title, $content, $startts, $endts, $userId) {
-        $note = new Note();
-        $note->setTitle($title);
-        $note->setContent($content);
-        $note->setStartts($startts);
-        $note->setEndts($endts);
-        $note->setUserId($userId);
-        return $this->mapper->insert($note);
+        $event = new Note();
+        $event->setTitle($title);
+        $event->setContent($content);
+        $event->setStartts($startts);
+        $event->setEndts($endts);
+        $event->setUserId($userId);
+        return $this->mapper->insert($event);
     }
 
     public function update($id, $title, $content, $startts, $endts, $userId) {
         try {
-            $note = $this->mapper->find($id, $userId);
-            $note->setTitle($title);
-            $note->setContent($content);
-            $note->setStartts($startts);
-            $note->setEndts($endts);
-            return $this->mapper->update($note);
+            $event = $this->mapper->find($id, $userId);
+            $event->setTitle($title);
+            $event->setContent($content);
+            $event->setStartts($startts);
+            $event->setEndts($endts);
+            return $this->mapper->update($event);
         } catch(Exception $e) {
             $this->handleException($e);
         }
@@ -69,9 +69,9 @@ class NoteService {
 
     public function delete($id, $userId) {
         try {
-            $note = $this->mapper->find($id, $userId);
-            $this->mapper->delete($note);
-            return $note;
+            $event = $this->mapper->find($id, $userId);
+            $this->mapper->delete($event);
+            return $event;
         } catch(Exception $e) {
             $this->handleException($e);
         }

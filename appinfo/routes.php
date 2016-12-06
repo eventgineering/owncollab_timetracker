@@ -19,7 +19,7 @@
  */
 return [
     'resources' => [
-        'note' => ['url' => '/notes']
+        'event' => ['url' => '/events']
     ],
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],

@@ -21,8 +21,8 @@ class NoteServiceTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testUpdate() {
-        // the existing note
-        $note = Note::fromRow([
+        // the existing event
+        $event = Note::fromRow([
             'id' => 3,
             'title' => 'yo',
             'content' => 'nope'
@@ -30,9 +30,9 @@ class NoteServiceTest extends PHPUnit_Framework_TestCase {
         $this->mapper->expects($this->once())
             ->method('find')
             ->with($this->equalTo(3))
-            ->will($this->returnValue($note));
+            ->will($this->returnValue($event));
 
-        // the note when updated
+        // the event when updated
         $updatedNote = Note::fromRow(['id' => 3]);
         $updatedNote->setTitle('title');
         $updatedNote->setContent('content');
@@ -51,7 +51,7 @@ class NoteServiceTest extends PHPUnit_Framework_TestCase {
      * @expectedException OCA\OwnCollab_TimeTracker\Service\NotFoundException
      */
     public function testUpdateNotFound() {
-        // test the correct status code if no note is found
+        // test the correct status code if no event is found
         $this->mapper->expects($this->once())
             ->method('find')
             ->with($this->equalTo(3))

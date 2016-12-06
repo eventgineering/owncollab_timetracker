@@ -27,23 +27,23 @@ class NoteControllerTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testUpdate() {
-        $note = 'just check if this value is returned correctly';
+        $event = 'just check if this value is returned correctly';
         $this->service->expects($this->once())
             ->method('update')
             ->with($this->equalTo(3),
                     $this->equalTo('title'),
                     $this->equalTo('content'),
                    $this->equalTo($this->userId))
-            ->will($this->returnValue($note));
+            ->will($this->returnValue($event));
 
         $result = $this->controller->update(3, 'title', 'content');
 
-        $this->assertEquals($note, $result->getData());
+        $this->assertEquals($event, $result->getData());
     }
 
 
     public function testUpdateNotFound() {
-        // test the correct status code if no note is found
+        // test the correct status code if no event is found
         $this->service->expects($this->once())
             ->method('update')
             ->will($this->throwException(new NotFoundException()));

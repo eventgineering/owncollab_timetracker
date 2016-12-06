@@ -3,12 +3,12 @@
 <p><button id="hello">click me</button></p>
 
 <script id="content-tpl" type="text/x-handlebars-template">
-    {{#if note}}
+    {{#if event}}
 	<p>
-        <input type="text" name="startts" id="startts" placeholder="{{ note.startts }}">{{ note.startts }}
-        <input type="text" name="endts" id="endts" placeholder="{{ note.endts }}">
+        <input type="text" name="startts" id="startts" placeholder="{{ event.startts }}">{{ event.startts }}
+        <input type="text" name="endts" id="endts" placeholder="{{ event.endts }}">
 	</p>
-        <div class="input"><textarea>{{ note.content }}</textarea></div>
+        <div class="input"><textarea>{{ event.content }}</textarea></div>
         <div class="save"><button><?php p($l->t('Save')); ?></button></div>
     {{else}}
 	<p>

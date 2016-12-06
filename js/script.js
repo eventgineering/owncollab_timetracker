@@ -36,25 +36,25 @@
 $(document).ready(function () {
 
 var translations = {
-    newNote: $('#new-note-string').text()
+    newNote: $('#new-event-string').text()
 };
 
-// this notes object holds all our notes
-var Notes = function (baseUrl) {
+// this events object holds all our events
+var Events = function (baseUrl) {
     this._baseUrl = baseUrl;
-    this._notes = [];
+    this._events = [];
     this._activeNote = undefined;
 };
 
-Notes.prototype = {
+Events.prototype = {
     load: function (id) {
         var self = this;
-        this._notes.forEach(function (note) {
-            if (note.id === id) {
-                note.active = true;
-                self._activeNote = note;
+        this._events.forEach(function (event) {
+            if (event.id === id) {
+                event.active = true;
+                self._activeNote = event;
             } else {
-                note.active = false;
+                event.active = false;
             }
         });
     },
@@ -65,19 +65,19 @@ Notes.prototype = {
         var index;
         var deferred = $.Deferred();
         var id = this._activeNote.id;
-        this._notes.forEach(function (note, counter) {
-            if (note.id === id) {
+        this._events.forEach(function (event, counter) {
+            if (event.id === id) {
                 index = counter;
             }
         });
 
         if (index !== undefined) {
-            // delete cached active note if necessary
-            if (this._activeNote === this._notes[index]) {
+            // delete cached active event if necessary
+            if (this._activeNote === this._events[index]) {
                 delete this._activeNote;
             }
 
-            this._notes.splice(index, 1);
+            this._events.splice(index, 1);
 
             $.ajax({
                 url: this._baseUrl + '/' + id,
@@ -92,18 +92,18 @@ Notes.prototype = {
         }
         return deferred.promise();
     },
-    create: function (note) {
+    create: function (event) {
         var deferred = $.Deferred();
         var self = this;
         $.ajax({
             url: this._baseUrl,
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(note)
-        }).done(function (note) {
-            self._notes.push(note);
-            self._activeNote = note;
-            self.load(note.id);
+            data: JSON.stringify(event)
+        }).done(function (event) {
+            self._events.push(event);
+            self._activeNote = event;
+            self.load(event.id);
             deferred.resolve();
         }).fail(function () {
             deferred.reject();
@@ -111,14 +111,14 @@ Notes.prototype = {
         return deferred.promise();
     },
     getAll: function () {
-        return this._notes;
+        return this._events;
     },
     loadAll: function () {
         var deferred = $.Deferred();
         var self = this;
-        $.get(this._baseUrl).done(function (notes) {
+        $.get(this._baseUrl).done(function (events) {
             self._activeNote = undefined;
-            self._notes = notes;
+            self._events = events;
             deferred.resolve();
         }).fail(function () {
             deferred.reject();
@@ -126,32 +126,32 @@ Notes.prototype = {
         return deferred.promise();
     },
     updateActive: function (title, content, startts, endts) {
-        var note = this.getActive();
-        note.title = title;
-        note.content = content;
-        note.startts = startts;
-        note.endts = endts;
+        var event = this.getActive();
+        event.title = title;
+        event.content = content;
+        event.startts = startts;
+        event.endts = endts;
 
 
         return $.ajax({
-            url: this._baseUrl + '/' + note.id,
+            url: this._baseUrl + '/' + event.id,
             method: 'PUT',
             contentType: 'application/json',
-            data: JSON.stringify(note)
+            data: JSON.stringify(event)
         });
     }
 };
 
 // this will be the view that is used to update the html
-var View = function (notes) {
-    this._notes = notes;
+var View = function (events) {
+    this._events = events;
 };
 
 View.prototype = {
     renderContent: function () {
         var source = $('#content-tpl').html();
         var template = Handlebars.compile(source);
-        var html = template({note: this._notes.getActive()});
+        var html = template({event: this._events.getActive()});
 
         $('#editor').html(html);
 
@@ -164,61 +164,61 @@ View.prototype = {
 	    var startts = $('#startts').val();
             var endts = $('#endts').val();
 
-            self._notes.updateActive(title, content, startts, endts).done(function () {
+            self._events.updateActive(title, content, startts, endts).done(function () {
                 self.render();
             }).fail(function () {
-                alert('Could not update note, not found');
+                alert('Could not update event, not found');
             });
         });
     },
     renderNavigation: function () {
         var source = $('#navigation-tpl').html();
         var template = Handlebars.compile(source);
-        var html = template({notes: this._notes.getAll()});
+        var html = template({events: this._events.getAll()});
 
         $('#app-navigation ul').html(html);
 
-        // create a new note
+        // create a new event
         var self = this;
-        $('#new-note').click(function () {
-            var note = {
+        $('#new-event').click(function () {
+            var event = {
                 title: translations.newNote,
                 content: 'content here . . .',
 		startts: '01.01.2016 00:00:00',
 		endts: '01.01.2016 00:00:01'
             };
 
-            self._notes.create(note).done(function() {
+            self._events.create(event).done(function() {
                 self.render();
                 $('#editor textarea').focus();
             }).fail(function () {
-                alert('Could not create note');
+                alert('Could not create event');
             });
 
         });
 
         // show app menu
         $('#app-navigation .app-navigation-entry-utils-menu-button').click(function () {
-            var entry = $(this).closest('.note');
+            var entry = $(this).closest('.event');
             entry.find('.app-navigation-entry-menu').toggleClass('open');
         });
 
-        // delete a note
-        $('#app-navigation .note .delete').click(function () {
-            var entry = $(this).closest('.note');
+        // delete a event
+        $('#app-navigation .event .delete').click(function () {
+            var entry = $(this).closest('.event');
             entry.find('.app-navigation-entry-menu').removeClass('open');
 
-            self._notes.removeActive().done(function () {
+            self._events.removeActive().done(function () {
                 self.render();
             }).fail(function () {
-                alert('Could not delete note, not found');
+                alert('Could not delete event, not found');
             });
         });
 
-        // load a note
-        $('#app-navigation .note > a').click(function () {
+        // load a event
+        $('#app-navigation .event > a').click(function () {
             var id = parseInt($(this).parent().data('id'), 10);
-            self._notes.load(id);
+            self._events.load(id);
             self.render();
             $('#editor textarea').focus();
         });
@@ -229,12 +229,12 @@ View.prototype = {
     }
 };
 
-var notes = new Notes(OC.generateUrl('/apps/owncollab_timetracker/notes'));
-var view = new View(notes);
-notes.loadAll().done(function () {
+var events = new Events(OC.generateUrl('/apps/owncollab_timetracker/events'));
+var view = new View(events);
+events.loadAll().done(function () {
     view.render();
 }).fail(function () {
-    alert('Could not load notes');
+    alert('Could not load events');
 });
 
 

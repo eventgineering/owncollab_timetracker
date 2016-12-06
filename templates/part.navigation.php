@@ -9,16 +9,16 @@
 	</li>
 </ul>
 <!-- translation strings -->
-<div style="display:none" id="new-note-string"><?php p($l->t('New note')); ?></div>
+<div style="display:none" id="new-event-string"><?php p($l->t('New event')); ?></div>
 <<<<<<< HEAD
-    <li id="new-note"><a href="#"><?php p($l->t('Add note')); ?></a></li>
+    <li id="new-event"><a href="#"><?php p($l->t('Add event')); ?></a></li>
 <ul></ul>
 =======
 
 <script id="navigation-tpl" type="text/x-handlebars-template">
-    <li id="new-note"><a href="#"><?php p($l->t('Add note')); ?></a></li>
-    {{#each notes}}
-        <li class="note with-menu {{#if active}}active{{/if}}"  data-id="{{ id }}">
+    <li id="new-event"><a href="#"><?php p($l->t('Add event')); ?></a></li>
+    {{#each events}}
+        <li class="event with-menu {{#if active}}active{{/if}}"  data-id="{{ id }}">
             <a href="#">{{ title }}</a>
             <div class="app-navigation-entry-utils">
                 <ul>
