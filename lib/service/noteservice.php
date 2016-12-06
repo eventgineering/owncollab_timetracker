@@ -48,7 +48,7 @@ class NoteService {
         $note = new Note();
         $note->setTitle($title);
         $note->setContent($content);
-        $note->setStartts($starts);
+        $note->setStartts($startts);
         $note->setEndts($endts);
         $note->setUserId($userId);
         return $this->mapper->insert($note);
