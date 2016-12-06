@@ -1,5 +1,5 @@
 <script id="navigation-tpl" type="text/x-handlebars-template">
-    <li id="new-note"><a href="#"><?php p($l->t('Add note')); ?></a></li>
+
     {{#each notes}}
         <li class="note with-menu {{#if active}}active{{/if}}"  data-id="{{ id }}">
             <a href="#">{{ title }}</a>
