@@ -10,7 +10,7 @@ class Event extends Entity implements JsonSerializable {
     protected $title;
     protected $content;
     protected $start;
-    protected $endts;
+    protected $end;
     protected $userId;
 
     public function jsonSerialize() {
@@ -19,7 +19,7 @@ class Event extends Entity implements JsonSerializable {
             'title' => $this->title,
             'content' => $this->content,
             'start' => $this->start,
-            'endts' => $this->endts
+            'end' => $this->end
         ];
     }
 }

@@ -43,7 +43,7 @@
                 <notnull>true</notnull>
             </field>
             <field>
-                <name>endts</name>
+                <name>end</name>
                 <type>text</type>
                 <length>20</length>
                 <default></default>
