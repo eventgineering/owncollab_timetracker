@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <info>
-    <id>ownnotes</id>
-    <name>Own Notes</name>
+    <id>owncollab_timetracker</id>
+    <name>ownCollab Timetracker</name>
     <description>My first ownCloud app</description>
     <licence>AGPL</licence>
     <author>andy</author>
@@ -9,6 +9,6 @@
     <namespace>OwnNotes</namespace>
     <category>other</category>
     <dependencies>
-        <owncloud min-version="9.0" />
+        <owncloud min-version="9.1" max-version="9.1"/>
     </dependencies>
 </info>
