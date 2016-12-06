@@ -190,7 +190,8 @@ View.prototype = {
     },
     renderNavigation: function () {
         var d = new Date();
-        var now = ("0" + d.getDate()).slice(-2) + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" + d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+        var now = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+        var today = ("0" + d.getDate()).slice(-2) + "." + ("0"+(d.getMonth()+1)).slice(-2) + "." + d.getFullYear();
         var source = $('#navigation-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({events: this._events.getAll()});
@@ -203,8 +204,8 @@ View.prototype = {
             var event = {
                 title: translations.newEvent,
                 content: 'content here . . .',
-		        start: now,
-		        end: '01.01.2016 00:00:01'
+		        start: today,
+		        end: now
             };
 
             self._events.create(event).done(function() {
