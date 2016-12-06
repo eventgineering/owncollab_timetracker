@@ -1,5 +1,5 @@
 <?php
-namespace OCA\OwnNotes\Service;
+namespace OCA\OwnCollab_TimeTracker\Service;
 
 use Exception;
 

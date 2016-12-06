@@ -194,8 +194,6 @@ View.prototype = {
             }).fail(function () {
                 alert('Could not create note');
             });
-        console.log('New Note, startts-value: ', startts);
-        console.log('New Note, endts-value: ', endts);
 
         });
 

@@ -1,11 +1,11 @@
 <?php
-namespace OCA\OwnNotes\Controller;
+namespace OCA\OwnCollab_TimeTracker\Controller;
 
 use OCP\IRequest;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Controller;
 
-use OCA\OwnNotes\Service\NoteService;
+use OCA\OwnCollab_TimeTracker\Service\NoteService;
 
 class NoteController extends Controller {
 

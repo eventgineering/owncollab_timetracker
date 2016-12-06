@@ -9,7 +9,7 @@
  * @copyright andy 2016
  */
 
-namespace OCA\OwnNotes\Controller;
+namespace OCA\OwnCollab_TimeTracker\Controller;
 
 use OCP\IRequest;
 use OCP\AppFramework\Http\TemplateResponse;

@@ -1,12 +1,12 @@
 <?php
-namespace OCA\OwnNotes\Tests\Unit\Controller;
+namespace OCA\OwnCollab_TimeTracker\Tests\Unit\Controller;
 
 use PHPUnit_Framework_TestCase;
 
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\DataResponse;
 
-use OCA\OwnNotes\Service\NotFoundException;
+use OCA\OwnCollab_TimeTracker\Service\NotFoundException;
 
 
 class NoteControllerTest extends PHPUnit_Framework_TestCase {
@@ -18,7 +18,7 @@ class NoteControllerTest extends PHPUnit_Framework_TestCase {
 
     public function setUp() {
         $this->request = $this->getMockBuilder('OCP\IRequest')->getMock();
-        $this->service = $this->getMockBuilder('OCA\OwnNotes\Service\NoteService')
+        $this->service = $this->getMockBuilder('OCA\OwnCollab_TimeTracker\Service\NoteService')
             ->disableOriginalConstructor()
             ->getMock();
         $this->controller = new NoteController(

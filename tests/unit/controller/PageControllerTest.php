@@ -9,7 +9,7 @@
  * @copyright andy 2016
  */
 
-namespace OCA\OwnNotes\Controller;
+namespace OCA\OwnCollab_TimeTracker\Controller;
 
 use PHPUnit_Framework_TestCase;
 

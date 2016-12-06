@@ -1,11 +1,11 @@
 <?php
-namespace OCA\OwnNotes\Tests\Unit\Service;
+namespace OCA\OwnCollab_TimeTracker\Tests\Unit\Service;
 
 use PHPUnit_Framework_TestCase;
 
 use OCP\AppFramework\Db\DoesNotExistException;
 
-use OCA\OwnNotes\Db\Note;
+use OCA\OwnCollab_TimeTracker\Db\Note;
 
 class NoteServiceTest extends PHPUnit_Framework_TestCase {
 
@@ -14,7 +14,7 @@ class NoteServiceTest extends PHPUnit_Framework_TestCase {
     private $userId = 'john';
 
     public function setUp() {
-        $this->mapper = $this->getMockBuilder('OCA\OwnNotes\Db\NoteMapper')
+        $this->mapper = $this->getMockBuilder('OCA\OwnCollab_TimeTracker\Db\NoteMapper')
             ->disableOriginalConstructor()
             ->getMock();
         $this->service = new NoteService($this->mapper);
@@ -48,7 +48,7 @@ class NoteServiceTest extends PHPUnit_Framework_TestCase {
 
 
     /**
-     * @expectedException OCA\OwnNotes\Service\NotFoundException
+     * @expectedException OCA\OwnCollab_TimeTracker\Service\NotFoundException
      */
     public function testUpdateNotFound() {
         // test the correct status code if no note is found

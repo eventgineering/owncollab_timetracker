@@ -1,5 +1,5 @@
 <?php
-namespace OCA\OwnNotes\Db;
+namespace OCA\OwnCollab_TimeTracker\Db;
 
 use OCP\IDb;
 use OCP\AppFramework\Db\Mapper;
@@ -7,7 +7,7 @@ use OCP\AppFramework\Db\Mapper;
 class NoteMapper extends Mapper {
 
     public function __construct(IDb $db) {
-        parent::__construct($db, 'ownnotes_notes', '\OCA\OwnNotes\Db\Note');
+        parent::__construct($db, 'ownnotes_notes', '\OCA\OwnCollab_TimeTracker\Db\Note');
     }
 
     public function find($id, $userId) {
