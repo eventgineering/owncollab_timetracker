@@ -189,6 +189,7 @@ View.prototype = {
         });
     },
     renderNavigation: function () {
+        var d = new toUTCString(Date()); 
         var source = $('#navigation-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({events: this._events.getAll()});
@@ -201,7 +202,7 @@ View.prototype = {
             var event = {
                 title: translations.newEvent,
                 content: 'content here . . .',
-		        start: '01.01.2016 00:00:00',
+		        start: d,
 		        end: '01.01.2016 00:00:01'
             };
 
