@@ -1,8 +1,5 @@
-
 <!-- translation strings -->
 <div style="display:none" id="new-event-string"><?php p($l->t('New event')); ?></div>
-    <li id="new-event"><a href="#"><?php p($l->t('Add event')); ?></a></li>
-<ul></ul>
 <script id="navigation-tpl" type="text/x-handlebars-template">
     <li id="new-event"><a href="#"><?php p($l->t('Add event')); ?></a></li>
     {{#each events}}
