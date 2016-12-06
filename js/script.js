@@ -189,8 +189,8 @@ View.prototype = {
         });
     },
     renderNavigation: function () {
-        var d = new Date();
-        var now = d.toUTCString(); 
+
+        var now = ("0" + d.getDate()).slice(-2) + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" + d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
         var source = $('#navigation-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({events: this._events.getAll()});
