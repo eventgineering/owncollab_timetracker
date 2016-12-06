@@ -165,12 +165,13 @@ View.prototype = {
             else{
                 var start = $('#start').val();
             }
-            if $('#end'){
-                var end = $('#end').val();
+            if ($('#end').val()==''){
+                var end = $('#end').attr('placeholder');
             }
             else{
-                var start = $('#end').attr('placeholder');
+                var end = $('#end').val();
             }
+
             console.log('placeholder start value:', $('#start').attr('placeholder'));
             console.log(' start value:', start);
             console.log('placeholder end value:', $('#end').attr('placeholder'));
@@ -179,7 +180,6 @@ View.prototype = {
             var content = textarea.val();
             var title = content.split('\n')[0]; // first line is the title
 
-            var end = $('#end').val();
 
             self._events.updateActive(title, content, start, end).done(function () {
                 self.render();
