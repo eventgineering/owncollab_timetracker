@@ -4,7 +4,7 @@
     <overwrite>false</overwrite>
     <charset>utf8</charset>
     <table>
-        <name>*dbprefix*ownnotes_notes</name>
+        <name>*dbprefix*owncollab_timetracker_events</name>
         <declaration>
             <field>
                 <name>id</name>
