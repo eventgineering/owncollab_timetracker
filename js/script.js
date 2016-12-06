@@ -159,7 +159,7 @@ View.prototype = {
         var textarea = $('#app-content textarea');
         var self = this;
         $('#app-content button').click(function () {
-            if ($('#start').attr('placeholder')==''){
+            if ($('#start').val()==''){
                 var start = $('#start').attr('placeholder');
             }
             else{
