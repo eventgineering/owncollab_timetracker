@@ -7,14 +7,14 @@ use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\AppFramework\Db\MultipleObjectsReturnedException;
 
 use OCA\OwnCollab_TimeTracker\Db\Note;
-use OCA\OwnCollab_TimeTracker\Db\NoteMapper;
+use OCA\OwnCollab_TimeTracker\Db\EventMapper;
 
 
 class NoteService {
 
     private $mapper;
 
-    public function __construct(NoteMapper $mapper){
+    public function __construct(EventMapper $mapper){
         $this->mapper = $mapper;
     }
 

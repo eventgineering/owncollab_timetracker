@@ -14,7 +14,7 @@ class NoteServiceTest extends PHPUnit_Framework_TestCase {
     private $userId = 'john';
 
     public function setUp() {
-        $this->mapper = $this->getMockBuilder('OCA\OwnCollab_TimeTracker\Db\NoteMapper')
+        $this->mapper = $this->getMockBuilder('OCA\OwnCollab_TimeTracker\Db\EventMapper')
             ->disableOriginalConstructor()
             ->getMock();
         $this->service = new NoteService($this->mapper);

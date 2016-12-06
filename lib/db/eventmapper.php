@@ -4,7 +4,7 @@ namespace OCA\OwnCollab_TimeTracker\Db;
 use OCP\IDb;
 use OCP\AppFramework\Db\Mapper;
 
-class NoteMapper extends Mapper {
+class EventMapper extends Mapper {
 
     public function __construct(IDb $db) {
         parent::__construct($db, 'ownnotes_notes', '\OCA\OwnCollab_TimeTracker\Db\Note');
