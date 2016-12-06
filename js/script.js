@@ -36,14 +36,14 @@
 $(document).ready(function () {
 
 var translations = {
-    newNote: $('#new-event-string').text()
+    newEvent: $('#new-event-string').text()
 };
 
 // this events object holds all our events
 var Events = function (baseUrl) {
     this._baseUrl = baseUrl;
     this._events = [];
-    this._activeNote = undefined;
+    this._activeEvent = undefined;
 };
 
 Events.prototype = {
@@ -52,19 +52,19 @@ Events.prototype = {
         this._events.forEach(function (event) {
             if (event.id === id) {
                 event.active = true;
-                self._activeNote = event;
+                self._activeEvent = event;
             } else {
                 event.active = false;
             }
         });
     },
     getActive: function () {
-        return this._activeNote;
+        return this._activeEvent;
     },
     removeActive: function () {
         var index;
         var deferred = $.Deferred();
-        var id = this._activeNote.id;
+        var id = this._activeEvent.id;
         this._events.forEach(function (event, counter) {
             if (event.id === id) {
                 index = counter;
@@ -73,8 +73,8 @@ Events.prototype = {
 
         if (index !== undefined) {
             // delete cached active event if necessary
-            if (this._activeNote === this._events[index]) {
-                delete this._activeNote;
+            if (this._activeEvent === this._events[index]) {
+                delete this._activeEvent;
             }
 
             this._events.splice(index, 1);
@@ -102,7 +102,7 @@ Events.prototype = {
             data: JSON.stringify(event)
         }).done(function (event) {
             self._events.push(event);
-            self._activeNote = event;
+            self._activeEvent = event;
             self.load(event.id);
             deferred.resolve();
         }).fail(function () {
@@ -117,7 +117,7 @@ Events.prototype = {
         var deferred = $.Deferred();
         var self = this;
         $.get(this._baseUrl).done(function (events) {
-            self._activeNote = undefined;
+            self._activeEvent = undefined;
             self._events = events;
             deferred.resolve();
         }).fail(function () {
@@ -182,7 +182,7 @@ View.prototype = {
         var self = this;
         $('#new-event').click(function () {
             var event = {
-                title: translations.newNote,
+                title: translations.newEvent,
                 content: 'content here . . .',
 		startts: '01.01.2016 00:00:00',
 		endts: '01.01.2016 00:00:01'

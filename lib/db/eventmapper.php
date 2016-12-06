@@ -7,7 +7,7 @@ use OCP\AppFramework\Db\Mapper;
 class EventMapper extends Mapper {
 
     public function __construct(IDb $db) {
-        parent::__construct($db, 'ownnotes_notes', '\OCA\OwnCollab_TimeTracker\Db\Note');
+        parent::__construct($db, 'ownnotes_notes', '\OCA\OwnCollab_TimeTracker\Db\Event');
     }
 
     public function find($id, $userId) {

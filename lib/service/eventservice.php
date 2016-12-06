@@ -6,7 +6,7 @@ use Exception;
 use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\AppFramework\Db\MultipleObjectsReturnedException;
 
-use OCA\OwnCollab_TimeTracker\Db\Note;
+use OCA\OwnCollab_TimeTracker\Db\Event;
 use OCA\OwnCollab_TimeTracker\Db\EventMapper;
 
 
@@ -45,7 +45,7 @@ class EventService {
     }
 
     public function create($title, $content, $startts, $endts, $userId) {
-        $event = new Note();
+        $event = new Event();
         $event->setTitle($title);
         $event->setContent($content);
         $event->setStartts($startts);

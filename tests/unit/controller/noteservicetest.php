@@ -5,7 +5,7 @@ use PHPUnit_Framework_TestCase;
 
 use OCP\AppFramework\Db\DoesNotExistException;
 
-use OCA\OwnCollab_TimeTracker\Db\Note;
+use OCA\OwnCollab_TimeTracker\Db\Event;
 
 class EventServiceTest extends PHPUnit_Framework_TestCase {
 
@@ -22,7 +22,7 @@ class EventServiceTest extends PHPUnit_Framework_TestCase {
 
     public function testUpdate() {
         // the existing event
-        $event = Note::fromRow([
+        $event = Event::fromRow([
             'id' => 3,
             'title' => 'yo',
             'content' => 'nope'
@@ -33,17 +33,17 @@ class EventServiceTest extends PHPUnit_Framework_TestCase {
             ->will($this->returnValue($event));
 
         // the event when updated
-        $updatedNote = Note::fromRow(['id' => 3]);
-        $updatedNote->setTitle('title');
-        $updatedNote->setContent('content');
+        $updatedEvent = Event::fromRow(['id' => 3]);
+        $updatedEvent->setTitle('title');
+        $updatedEvent->setContent('content');
         $this->mapper->expects($this->once())
             ->method('update')
-            ->with($this->equalTo($updatedNote))
-            ->will($this->returnValue($updatedNote));
+            ->with($this->equalTo($updatedEvent))
+            ->will($this->returnValue($updatedEvent));
 
         $result = $this->service->update(3, 'title', 'content', $this->userId);
 
-        $this->assertEquals($updatedNote, $result);
+        $this->assertEquals($updatedEvent, $result);
     }
 
 
