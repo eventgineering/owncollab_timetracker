@@ -203,15 +203,13 @@ View.prototype = {
         $('#new-event').click(function () {
             var event = {
                 title: translations.newEvent,
-                content: 'content here . . .',
-		        start: '',
-		        end: ''
+                content: 'content here . . .'
             };
-	start.placeholder=today;
-	end.placeholder=today;
 
             self._events.create(event).done(function() {
                 self.render();
+		start.placeholder=today;
+		end.placeholder=today;
                 $('#editor textarea').focus();
             }).fail(function () {
                 alert('Could not create event');
@@ -239,10 +237,15 @@ View.prototype = {
 
         // load a event
         $('#app-navigation .event > a').click(function () {
+
+	    var d = new Date();
+            var now = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+            var today = ("0" + d.getDate()).slice(-2) + "." + ("0"+(d.getMonth()+1)).slice(-2) + "." + d.getFullYear();
             var id = parseInt($(this).parent().data('id'), 10);
             self._events.load(id);
-            console.log('now');
             self.render();
+            if ($('#start').val()==''){start.placeholder=today;}
+            if ($('#end').val()==''){end.placeholder=today;}
             $('#editor textarea').focus();
 
         });
