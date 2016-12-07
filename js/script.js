@@ -53,6 +53,7 @@ Events.prototype = {
             if (event.id === id) {
                 event.active = true;
                 self._activeEvent = event;
+                if (event.start !== '') {$('#start').val(event.start);}
             } else {
                 event.active = false;
             }
