@@ -53,7 +53,6 @@ Events.prototype = {
             if (event.id === id) {
                 event.active = true;
                 self._activeEvent = event;
-                if (event.start !== '') {$('#start').val(event.start);}
             } else {
                 event.active = false;
             }
@@ -242,6 +241,7 @@ View.prototype = {
         $('#app-navigation .event > a').click(function () {
             var id = parseInt($(this).parent().data('id'), 10);
             self._events.load(id);
+            console.log('now');
             self.render();
             $('#editor textarea').focus();
 

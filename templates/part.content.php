@@ -5,7 +5,7 @@
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if event}}
 	<p>
-        <input type="text" name="start" id="start" placeholder="">
+        <input type="text" name="start" id="start" placeholder="" value="{{ event.start }}">
         <input type="text" name="end" id="end" placeholder="{{ event.end }}">
 	</p>
         <div class="input"><textarea placeholder="{{ event.content }}"></textarea></div>
