@@ -278,6 +278,7 @@ events.loadAll().done(function () {
 
 app.directive('ocdatetimepicker', ["$compile", "$timeout", function($compile, $timeout) {
 	'use strict';
+    console.log('is ocdatetimepicker loading');
 
 	return {
 		restrict: 'E',
