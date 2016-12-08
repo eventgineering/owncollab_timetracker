@@ -1,8 +1,3 @@
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
   <p>Date: <input type="text" id="datepicker"></p>
 
 <script id="content-tpl" type="text/x-handlebars-template">
