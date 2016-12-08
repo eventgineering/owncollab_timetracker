@@ -1,7 +1,5 @@
 <?php
 script('owncollab_timetracker', 'handlebars');
-script('owncollab_timetracker', 'lib/jquery/external/jquery/jquery');
-script('owncollab_timetracker', 'lib/jquery/jquery-ui');
 script('owncollab_timetracker', 'script');
 style('owncollab_timetracker', 'style');
 ?>
