@@ -1,8 +1,5 @@
-<script>
-    var picker = new Pikaday({ field: document.getElementById('datepicker') });
-</script>
+  <p>Date: <input id="startdate" class="datepicker" type="text"></p>
 
-<input type="text" id="datepicker">
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if event}}
 	<p>
