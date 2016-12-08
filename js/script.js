@@ -252,8 +252,8 @@ View.prototype = {
     render: function () {
         this.renderNavigation();
         this.renderContent();
-        $.localise('js/jquery.ui.datepicker');
-	    $( "#start" ).datepicker();
+	$( "#start" ).datepicker({
+		minDate: new Date(2016, 1 - 1, 1)});
         $( "#end" ).datepicker();
 
     }
