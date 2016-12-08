@@ -1,5 +1,3 @@
-<p>Date: <input type="text" id="datestart"></p>
-
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if event}}
 	<p>

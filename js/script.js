@@ -14,9 +14,6 @@
 		$('#hello').click(function () {
 			alert('Hello from your script file');
 		});
-          $( function() {
-    $( "#datestart" ).datepicker();
-  } );
 		$('#echo').click(function () {
 			var url = OC.generateUrl('/apps/owncollab_timetracker/echo');
 			var data = {
@@ -255,6 +252,9 @@ View.prototype = {
     render: function () {
         this.renderNavigation();
         this.renderContent();
+	$( "#start" ).datepicker();
+        $( "#end" ).datepicker();
+
     }
 };
 
