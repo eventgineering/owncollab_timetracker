@@ -4,7 +4,9 @@ $langurl = "i18n/datepicker-" . $lang;
 script('owncollab_timetracker', 'handlebars');
 script('owncollab_timetracker', 'jquery.localisation');
 script('owncollab_timetracker', $langurl);
+script('owncollab_timetracker', 'timepicki/timepicki');
 script('owncollab_timetracker', 'script');
+style('owncollab_timetracker', 'timepicki/timepicki');
 style('owncollab_timetracker', 'style');
 ?>
 
