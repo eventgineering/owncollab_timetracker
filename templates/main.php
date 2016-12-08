@@ -10,14 +10,18 @@ script('owncollab_timetracker', 'script');
 script('owncollab_timetracker', 'app');
 style('owncollab_timetracker', 'datepicker');
 style('owncollab_timetracker', 'jquery.ui.timepicker');
+style('owncollab_timetracker', 'globals');
+style('owncollab_timetracker', 'calendar');
+style('owncollab_timetracker', 'datepicker');
+style('owncollab_timetracker', 'eventdialog');
 style('owncollab_timetracker', 'style');
-style('owncollab_timetracker', 'settings');
 
 foreach ($styles as $style) {
 	style('calendar', $style);
 }
-
 ?>
+
+<div class="app" ng-app="Calendar" ng-controller="CalController">
 
 <div id="app">
 	<div id="app-navigation">
@@ -30,4 +34,6 @@ foreach ($styles as $style) {
 			<?php print_unescaped($this->inc('part.content')); ?>
 		</div>
 	</div>
+</div>
+
 </div>
