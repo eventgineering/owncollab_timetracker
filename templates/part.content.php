@@ -7,14 +7,6 @@
 				<span><?php p($l->t('ends')); ?></span>
 				<ocdatetimepicker ng-model="properties.dtend.value" disabletime="properties.allDay"></ocdatetimepicker>
 			</div>
-			<div class="clear-both"></div>
-			<div class="events--checkbox pull-left">
-				<input type="checkbox" name="alldayeventcheckbox"
-					   ng-model="properties.allDay"
-					   id="alldayeventcheckbox" class="event-checkbox"
-					   ng-change="toggledAllDay()" />
-				<label for="alldayeventcheckbox"><?php p($l->t('All day Event'))?></label>
-			</div>
 		</fieldset>
 
 
