@@ -255,6 +255,7 @@ View.prototype = {
 	$( "#start" ).datepicker({
 		minDate: new Date(2016, 1 - 1, 1)});
         $( "#end" ).datepicker();
+        console.log(OC.getLocale());
 
     }
 };
