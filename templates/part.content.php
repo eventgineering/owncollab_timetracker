@@ -1,4 +1,5 @@
-<input type="text" id="calendar">
+  <p>Date: <input id="startdate" class="datepicker" type="text"></p>
+
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if event}}
 	<p>
@@ -20,3 +21,5 @@
     {{/if}}
 </script>
 <div id="editor"></div>
+
+

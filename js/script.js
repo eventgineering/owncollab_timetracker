@@ -14,7 +14,7 @@
 		$('#hello').click(function () {
 			alert('Hello from your script file');
 		});
-        var myCalendar = new dhtmlXCalendarObject(["calendar","calendar2"]);
+
 		$('#echo').click(function () {
 			var url = OC.generateUrl('/apps/owncollab_timetracker/echo');
 			var data = {

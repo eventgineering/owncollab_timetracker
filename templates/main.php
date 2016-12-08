@@ -1,9 +1,7 @@
 <?php
 script('owncollab_timetracker', 'handlebars');
-script('owncollab_timetracker', 'lib/dhtmlxcalendar/codebase/dhtmlxcalendar');
 script('owncollab_timetracker', 'script');
 style('owncollab_timetracker', 'style');
-style('owncollab_timetracker', 'lib/dhtmlxcalendar/codebase/dhtmlxcalendar')
 ?>
 
 <div id="app">
