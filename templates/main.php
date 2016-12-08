@@ -1,5 +1,6 @@
 <?php
 script('owncollab_timetracker', 'handlebars');
+script('owncollab_timetracker', 'jquery.localisation');
 script('owncollab_timetracker', 'script');
 style('owncollab_timetracker', 'style');
 ?>

@@ -252,7 +252,8 @@ View.prototype = {
     render: function () {
         this.renderNavigation();
         this.renderContent();
-	$( "#start" ).datepicker();
+        $.localise('js/jquery.ui.datepicker');
+	    $( "#start" ).datepicker();
         $( "#end" ).datepicker();
 
     }
