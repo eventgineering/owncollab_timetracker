@@ -8,6 +8,12 @@
  * @copyright andy 2016
  */
 
+var app = angular.module('Calendar', [
+	'ngRoute',
+	'ui.bootstrap',
+	'ui.calendar'
+]);
+
 (function ($, OC) {
 
 	$(document).ready(function () {
