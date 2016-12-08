@@ -252,9 +252,10 @@ View.prototype = {
     render: function () {
         this.renderNavigation();
         this.renderContent();
-	$( "#start" ).datepicker({
+        $( "#start" ).datepicker({
 		minDate: new Date(2016, 1 - 1, 1)});
         $( "#end" ).datepicker();
+        $('#timepicker').timepicki(); 
         console.log(OC.getLocale());
 
     }

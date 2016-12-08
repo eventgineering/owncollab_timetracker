@@ -1,3 +1,4 @@
+<input id="timepicker"" type="text" name="timepicker"/>
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if event}}
 	<p>
