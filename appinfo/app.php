@@ -15,7 +15,8 @@ use OCP\AppFramework\App;
 
 require_once __DIR__ . '/autoload.php';
 
-$app = new App('owncollab_timetracker');
+$appName = 'owncollab_timetracker';
+$app = new App($appName);
 $container = $app->getContainer();
 
 $container->query('OCP\INavigationManager')->add(function () use ($container) {
@@ -41,3 +42,12 @@ $container->query('OCP\INavigationManager')->add(function () use ($container) {
 		'name' => $l10n->t('Time Tracker'),
 	];
 });
+
+if(Helper::isApp($appName)) {
+
+	Util::addStyle($appName, 'jquery-ui-timepicker');
+
+    Util::addScript($appName, 'libs/ns.application');
+
+	Helper::provider('config',['domain' => '']);
+}
