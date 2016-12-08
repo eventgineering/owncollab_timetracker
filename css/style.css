@@ -1,14 +1,3 @@
-#ui-datepicker-div{z-index: 99999 !important;}
-#ui-datepicker-div{
-    z-index: 10002;
-    font-size: 11px;
-}
-.gantt_row>.ui-datepicker-inline{
-    display: block;
-    position: absolute;
-    z-index: 10002;
-    left: 181px;
-}
 #hello {
 	color: red;
 }
