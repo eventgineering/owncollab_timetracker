@@ -268,5 +268,3 @@ events.loadAll().done(function () {
 });
 
 })(OC, window, jQuery);
-
-var picker = new Pikaday({ field: $('#datepicker')[0] });
