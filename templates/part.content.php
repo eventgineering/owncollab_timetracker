@@ -1,13 +1,3 @@
-<fieldset class="event-time event-fieldset">
-  <div class="event-time-interior pull-left">
-    <input type="text" name="from" id="from" ng-model="fromdatemodel" placeholder="<?php p($l->t('from'));?>" />
-  </div>
-  <div class="event-time-interior pull-right">
-    <input type="text" name="to" id="to" ng-model="todatemodel" placeholder="<?php p($l->t('to'));?>" />
-  </div>
-</fieldset>
-
-
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if event}}
 	<p>
