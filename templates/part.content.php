@@ -1,6 +1,7 @@
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if event}}
 	<p>
+        <ocdatetimepicker ng-model="properties.dtstart.value"></ocdatetimepicker>
         <input type="text" name="start" id="start" {{#if event.start}} value="{{ event.start }}" {{/if}}>
         <input type="text" name="end" id="end" {{#if event.end}} value="{{ event.end }}" {{/if}}>
 	</p>
