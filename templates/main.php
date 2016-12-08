@@ -1,6 +1,9 @@
 <?php
+$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+$langurl = "i18n/datepicker-" . $lang;
 script('owncollab_timetracker', 'handlebars');
 script('owncollab_timetracker', 'jquery.localisation');
+script('owncollab_timetracker', $langurl);
 script('owncollab_timetracker', 'script');
 style('owncollab_timetracker', 'style');
 ?>
