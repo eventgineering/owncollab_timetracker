@@ -250,13 +250,21 @@ View.prototype = {
         });
     },
     render: function () {
+	var d = new Date();
+	var now = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
         this.renderNavigation();
         this.renderContent();
         $( "#start" ).datepicker({
 		minDate: new Date(2016, 1 - 1, 1)});
         $( "#end" ).datepicker();
-        $('#timepicker').timepicki(); 
-        console.log(OC.getLocale());
+        $('#timepicker').timepicki({
+		show_meridian:false,
+		min_hour_value:0,
+		max_hour_value:23,
+		overflow_minutes:true
+		});
+	timepicker.placeholder=now;
+        console.log(now);
 
     }
 };
