@@ -8,6 +8,8 @@
  * @copyright andy 2016
  */
 
+var picker = new Pikaday({ field: $('#datepicker')[0] });
+
 (function ($, OC) {
 
 	$(document).ready(function () {
