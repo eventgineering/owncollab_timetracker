@@ -7,10 +7,16 @@ script('owncollab_timetracker', 'lib/angular-bootstrap/ui-bootstrap-tpls.min');
 script('owncollab_timetracker', 'lib/jquery-timepicker/jquery.ui.timepicker');
 script('owncollab_timetracker', 'lib/angular-ui-calendar/src/calendar');
 script('owncollab_timetracker', 'script');
+script('owncollab_timetracker', 'app');
 style('owncollab_timetracker', 'datepicker');
 style('owncollab_timetracker', 'jquery.ui.timepicker');
 style('owncollab_timetracker', 'style');
 style('owncollab_timetracker', 'settings');
+
+foreach ($styles as $style) {
+	style('calendar', $style);
+}
+
 ?>
 
 <div id="app">
