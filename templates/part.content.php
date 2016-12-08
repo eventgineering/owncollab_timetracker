@@ -20,8 +20,3 @@
     {{/if}}
 </script>
 <div id="editor"></div>
-
-
-<script>
-    var picker = new Pikaday({ field: document.getElementById('datepicker') });
-</script>
