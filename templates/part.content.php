@@ -6,7 +6,7 @@
 	<tr>
 	<td><input type="text" name="startdate" id="startdate" {{#if event.startdate}} value="{{ event.startdate }}" {{/if}}/></td>
 	<td><input id="starttime" type="time" name="starttime"/></td>
-        <td><input type="text" name="end" id="end" {{#if event.end}} value="{{ event.end }}" {{/if}}/></td>
+        <td><input type="text" name="enddate" id="enddate" {{#if event.enddate}} value="{{ event.enddate }}" {{/if}}/></td>
 	<td><input id="endtime" type="time" name="starttime"/></td></tr>
 	<tr>
 	<td><?php p($l->t('Client')); ?></td>
@@ -30,7 +30,7 @@
     <p><button id="hello">click me</button></p>
 	<p>
         <input type="text" name="startdate" id="startdate" placeholder="<?php p($l->t('startdate date')); ?>" disabled>
-        <input type="text" name="end" id="end" placeholder="<?php p($l->t('end date')); ?>" disabled>
+        <input type="text" name="enddate" id="enddate" placeholder="<?php p($l->t('enddate date')); ?>" disabled>
 	</p>
         <div class="input"><textarea disabled></textarea></div>
         <div class="save"><button disabled><?php p($l->t('Save')); ?></button></div>

@@ -124,12 +124,12 @@ Events.prototype = {
         });
         return deferred.promise();
     },
-    updateActive: function (title, content, startdate, end) {
+    updateActive: function (title, content, startdate, enddate) {
         var event = this.getActive();
         event.title = title;
         event.content = content;
         event.startdate = startdate;
-        event.end = end;
+        event.enddate = enddate;
 
 
         return $.ajax({
@@ -164,11 +164,11 @@ View.prototype = {
             else{
                 var startdate = $('#startdate').val();
             }
-            if ($('#end').val()==''){
-                var end = $('#end').attr('placeholder');
+            if ($('#enddate').val()==''){
+                var enddate = $('#enddate').attr('placeholder');
             }
             else{
-                var end = $('#end').val();
+                var enddate = $('#enddate').val();
             }
             if (textarea.val()==''){
                 var content = textarea.attr('placeholder');
@@ -180,7 +180,7 @@ View.prototype = {
             var title = content.split('\n')[0]; // first line is the title
             
 
-            self._events.updateActive(title, content, startdate, end).done(function () {
+            self._events.updateActive(title, content, startdate, enddate).done(function () {
                 self.render();
             }).fail(function () {
                 alert('Could not update event, not found');
@@ -208,10 +208,10 @@ View.prototype = {
             self._events.create(event).done(function() {
                 self.render();
 		startdate.placeholder=today;
-		end.placeholder=today;
+		enddate.placeholder=today;
                 $( "#startdate" ).datepicker({
     	            minDate: new Date(2016, 1 - 1, 1)});
-        	$( "#end" ).datepicker();
+        	$( "#enddate" ).datepicker();
             	$('#starttime').timepicki({
                 	show_meridian:false,
                 	min_hour_value:0,
@@ -262,10 +262,10 @@ View.prototype = {
             self._events.load(id);
             self.render();
             if ($('#startdate').val()==''){startdate.placeholder=today;}
-            if ($('#end').val()==''){end.placeholder=today;}
+            if ($('#enddate').val()==''){enddate.placeholder=today;}
             $( "#startdate" ).datepicker({
                 minDate: new Date(2016, 1 - 1, 1)});
-            $( "#end" ).datepicker();
+            $( "#enddate" ).datepicker();
             $('#starttime').timepicki({
                 show_meridian:false,
                 min_hour_value:0,
