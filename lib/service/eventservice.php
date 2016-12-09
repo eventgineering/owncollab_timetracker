@@ -44,23 +44,27 @@ class EventService {
         }
     }
 
-    public function create($title, $content, $startdate, $enddate, $userId) {
+    public function create($title, $content, $startdate, $starttime, $enddate, $endtime, $userId) {
         $event = new Event();
         $event->setTitle($title);
         $event->setContent($content);
         $event->setStartdate($startdate);
+        $event->setStarttime($starttime);
         $event->setEnddate($enddate);
+        $event->setEndtime($endtime);
         $event->setUserId($userId);
         return $this->mapper->insert($event);
     }
 
-    public function update($id, $title, $content, $startdate, $enddate, $userId) {
+    public function update($id, $title, $content, $startdate, $starttime, $enddate, $endtime, $userId) {
         try {
             $event = $this->mapper->find($id, $userId);
             $event->setTitle($title);
             $event->setContent($content);
             $event->setStartdate($startdate);
+            $event->setStarttime($starttime);
             $event->setEnddate($enddate);
+            $event->setEndtime($endtime);
             return $this->mapper->update($event);
         } catch(Exception $e) {
             $this->handleException($e);

@@ -38,12 +38,26 @@
             <field>
                 <name>startdate</name>
                 <type>text</type>
-		<length>20</length>
+                <length>20</length>
+                <default></default>
+                <notnull>true</notnull>
+            </field>
+            <field>
+                <name>starttime</name>
+                <type>text</type>
+                <length>20</length>
                 <default></default>
                 <notnull>true</notnull>
             </field>
             <field>
                 <name>enddate</name>
+                <type>text</type>
+                <length>20</length>
+                <default></default>
+                <notnull>true</notnull>
+            </field>
+            <field>
+                <name>endtime</name>
                 <type>text</type>
                 <length>20</length>
                 <default></default>

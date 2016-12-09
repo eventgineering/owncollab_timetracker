@@ -124,13 +124,14 @@ Events.prototype = {
         });
         return deferred.promise();
     },
-    updateActive: function (title, content, startdate, enddate) {
+    updateActive: function (title, content, startdate, starttime, enddate, endtime) {
         var event = this.getActive();
         event.title = title;
         event.content = content;
         event.startdate = startdate;
+        event.starttime = starttime;
         event.enddate = enddate;
-
+        event.endtime = endtime;
 
         return $.ajax({
             url: this._baseUrl + '/' + event.id,
@@ -164,11 +165,23 @@ View.prototype = {
             else{
                 var startdate = $('#startdate').val();
             }
+            if ($('#starttime').val()==''){
+                var starttime = $('#starttime').attr('placeholder');
+            }
+            else{
+                var starttime = $('#starttime').val();
+            }
             if ($('#enddate').val()==''){
                 var enddate = $('#enddate').attr('placeholder');
             }
             else{
                 var enddate = $('#enddate').val();
+            }
+            if ($('#endtime').val()==''){
+                var endtime = $('#endtime').attr('placeholder');
+            }
+            else{
+                var endtime = $('#endtime').val();
             }
             if (textarea.val()==''){
                 var content = textarea.attr('placeholder');
@@ -180,7 +193,7 @@ View.prototype = {
             var title = content.split('\n')[0]; // first line is the title
             
 
-            self._events.updateActive(title, content, startdate, enddate).done(function () {
+            self._events.updateActive(title, content, startdate, starttime, enddate, endtime).done(function () {
                 self.render();
             }).fail(function () {
                 alert('Could not update event, not found');
@@ -207,18 +220,18 @@ View.prototype = {
 
             self._events.create(event).done(function() {
                 self.render();
-		startdate.placeholder=today;
-		enddate.placeholder=today;
+                startdate.placeholder=today;
+                enddate.placeholder=today;
                 $( "#startdate" ).datepicker({
     	            minDate: new Date(2016, 1 - 1, 1)});
-        	$( "#enddate" ).datepicker();
+                $( "#enddate" ).datepicker();
             	$('#starttime').timepicki({
                 	show_meridian:false,
                 	min_hour_value:0,
                 	max_hour_value:23,
                 	overflow_minutes:true
                 });
-                startdatetime.placeholder=now;
+                starttime.placeholder=now;
                 $('#endtime').timepicki({
                 	show_meridian:false,
                 	min_hour_value:0,
@@ -226,7 +239,6 @@ View.prototype = {
                 	overflow_minutes:true
                 });
                 endtime.placeholder=now;
-	
                 $('#editor textarea').focus();
             }).fail(function () {
                 alert('Could not create event');
@@ -272,14 +284,14 @@ View.prototype = {
                 max_hour_value:23,
                 overflow_minutes:true
                 });
-            starttime.placeholder=now;
+            if ($('#starttime').val()==''){starttime.placeholder=now;}
             $('#endtime').timepicki({
                 show_meridian:false,
                 min_hour_value:0,
                 max_hour_value:23,
                 overflow_minutes:true
                 });
-            endtime.placeholder=now;
+            if ($('#endtime').val()==''){endtime.placeholder=now;}
 
             $('#editor textarea').focus();
 

@@ -5,9 +5,9 @@
 	<tr><td><span><?php p($l->t('Start')); ?></span></td><td></td><td><span><?php p($l->t('End')); ?></span></td><td></td></tr>
 	<tr>
 	<td><input type="text" name="startdate" id="startdate" {{#if event.startdate}} value="{{ event.startdate }}" {{/if}}/></td>
-	<td><input id="starttime" type="time" name="starttime"/></td>
+	<td><input id="starttime" type="time" name="starttime" {{#if event.starttime}} value="{{ event.starttime }}" {{/if}}/></td>
         <td><input type="text" name="enddate" id="enddate" {{#if event.enddate}} value="{{ event.enddate }}" {{/if}}/></td>
-	<td><input id="endtime" type="time" name="starttime"/></td></tr>
+	<td><input id="endtime" type="time" name="endtime" {{#if event.endtime}} value="{{ event.endtime }}" {{/if}}/></td></tr>
 	<tr>
 	<td><?php p($l->t('Client')); ?></td>
 	<td colspan="3"><select style="width: calc(100% - 3px);">
