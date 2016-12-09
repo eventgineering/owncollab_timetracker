@@ -48,7 +48,7 @@ class EventService {
         $event = new Event();
         $event->setTitle($title);
         $event->setContent($content);
-        $event->setStart($startdate);
+        $event->setStartdate($startdate);
         $event->setEnd($end);
         $event->setUserId($userId);
         return $this->mapper->insert($event);
@@ -59,7 +59,7 @@ class EventService {
             $event = $this->mapper->find($id, $userId);
             $event->setTitle($title);
             $event->setContent($content);
-            $event->setStart($startdate);
+            $event->setStartdate($startdate);
             $event->setEnd($end);
             return $this->mapper->update($event);
         } catch(Exception $e) {
