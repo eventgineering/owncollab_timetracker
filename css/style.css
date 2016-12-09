@@ -2,17 +2,22 @@
 	color: red;
 }
 #app-content-wrapper {
-    height: 100%;
+    width: calc(100% - 11px);
+    margin-top: 11px;
+    margin-left: 11px;
+    height: calc(100% - 11px);;
+    min-width: calc(100% - 11px);
+    min-height: calc(100% - 11px);
 }
 
 #editor {
     height: 50%;
-    width: 100%;
+    width: calc(100%-6px);
 }
 
 #editor .input {
-    height: calc(100% - 51px);
-    width: 100%;
+    height: 100%;
+    width: calc(100%-6px);
 }
 
 #editor .save {
@@ -34,4 +39,8 @@
 
 #editor button {
     height: 44px;
+}
+
+input[type="time"]{
+	width: 65px;
 }

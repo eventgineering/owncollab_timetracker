@@ -209,6 +209,24 @@ View.prototype = {
                 self.render();
 		start.placeholder=today;
 		end.placeholder=today;
+                $( "#start" ).datepicker({
+    	            minDate: new Date(2016, 1 - 1, 1)});
+        	$( "#end" ).datepicker();
+            	$('#starttime').timepicki({
+                	show_meridian:false,
+                	min_hour_value:0,
+                	max_hour_value:23,
+                	overflow_minutes:true
+                });
+                starttime.placeholder=now;
+                $('#endtime').timepicki({
+                	show_meridian:false,
+                	min_hour_value:0,
+                	max_hour_value:23,
+                	overflow_minutes:true
+                });
+                endtime.placeholder=now;
+	
                 $('#editor textarea').focus();
             }).fail(function () {
                 alert('Could not create event');
@@ -245,29 +263,35 @@ View.prototype = {
             self.render();
             if ($('#start').val()==''){start.placeholder=today;}
             if ($('#end').val()==''){end.placeholder=today;}
+            $( "#start" ).datepicker({
+                minDate: new Date(2016, 1 - 1, 1)});
+            $( "#end" ).datepicker();
+            $('#starttime').timepicki({
+                show_meridian:false,
+                min_hour_value:0,
+                max_hour_value:23,
+                overflow_minutes:true
+                });
+            starttime.placeholder=now;
+            $('#endtime').timepicki({
+                show_meridian:false,
+                min_hour_value:0,
+                max_hour_value:23,
+                overflow_minutes:true
+                });
+            endtime.placeholder=now;
+
             $('#editor textarea').focus();
 
         });
     },
     render: function () {
-	var d = new Date();
-	var now = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
         this.renderNavigation();
         this.renderContent();
-        $( "#start" ).datepicker({
-		minDate: new Date(2016, 1 - 1, 1)});
-        $( "#end" ).datepicker();
-        $('#timepicker').timepicki({
-		show_meridian:false,
-		min_hour_value:0,
-		max_hour_value:23,
-		overflow_minutes:true
-		});
-	timepicker.placeholder=now;
-        console.log(now);
-
     }
 };
+
+
 
 var events = new Events(OC.generateUrl('/apps/owncollab_timetracker/events'));
 var view = new View(events);
