@@ -36,7 +36,7 @@
                 <notnull>true</notnull>
             </field>
             <field>
-                <name>start</name>
+                <name>startdate</name>
                 <type>text</type>
 		<length>20</length>
                 <default></default>

@@ -124,11 +124,11 @@ Events.prototype = {
         });
         return deferred.promise();
     },
-    updateActive: function (title, content, start, end) {
+    updateActive: function (title, content, startdate, end) {
         var event = this.getActive();
         event.title = title;
         event.content = content;
-        event.start = start;
+        event.startdate = startdate;
         event.end = end;
 
 
@@ -158,11 +158,11 @@ View.prototype = {
         var textarea = $('#app-content textarea');
         var self = this;
         $('#app-content button').click(function () {
-            if ($('#start').val()==''){
-                var start = $('#start').attr('placeholder');
+            if ($('#startdate').val()==''){
+                var startdate = $('#startdate').attr('placeholder');
             }
             else{
-                var start = $('#start').val();
+                var startdate = $('#startdate').val();
             }
             if ($('#end').val()==''){
                 var end = $('#end').attr('placeholder');
@@ -180,7 +180,7 @@ View.prototype = {
             var title = content.split('\n')[0]; // first line is the title
             
 
-            self._events.updateActive(title, content, start, end).done(function () {
+            self._events.updateActive(title, content, startdate, end).done(function () {
                 self.render();
             }).fail(function () {
                 alert('Could not update event, not found');
@@ -207,9 +207,9 @@ View.prototype = {
 
             self._events.create(event).done(function() {
                 self.render();
-		start.placeholder=today;
+		startdate.placeholder=today;
 		end.placeholder=today;
-                $( "#start" ).datepicker({
+                $( "#startdate" ).datepicker({
     	            minDate: new Date(2016, 1 - 1, 1)});
         	$( "#end" ).datepicker();
             	$('#starttime').timepicki({
@@ -218,7 +218,7 @@ View.prototype = {
                 	max_hour_value:23,
                 	overflow_minutes:true
                 });
-                starttime.placeholder=now;
+                startdatetime.placeholder=now;
                 $('#endtime').timepicki({
                 	show_meridian:false,
                 	min_hour_value:0,
@@ -261,9 +261,9 @@ View.prototype = {
             var id = parseInt($(this).parent().data('id'), 10);
             self._events.load(id);
             self.render();
-            if ($('#start').val()==''){start.placeholder=today;}
+            if ($('#startdate').val()==''){startdate.placeholder=today;}
             if ($('#end').val()==''){end.placeholder=today;}
-            $( "#start" ).datepicker({
+            $( "#startdate" ).datepicker({
                 minDate: new Date(2016, 1 - 1, 1)});
             $( "#end" ).datepicker();
             $('#starttime').timepicki({

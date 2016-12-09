@@ -4,7 +4,7 @@
 	<table>
 	<tr><td><span><?php p($l->t('Start')); ?></span></td><td></td><td><span><?php p($l->t('End')); ?></span></td><td></td></tr>
 	<tr>
-	<td><input type="text" name="start" id="start" {{#if event.start}} value="{{ event.start }}" {{/if}}/></td>
+	<td><input type="text" name="startdate" id="startdate" {{#if event.startdate}} value="{{ event.startdate }}" {{/if}}/></td>
 	<td><input id="starttime" type="time" name="starttime"/></td>
         <td><input type="text" name="end" id="end" {{#if event.end}} value="{{ event.end }}" {{/if}}/></td>
 	<td><input id="endtime" type="time" name="starttime"/></td></tr>
@@ -29,7 +29,7 @@
 
     <p><button id="hello">click me</button></p>
 	<p>
-        <input type="text" name="start" id="start" placeholder="<?php p($l->t('start date')); ?>" disabled>
+        <input type="text" name="startdate" id="startdate" placeholder="<?php p($l->t('startdate date')); ?>" disabled>
         <input type="text" name="end" id="end" placeholder="<?php p($l->t('end date')); ?>" disabled>
 	</p>
         <div class="input"><textarea disabled></textarea></div>
