@@ -21,7 +21,7 @@
                 <option label="Project2" value="2">Project2</option></select>
         </td></tr>
         <tr style="height:200px">
-	<td colspan="4"><div class="input"><textarea style="width: calc(100% -  3px); height: 200px;" placeholder="{{ event.content }}"></textarea></div></td></tr>
+	<td colspan="4"><div class="input"><textarea style="width: calc(100% -  3px); height: 200px;" placeholder="{{{ event.content }}}"></textarea></div></td></tr>
 	<tr><td colspan="4"><div class="save" style="width: calc(100% -  3px);"><button><?php p($l->t('Save')); ?></button></div></td></tr></table>
 	</p>
     {{else}}

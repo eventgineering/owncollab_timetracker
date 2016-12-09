@@ -132,6 +132,7 @@ Events.prototype = {
         event.starttime = starttime;
         event.enddate = enddate;
         event.endtime = endtime;
+	console.log(event.content);
 
         return $.ajax({
             url: this._baseUrl + '/' + event.id,
@@ -292,7 +293,6 @@ View.prototype = {
                 overflow_minutes:true
                 });
             if ($('#endtime').val()==''){endtime.placeholder=now;}
-
             $('#editor textarea').focus();
 
         });
