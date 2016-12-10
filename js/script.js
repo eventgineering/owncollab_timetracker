@@ -200,7 +200,6 @@ View.prototype = {
 
             self._events.create(event).done(function() {
                 self.render();
-		});
                 startdate.placeholder=today;
                 enddate.placeholder=today;
                 $( "#startdate" ).datepicker({

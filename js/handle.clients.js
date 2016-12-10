@@ -50,7 +50,7 @@ View.prototype = {
         var html = template({clients: this._clients.getAll()});
 
         $('#editor').html(html);
-        var entry = $(this).closest('.client);
+        var entry = $(this).closest('.client');
     },
     render: function () {
         this.renderClients();
