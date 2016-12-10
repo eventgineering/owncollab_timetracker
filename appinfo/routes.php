@@ -20,6 +20,7 @@
 return [
     'resources' => [
         'event' => ['url' => '/events']
+        'client' => ['url' => '/clients']
     ],
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
