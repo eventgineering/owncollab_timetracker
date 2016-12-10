@@ -27,7 +27,7 @@ class EventController extends Controller {
      */
     public function index() {
         // return new DataResponse($this->service->findAll($this->userId));
-        $params = ['events' => $this->service->findAll()];
+        $params = ['events' => $this->service->findAll($this->userId)];
         return new TemplateResponse('owncollab_timetracker', 'main', $params);  // templates/main.php
     }
 
