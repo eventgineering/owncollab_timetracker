@@ -135,7 +135,6 @@ View.prototype = {
     },
     render: function () {
         this.renderSelector();
-        this.renderContent();
     }
 };
 
