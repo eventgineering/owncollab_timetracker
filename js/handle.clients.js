@@ -103,18 +103,17 @@ Clients.prototype = {
         });
         return deferred.promise();
     },
-    updateActive: function (title, content) {
-        var client = this.getActive();
-        client.title = title;
-        client.content = content;
-
-        return $.ajax({
-            url: this._baseUrl + '/' + client.id,
-            method: 'PUT',
-            contentType: 'application/json',
-            data: JSON.stringify(client)
-        });
-    }
+    // updateActive: function (name) {
+    //    var client = this.getActive();
+    //    client.name = title;
+    //    
+    //    return $.ajax({
+    //        url: this._baseUrl + '/' + client.id,
+    //        method: 'PUT',
+    //        contentType: 'application/json',
+    //        data: JSON.stringify(client)
+    //    });
+    //}
 };
 
 // this will be the view that is used to update the html
@@ -131,17 +130,17 @@ View.prototype = {
         $('#editor').html(html);
 
         // handle saves
-        var textarea = $('#app-content textarea');
-        var self = this;
-        $('#app-content button').click(function () {
-            var content = textarea.val();
-            var title = content.split('\n')[0]; // first line is the title
+       //var textarea = $('#app-content textarea');
+        //var self = this;
+        //$('#app-content button').click(function () {
+        //    var content = textarea.val();
+        //    var title = content.split('\n')[0]; // first line is the title
 
-            self._clients.updateActive(title, content).done(function () {
-                self.render();
-            }).fail(function () {
-                alert('Could not update client, not found');
-            });
+        //    self._clients.updateActive(title, content).done(function () {
+        //        self.render();
+        //    }).fail(function () {
+        //        alert('Could not update client, not found');
+        //    });
         });
     },
     renderNavigation: function () {
@@ -155,8 +154,8 @@ View.prototype = {
         var self = this;
         $('#new-client').click(function () {
             var client = {
-                title: translations.newClient,
-                content: ''
+                name: translations.newClient,
+                
             };
 
             self._clients.create(client).done(function() {
