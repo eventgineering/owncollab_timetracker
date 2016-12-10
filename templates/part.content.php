@@ -28,7 +28,7 @@
 
 	{{#each clients}}
         <li class="client"  data-id="{{ id }}">
-            <a href="#">{{ name }}</a><p>{{ client.name }}</p>
+            <p>{{ name }}</p>
 	</li>
 	{{/each}}
         <input type="text" name="startdate" id="startdate" placeholder="<?php p($l->t('startdate date')); ?>" disabled>
