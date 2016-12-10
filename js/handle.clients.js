@@ -118,20 +118,13 @@ var View = function (clients) {
 };
 
 View.prototype = {
-    renderContent: function () {
-        var source = $('#content-tpl').html();
-        var template = Handlebars.compile(source);
-        var html = template({client: this._clients.getActive()});
 
-        console.log($('#editor').html(html));
-
-    },
     renderSelector: function () {
         var source = $('#content-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({clients: this._clients.getAll()});
-
-        $('#editor select_client').html(html);
+        console.log(html);
+        // $('#editor select_client').html(html);
 
         // show app menu
         // $('#app-navigation .app-navigation-entry-utils-menu-button').click(function () {
