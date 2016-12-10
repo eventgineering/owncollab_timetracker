@@ -200,13 +200,7 @@ View.prototype = {
 
             self._events.create(event).done(function() {
                 self.render();
-		var items='';
-		var data=[{ "ID" :"1", "Name":"Scott"},{ "ID":"2", "Name":"Jon"} ];
-		$.each(data,function(index,item){
-		items+="<option value='"+item.ID+"'>"+item.Name+"</option>";
 		});
-		console.log(items);
-		$("#select_client").html(items); 
                 startdate.placeholder=today;
                 enddate.placeholder=today;
                 $( "#startdate" ).datepicker({

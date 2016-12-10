@@ -44,13 +44,16 @@ var View = function (clients) {
 };
 
 View.prototype = {
-    renderNavigation: function () {
-        var source = $('#navigation-tpl').html();
+    renderClients: function () {
+        var source = $('#content-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({clients: this._clients.getAll()});
+
+        $('#editor').html(html);
+        var entry = $(this).closest('.client);
     },
     render: function () {
-        this.renderNavigation();
+        this.renderClients();
     }
 };
 
