@@ -25,7 +25,7 @@
 	</p>
     {{else}}
     <p>Hello <?php p($_['user']) ?>! Hier wird irgendwann die Statistik zu finden sein.</p>
-    	<p><?php p($_['clients']) ?></p>
+    	<p><?php p($_['events']) ?></p>
         <input type="text" name="startdate" id="startdate" placeholder="<?php p($l->t('startdate date')); ?>" disabled>
         <input type="text" name="enddate" id="enddate" placeholder="<?php p($l->t('enddate date')); ?>" disabled>
 	</p>
