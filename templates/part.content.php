@@ -17,8 +17,7 @@
 	        <tr>
         <td><?php p($l->t('Project')); ?></td>
         <td colspan="3"><select	style="width: calc(100% -  3px);">
-                <option label="Project1" value="1">Project1</option>
-                <option label="Project2" value="2">Project2</option></select>
+                </select>
         </td></tr>
         <tr style="height:200px">
 	<td colspan="4"><div class="input"><textarea style="width: calc(100% -  3px); height: 200px;" placeholder="{{{ event.content }}}"></textarea></div></td></tr>

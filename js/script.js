@@ -8,27 +8,6 @@
  * @copyright andy 2016
  */
 
-(function ($, OC) {
-
-	$(document).ready(function () {
-		$('#hello').click(function () {
-			alert('Hello from your script file');
-		});
-		$('#echo').click(function () {
-			var url = OC.generateUrl('/apps/owncollab_timetracker/echo');
-			var data = {
-				echo: $('#echo-content').val()
-			};
-
-			$.post(url, data).success(function (response) {
-				$('#echo-result').text(response.echo);
-			});
-
-		});
-	});
-
-})(jQuery, OC);
-
 (function (OC, window, $, undefined) {
 'use strict';
 
@@ -221,6 +200,13 @@ View.prototype = {
 
             self._events.create(event).done(function() {
                 self.render();
+		var items='';
+		var data=[{ "ID" :"1", "Name":"Scott"},{ "ID":"2", "Name":"Jon"} ];
+		$.each(data,function(index,item){
+		items+="<option value='"+item.ID+"'>"+item.Name+"</option>";
+		});
+		console.log(items);
+		$("#select_client").html(items); 
                 startdate.placeholder=today;
                 enddate.placeholder=today;
                 $( "#startdate" ).datepicker({
