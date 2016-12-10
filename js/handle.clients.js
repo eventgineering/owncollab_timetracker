@@ -13,7 +13,11 @@
 
 $(document).ready(function () {
 
-// this notes object holds all our notes
+var translations = {
+    newClient: $('#new-client-string').text()
+};
+
+// this clients object holds all our clients
 var Clients = function (baseUrl) {
     this._baseUrl = baseUrl;
     this._clients = [];
@@ -46,7 +50,7 @@ Clients.prototype = {
         });
 
         if (index !== undefined) {
-            // delete cached active note if necessary
+            // delete cached active client if necessary
             if (this._activeClient === this._clients[index]) {
                 delete this._activeClient;
             }
@@ -99,15 +103,16 @@ Clients.prototype = {
         });
         return deferred.promise();
     },
-    updateActive: function (name) {
+    updateActive: function (title, content) {
         var client = this.getActive();
-        client.name = name;
+        client.title = title;
+        client.content = content;
 
         return $.ajax({
             url: this._baseUrl + '/' + client.id,
             method: 'PUT',
             contentType: 'application/json',
-            data: JSON.stringify(note)
+            data: JSON.stringify(client)
         });
     }
 };
@@ -118,28 +123,83 @@ var View = function (clients) {
 };
 
 View.prototype = {
-
-    renderSelector: function () {
+    renderContent: function () {
         var source = $('#content-tpl').html();
         var template = Handlebars.compile(source);
+        var html = template({client: this._clients.getActive()});
+
+        $('#editor').html(html);
+
+        // handle saves
+        var textarea = $('#app-content textarea');
+        var self = this;
+        $('#app-content button').click(function () {
+            var content = textarea.val();
+            var title = content.split('\n')[0]; // first line is the title
+
+            self._clients.updateActive(title, content).done(function () {
+                self.render();
+            }).fail(function () {
+                alert('Could not update client, not found');
+            });
+        });
+    },
+    renderNavigation: function () {
+        var source = $('#navigation-tpl').html();
+        var template = Handlebars.compile(source);
         var html = template({clients: this._clients.getAll()});
-        console.log('ran renderSelector')
-        console.log(html);
-        // $('#editor select_client').html(html);
+
+        $('#app-navigation ul').html(html);
+
+        // create a new client
+        var self = this;
+        $('#new-client').click(function () {
+            var client = {
+                title: translations.newClient,
+                content: ''
+            };
+
+            self._clients.create(client).done(function() {
+                self.render();
+                $('#editor textarea').focus();
+            }).fail(function () {
+                alert('Could not create client');
+            });
+        });
 
         // show app menu
-        // $('#app-navigation .app-navigation-entry-utils-menu-button').click(function () {
-        //    var entry = $(this).closest('.note');
-        //    entry.find('.app-navigation-entry-menu').toggleClass('open');
-        // });
+        $('#app-navigation .app-navigation-entry-utils-menu-button').click(function () {
+            var entry = $(this).closest('.client');
+            entry.find('.app-navigation-entry-menu').toggleClass('open');
+        });
 
+        // delete a client
+        $('#app-navigation .client .delete').click(function () {
+            var entry = $(this).closest('.client');
+            entry.find('.app-navigation-entry-menu').removeClass('open');
+
+            self._clients.removeActive().done(function () {
+                self.render();
+            }).fail(function () {
+                alert('Could not delete client, not found');
+            });
+        });
+
+        // load a client
+        $('#app-navigation .client > a').click(function () {
+            var id = parseInt($(this).parent().data('id'), 10);
+            self._clients.load(id);
+            self.render();
+            $('#editor textarea').focus();
+        });
     },
     render: function () {
-        this.renderSelector();
+        this.renderNavigation();
+        this.renderContent();
     }
 };
 
-var clients = new Clients(OC.generateUrl('/apps/owncollab_timetracker/clients'));
+var clients = new Clients(OC.generateUrl('/apps/ownclients/clients'));
 var view = new View(clients);
 clients.loadAll().done(function () {
     view.render();

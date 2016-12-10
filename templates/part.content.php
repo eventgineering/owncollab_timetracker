@@ -10,9 +10,9 @@
 	<td><input id="endtime" type="time" name="endtime" {{#if event.endtime}} value="{{ event.endtime }}" {{/if}}/></td></tr>
 	<tr>
 	<td><?php p($l->t('Client')); ?></td>
-	<td colspan="3"><select id ="select_client" style="width: calc(100% - 3px);">
+	<td colspan="3"><select id ="select_client" name="select_client" style="width: calc(100% - 3px);">
 		<option label="Client1" value="1">Client1</option>
-		<option label="Client2" value="2">Cleint2</option></select>
+		<option label="Client2" value="2">Client2</option></select>
 	</td></tr>
 	        <tr>
         <td><?php p($l->t('Project')); ?></td>
