@@ -18,8 +18,8 @@ class ClientService {
         $this->mapper = $mapper;
     }
 
-    public function getAll() {
-        return $this->mapper->getAll();
+    public function findAll() {
+        return $this->mapper->findAll();
     }
 
     private function handleException ($e) {

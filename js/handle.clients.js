@@ -144,7 +144,7 @@ var view = new View(clients);
 clients.loadAll().done(function () {
     view.render();
 }).fail(function () {
-    alert('Could not load notes');
+    alert('Could not load clients');
 });
 
 

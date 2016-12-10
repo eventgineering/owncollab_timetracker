@@ -25,7 +25,7 @@ class ClientController extends Controller {
      * @NoAdminRequired
      */
     public function index() {
-        return new DataResponse($this->service->getAll());
+        return new DataResponse($this->service->findAll());
     }
 
     /**

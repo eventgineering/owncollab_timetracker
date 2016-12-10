@@ -10,7 +10,7 @@ class ClientMapper extends Mapper {
         parent::__construct($db, 'owncollab_timetracker_clients', '\OCA\OwnCollab_TimeTracker\Db\Client');
     }
 
-    public function getAll() {
+    public function findAll() {
         $sql = 'SELECT * FROM *PREFIX*owncollab_timetracker_clients';
         return $this->findEntity($sql);
     }
