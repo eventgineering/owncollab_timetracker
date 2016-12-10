@@ -6,6 +6,7 @@ script('owncollab_timetracker', 'jquery.localisation');
 script('owncollab_timetracker', $langurl);
 script('owncollab_timetracker', 'timepicki/timepicki');
 script('owncollab_timetracker', 'script');
+script('owncollab_timetracker', 'handle.clients');
 style('owncollab_timetracker', 'timepicki/timepicki');
 style('owncollab_timetracker', 'style');
 ?>
