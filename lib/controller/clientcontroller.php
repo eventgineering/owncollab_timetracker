@@ -3,6 +3,7 @@ namespace OCA\OwnCollab_TimeTracker\Controller;
 
 use OCP\IRequest;
 use OCP\AppFramework\Http\DataResponse;
+use OCP\AppFramework\Http\JSONResponse;
 use OCP\AppFramework\Controller;
 
 use OCA\OwnCollab_TimeTracker\Service\ClientService;
@@ -24,9 +25,15 @@ class ClientController extends Controller {
     /**
      * @NoAdminRequired
      */
+    public function json() {
+	return new JSONResponse($this->service->findAll());
+    }
+
+    /**
+     * @NoAdminRequired
+     */
     public function index() {
-        $params = ['clients' => $this->service->findAll()];
-        return new TemplateResponse('owncollab_timetracker', 'main', $params);  // templates/main.php
+	return new DataResponse($this->service->findAll());
     }
 
     /**

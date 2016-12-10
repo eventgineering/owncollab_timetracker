@@ -12,6 +12,12 @@
 'use strict';
 
 $(document).ready(function () {
+            $.getJSON("/index.php/apps/owncollab_timetracker/clients/list", function(result){
+	    $.each(result, function(i, field){
+		console.log('i: ', i, 'field: ', field);});
+            console.log(result);
+    	    });
+
 
 var translations = {
     newEvent: $('#new-event-string').text()
@@ -35,6 +41,8 @@ Events.prototype = {
                 event.active = false;
             }
         });
+
+console.log(this._baseUrl);
     },
     getActive: function () {
         return this._activeEvent;
