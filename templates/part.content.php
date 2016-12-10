@@ -26,15 +26,13 @@
     {{else}}
     <p>Hello <?php p($_['user']) ?>! Hier wird irgendwann die Statistik zu finden sein.</p>
 
-    <p><button id="hello">click me</button></p>
 	{{#each clients}}
         <li class="client"  data-id="{{ id }}">
-            <a href="#">{{ name }}</a>
+            <a href="#">{{ name }}</a><p>{{ client.name }}</p>
 	</li>
 	{{/each}}
         <input type="text" name="startdate" id="startdate" placeholder="<?php p($l->t('startdate date')); ?>" disabled>
         <input type="text" name="enddate" id="enddate" placeholder="<?php p($l->t('enddate date')); ?>" disabled>
-	<select id ="testselect" name="testselect" style="width: calc(100% - 3px);"></select>
 	</p>
         <div class="input"><textarea disabled></textarea></div>
         <div class="save"><button disabled><?php p($l->t('Save')); ?></button></div>
