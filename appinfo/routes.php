@@ -19,7 +19,7 @@
  */
 return [
     'resources' => [
-        'event' => ['url' => '/events']
+        'event' => ['url' => '/events'],
         'client' => ['url' => '/clients']
     ],
     'routes' => [

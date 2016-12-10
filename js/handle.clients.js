@@ -123,6 +123,7 @@ View.prototype = {
         var source = $('#content-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({clients: this._clients.getAll()});
+        console.log('ran renderSelector')
         console.log(html);
         // $('#editor select_client').html(html);
 
