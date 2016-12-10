@@ -25,12 +25,7 @@
 	</p>
     {{else}}
     <p>Hello <?php p($_['user']) ?>! Hier wird irgendwann die Statistik zu finden sein.</p>
-
-	{{#each clients}}
-        <li class="client"  data-id="{{ id }}">
-            <p>{{ name }}</p>
-	</li>
-	{{/each}}
+    	<p><?php p($_['clients']) ?></p>
         <input type="text" name="startdate" id="startdate" placeholder="<?php p($l->t('startdate date')); ?>" disabled>
         <input type="text" name="enddate" id="enddate" placeholder="<?php p($l->t('enddate date')); ?>" disabled>
 	</p>

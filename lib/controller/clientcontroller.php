@@ -25,7 +25,8 @@ class ClientController extends Controller {
      * @NoAdminRequired
      */
     public function index() {
-        return new DataResponse($this->service->findAll());
+        $params = ['clients' => $this->service->findAll()];
+        return new TemplateResponse('owncollab_timetracker', 'main', $params);  // templates/main.php
     }
 
     /**
