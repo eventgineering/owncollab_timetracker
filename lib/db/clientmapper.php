@@ -12,7 +12,7 @@ class ClientMapper extends Mapper {
 
     public function findAll() {
         $sql = 'SELECT * FROM *PREFIX*owncollab_timetracker_clients';
-        return $this->findEntity($sql[]);
+        return $this->findEntity($sql, []);
     }
     
     public function find($id) {
