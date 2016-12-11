@@ -13,12 +13,9 @@
 
 $(document).ready(function () {
             $.getJSON("/index.php/apps/owncollab_timetracker/clients", function(result){
-	    $.each(result, function(i, field){
-		console.log('i: ', i, 'field: ', field);
-		$.each(field, function(i, name){
-			console.log(name);});
-	    });
-            console.log(result);
+	    $.each(result, function(i, data){
+		console.log('id: ', data.id, 'name: ', data.name);
+	    	});
     	    });
 
 
