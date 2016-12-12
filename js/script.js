@@ -13,7 +13,6 @@ var instanceUrl = OC.generateUrl('/apps/owncollab_timetracker/');
 'use strict';
 
 $(document).ready(function () {
-        $().changeSelect(instanceUrl, 'clients', '#a1_title');
 
 var translations = {
     newEvent: $('#new-event-string').text()
@@ -38,7 +37,6 @@ Events.prototype = {
             }
         });
 
-console.log(this._baseUrl);
     },
     getActive: function () {
         return this._activeEvent;
@@ -115,7 +113,6 @@ console.log(this._baseUrl);
         event.starttime = starttime;
         event.enddate = enddate;
         event.endtime = endtime;
-	console.log(event.content);
 
         return $.ajax({
             url: this._baseUrl + '/' + event.id,
@@ -223,6 +220,8 @@ View.prototype = {
                 	overflow_minutes:true
                 });
                 endtime.placeholder=now;
+                $().changeSelect(instanceUrl, 'clients', 'select_client');
+                $().changeSelect(instanceUrl, 'clients', 'select_project');
                 $('#editor textarea').focus();
             }).fail(function () {
                 alert('Could not create event');
