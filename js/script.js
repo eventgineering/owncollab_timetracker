@@ -7,11 +7,13 @@
  * @author andy <info@eventgineering.de>
  * @copyright andy 2016
  */
+var instanceUrl = OC.generateUrl('/apps/owncollab_timetracker/');
 
 (function (OC, window, $, undefined) {
 'use strict';
 
 $(document).ready(function () {
+        $().changeSelect(instanceUrl, 'clients', '#a1_title');
 
 var translations = {
     newEvent: $('#new-event-string').text()
