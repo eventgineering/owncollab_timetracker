@@ -12,11 +12,13 @@
 'use strict';
 
 $(document).ready(function () {
-            $.getJSON("/index.php/apps/owncollab_timetracker/clients", function(result){
-	    $.each(result, function(i, data){
-		console.log('id: ', data.id, 'name: ', data.name);
+        $.getJSON("/index.php/apps/owncollab_timetracker/clients", function(result){
+	        $.each(result, function(i, data){
+                items+="<option value='"+item.id+"'>"+item.name+"</option>";
+                console.log('id: ', data.id, 'name: ', data.name);
 	    	});
-    	    });
+            $("#a1_title").html(items); 
+    	});
 
 
 var translations = {

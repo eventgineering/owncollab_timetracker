@@ -1,3 +1,7 @@
+<select id="a1_title">
+  <option>Default</option>
+</select>
+
 <script id="content-tpl" type="text/x-handlebars-template">
     {{#if event}}
 	<p>
