@@ -13,11 +13,12 @@
 
 $(document).ready(function () {
         $.getJSON("/index.php/apps/owncollab_timetracker/clients", function(result){
-	        $.each(result, function(i, data){
-                items+="<option value='"+item.id+"'>"+item.name+"</option>";
+	        var items="";
+		$.each(result, function(i, data){
+                items+="<option value='"+data.id+"'>"+data.name+"</option>";
                 console.log('id: ', data.id, 'name: ', data.name);
 	    	});
-            $("#a1_title").html(items); 
+            $("#a1_title").append(items); 
     	});
 
 
