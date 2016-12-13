@@ -8,6 +8,7 @@ use OCP\AppFramework\Db\Entity;
 class Project extends Entity implements JsonSerializable {
 
     protected $name;
+    protected $clientid;
 
     public function jsonSerialize() {
         return [
