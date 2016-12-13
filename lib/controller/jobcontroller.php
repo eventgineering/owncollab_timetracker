@@ -66,7 +66,7 @@ class JobController extends Controller {
      * @param string $rate
      * @param string $currency
      */
-    public function update($id, $name, $rate, currency) {
+    public function update($id, $name, $rate, $currency) {
         return $this->handleNotFound(function () use ($id, $name, $rate, $currency) {
             return $this->service->update($id, $name, $rate, $currency);
         });
