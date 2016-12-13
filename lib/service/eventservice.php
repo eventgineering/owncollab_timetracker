@@ -54,7 +54,7 @@ class EventService {
         $event->setEndtime($endtime);
         $event->setClientid($clientid);
         $event->setProjectid($projectid);
-        $event->setJobid($Jobid);
+        $event->setJobid($jobid);
         $event->setUserId($userId);
         return $this->mapper->insert($event);
     }
@@ -70,7 +70,7 @@ class EventService {
             $event->setEndtime($endtime);
             $event->setClientid($clientid);
             $event->setProjectid($projectid);
-            $event->setJobid($Jobid);
+            $event->setJobid($jobid);
             return $this->mapper->update($event);
         } catch(Exception $e) {
             $this->handleException($e);
