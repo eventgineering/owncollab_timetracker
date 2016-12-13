@@ -17,11 +17,13 @@ $.fn.changebySelect = function(url, route, value){
         var items="";
 		console.log('result: ',result);
                 $.each(result, function(i, data){
-                        items+="<option value='"+data.id+"'>"+data.name+"</option>";
-                        console.log('items: ', items);
-                        console.log('data: ', data);
+                        if (data.clientid == value){
+                            items+="<option value='"+data.id+"'>"+data.name+"</option>";
+                            console.log('items: ', items);
+                            console.log('data: ', data);
+                        }
                 });
-                $(field).append(items);
+                $(field).html(items);
         });
 }
 
