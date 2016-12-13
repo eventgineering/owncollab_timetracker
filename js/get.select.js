@@ -20,7 +20,7 @@ $.fn.changeSelect = function(url, route){
                         items+="<option value='"+data.id+"'>"+data.name+"</option>";
                 });
 		$(field).append(items);
-	});}
+	});
         return field;
 }
 
