@@ -63,7 +63,27 @@
                 <default></default>
                 <notnull>true</notnull>
             </field>
-
+            <field>
+                <name>clientid</name>
+                <type>integer</type>
+                <length>8</length>
+                <default></default>
+                <notnull>true</notnull>
+            </field>
+            <field>
+                <name>projectid</name>
+                <type>integer</type>
+                <length>8</length>
+                <default></default>
+                <notnull>true</notnull>
+            </field>
+            <field>
+                <name>jobid</name>
+                <type>integer</type>
+                <length>8</length>
+                <default></default>
+                <notnull>true</notnull>
+            </field>
         </declaration>
     </table>
     <table>
