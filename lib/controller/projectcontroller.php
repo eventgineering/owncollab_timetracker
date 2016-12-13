@@ -16,7 +16,7 @@ class ProjectController extends Controller {
     use Errors;
 
     public function __construct($AppName, IRequest $request,
-                                ClientService $service, $UserId){
+                                ProjectService $service, $UserId){
         parent::__construct($AppName, $request);
         $this->service = $service;
         $this->userId = $UserId;
