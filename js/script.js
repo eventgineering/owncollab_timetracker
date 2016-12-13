@@ -105,7 +105,7 @@ Events.prototype = {
         });
         return deferred.promise();
     },
-    updateActive: function (title, content, startdate, starttime, enddate, endtime, select_client, select_project, select_job) {
+    updateActive: function (title, content, startdate, starttime, enddate, endtime, clientid, projectid, jobid) {
         var event = this.getActive();
         event.title = title;
         event.content = content;
@@ -113,10 +113,9 @@ Events.prototype = {
         event.starttime = starttime;
         event.enddate = enddate;
         event.endtime = endtime;
-        event.clientid = select_client;
-        event.projectid = select_project;
-        event.jobid = select_job;
-
+        event.clientid = clientid;
+        event.projectid = projectid;
+        event.jobid = jobid;
         return $.ajax({
             url: this._baseUrl + '/' + event.id,
             method: 'PUT',
@@ -178,9 +177,9 @@ View.prototype = {
             var clientid = $('#select_client').value;
             var projectid = $('#select_project').value;
             var jobid = $('#select_job').value
-            
+		console.log(clientid);            
 
-            self._events.updateActive(title, content, startdate, starttime, enddate, endtime, select_client, select_project, select_job).done(function () {
+            self._events.updateActive(title, content, startdate, starttime, enddate, endtime, clientid, projectid, jobid).done(function () {
                 self.render();
             }).fail(function () {
                 alert('Could not update event, not found');
