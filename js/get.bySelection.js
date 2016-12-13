@@ -15,12 +15,9 @@ $.fn.changebySelect = function(url, route, value){
     var field = this;
     $.getJSON(url+route, function(result){
         var items="";
-		console.log('result: ',result);
                 $.each(result, function(i, data){
                         if (data.clientid == value){
                             items+="<option value='"+data.id+"'>"+data.name+"</option>";
-                            console.log('items: ', items);
-                            console.log('data: ', data);
                         }
                 });
                 $(field).html(items);
