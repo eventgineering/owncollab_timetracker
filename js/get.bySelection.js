@@ -26,7 +26,3 @@ $.fn.changebySelect = function(url, route, value){
 }
 
 })(OC, window, jQuery);
-
-
-
-value
