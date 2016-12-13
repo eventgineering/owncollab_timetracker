@@ -22,6 +22,7 @@ return [
         'event' => ['url' => '/events'],
         'client' => ['url' => '/clients'],
         'project' => ['url' => '/projects'],
+        'job' => ['url' => '/jobs'],
     ],
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
