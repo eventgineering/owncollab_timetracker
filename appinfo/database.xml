@@ -115,5 +115,39 @@
             </field>
         </declaration>
     </table>
+            <name>*dbprefix*owncollab_timetracker_jobs</name>
+        <declaration>
+            <field>
+                <name>id</name>
+                <type>integer</type>
+                <notnull>true</notnull>
+                <autoincrement>true</autoincrement>
+                <unsigned>true</unsigned>
+                <primary>true</primary>
+                <length>8</length>
+            </field>
+            <field>
+                <name>name</name>
+                <type>text</type>
+                <length>200</length>
+                <default></default>
+                <notnull>true</notnull>
+            </field>
+            <field>
+                <name>rate</name>
+                <type>text</type>
+                <length>10</length>
+                <default></default>
+                <notnull>true</notnull>
+            </field>
+            <field>
+                <name>currency</name>
+                <type>text</type>
+                <length>3</length>
+                <default></default>
+                <notnull>true</notnull>
+            </field>
+        </declaration>
+    </table>
 
 </database>
