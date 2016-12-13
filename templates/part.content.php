@@ -22,6 +22,11 @@
         <td colspan="3"><select id ="select_project" name="select_project" style="width: calc(100% - 3px);">
                 <option label="Project1">Select Project</option></select>
         </td></tr>
+        <tr>
+        <td><?php p($l->t('Job')); ?></td>
+        <td colspan="3"><select id ="select_job" name="select_job" style="width: calc(100% - 3px);">
+                <option label="Job1">Select Job</option></select>
+        </td></tr>
         <tr style="height:200px">
 	<td colspan="4"><div class="input"><textarea style="width: calc(100% -  3px); height: 200px;" placeholder="{{{ event.content }}}"></textarea></div></td></tr>
 	<tr><td colspan="4"><div class="save" style="width: calc(100% -  3px);"><button><?php p($l->t('Save')); ?></button></div></td></tr></table>
