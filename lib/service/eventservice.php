@@ -52,9 +52,9 @@ class EventService {
         $event->setStarttime($starttime);
         $event->setEnddate($enddate);
         $event->setEndtime($endtime);
-        $event->setClientId($clientid);
-        $event->setProjectId($projectid);
-        $event->setJobId($Jobid);
+        $event->setClientid($clientid);
+        $event->setProjectid($projectid);
+        $event->setJobid($Jobid);
         $event->setUserId($userId);
         return $this->mapper->insert($event);
     }
