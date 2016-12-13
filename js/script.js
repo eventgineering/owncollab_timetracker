@@ -174,9 +174,9 @@ View.prototype = {
             }
 
             var title = content.split('\n')[0]; // first line is the title
-            var clientid = $('#select_client').value;
-            var projectid = $('#select_project').value;
-            var jobid = $('#select_job').value
+            var clientid = $('#select_client').val();
+            var projectid = $('#select_project').val();
+            var jobid = $('#select_job').val();
 		console.log(clientid);            
 
             self._events.updateActive(title, content, startdate, starttime, enddate, endtime, clientid, projectid, jobid).done(function () {
