@@ -115,6 +115,7 @@
             </field>
         </declaration>
     </table>
+    <table>
             <name>*dbprefix*owncollab_timetracker_jobs</name>
         <declaration>
             <field>
