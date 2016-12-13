@@ -20,12 +20,13 @@
 return [
     'resources' => [
         'event' => ['url' => '/events'],
-	'client' => ['url' => '/clients'],
+        'client' => ['url' => '/clients'],
+        'project' => ['url' => '/projects'],
     ],
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
 	   ['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
-           ['name' => 'client#json', 'url' => '/clients/list', 'verb' => 'GET'],
+       ['name' => 'client#json', 'url' => '/clients/list', 'verb' => 'GET'],
 
     ]
 ];

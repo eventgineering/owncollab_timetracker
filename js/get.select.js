@@ -11,9 +11,8 @@
 (function (OC, window, $, undefined) {
 'use strict';
 
-$.fn.changeSelect = function(url, route, value){
+$.fn.changeSelect = function(url, route){
         var field = this;
-	if (value == ''){
         $.getJSON(url+route, function(result){
                 var items="";
 		console.log(url);
@@ -22,19 +21,6 @@ $.fn.changeSelect = function(url, route, value){
                 });
 		$(field).append(items);
 	});}
-	if (value != ''){
-        $.getJSON(url+route+'/'+value, function(result){
-                var items="";
-		console.log(url+route+'/'+value);
-		console.log('result: ',result);
-//                $.each(result, function(i, data){
-                        items+="<option value='"+result.id+"'>"+result.name+"</option>";
-			console.log('items: ', items);
-//			console.log('data: ', data);
-//                });
-                $(field).append(items);
-        });}
-
         return field;
 }
 
