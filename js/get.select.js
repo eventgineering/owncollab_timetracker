@@ -15,7 +15,6 @@ $.fn.changeSelect = function(url, route){
         var field = this;
         $.getJSON(url+route, function(result){
                 var items="";
-		console.log(url);
                 $.each(result, function(i, data){
                         items+="<option value='"+data.id+"'>"+data.name+"</option>";
                 });
