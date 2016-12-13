@@ -12,9 +12,9 @@
 'use strict';
 
 $.fn.changebySelect = function(url, route, value){
-    $.getJSON(url+route+'/'+value, function(result){
+    var field = this;
+    $.getJSON(url+route, function(result){
         var items="";
-		console.log(url+route+'/'+value);
 		console.log('result: ',result);
                 $.each(result, function(i, data){
                         items+="<option value='"+result.id+"'>"+result.name+"</option>";
@@ -26,3 +26,7 @@ $.fn.changebySelect = function(url, route, value){
 }
 
 })(OC, window, jQuery);
+
+
+
+value

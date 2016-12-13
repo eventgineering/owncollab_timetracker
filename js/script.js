@@ -221,7 +221,7 @@ View.prototype = {
                 });
                 endtime.placeholder=now;
                 $('#select_client').changeSelect(instanceUrl, 'clients');
-                $('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'clients', this.value);});
+                $('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
                 $('#editor textarea').focus();
             }).fail(function () {
                 alert('Could not create event');
