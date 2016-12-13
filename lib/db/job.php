@@ -5,7 +5,7 @@ use JsonSerializable;
 
 use OCP\AppFramework\Db\Entity;
 
-class Client extends Entity implements JsonSerializable {
+class Job extends Entity implements JsonSerializable {
 
     protected $name;
     protected $rate;
