@@ -17,7 +17,7 @@ $.fn.changebySelect = function(url, route, value){
         var items="";
 		console.log('result: ',result);
                 $.each(result, function(i, data){
-                        items+="<option value='"+result.id+"'>"+result.name+"</option>";
+                        items+="<option value='"+data.id+"'>"+data.name+"</option>";
                         console.log('items: ', items);
                         console.log('data: ', data);
                 });
