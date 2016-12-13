@@ -14,6 +14,9 @@ class Event extends Entity implements JsonSerializable {
     protected $enddate;
     protected $endtime;
     protected $userId;
+    protected $clientid;
+    protected $projectid;
+    protected $jobid;
 
     public function jsonSerialize() {
         return [
@@ -24,6 +27,9 @@ class Event extends Entity implements JsonSerializable {
             'starttime' => $this->starttime,
             'enddate' => $this->enddate,
             'endtime' => $this->endtime,
+            'clientid' => $this->clientid,
+            'projectid' => $this->projectid,
+            'jobid' => $this->jobid,
         ];
     }
 }

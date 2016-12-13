@@ -49,9 +49,12 @@ class EventController extends Controller {
      * @param string $starttime
      * @param string $enddate
      * @param string $endtime
+     * @param string $clientid
+     * @param string $projectid
+     * @param string $jobid
      */
-    public function create($title, $content, $startdate, $starttime, $enddate, $endtime) {
-        return $this->service->create($title, $content, $startdate, $starttime, $enddate, $endtime, $this->userId);
+    public function create($title, $content, $startdate, $starttime, $enddate, $endtime, $clientid, $projectid, $jobid) {
+        return $this->service->create($title, $content, $startdate, $starttime, $enddate, $endtime, $clientid, $projectid, $jobid, $this->userId);
     }
 
     /**
@@ -64,10 +67,13 @@ class EventController extends Controller {
      * @param string $starttime
      * @param string $enddate
      * @param string $endtime
+     * @param string $clientid
+     * @param string $projectid
+     * @param string $jobid
      */
-    public function update($id, $title, $content, $startdate, $starttime, $enddate, $endtime) {
-        return $this->handleNotFound(function () use ($id, $title, $content, $startdate, $starttime, $enddate, $endtime) {
-            return $this->service->update($id, $title, $content, $startdate, $starttime, $enddate, $endtime, $this->userId);
+    public function update($id, $title, $content, $startdate, $starttime, $enddate, $endtime, $clientid, $projectid, $jobid) {
+        return $this->handleNotFound(function () use ($id, $title, $content, $startdate, $starttime, $enddate, $endtime, $clientid, $projectid, $jobid) {
+            return $this->service->update($id, $title, $content, $startdate, $starttime, $enddate, $endtime, $clientid, $projectid, $jobid, $this->userId);
         });
     }
 

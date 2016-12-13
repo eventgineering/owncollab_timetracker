@@ -44,7 +44,7 @@ class EventService {
         }
     }
 
-    public function create($title, $content, $startdate, $starttime, $enddate, $endtime, $userId) {
+    public function create($title, $content, $startdate, $starttime, $enddate, $endtime, $clientid, $projectid, $jobid, $userId) {
         $event = new Event();
         $event->setTitle($title);
         $event->setContent($content);
@@ -52,11 +52,14 @@ class EventService {
         $event->setStarttime($starttime);
         $event->setEnddate($enddate);
         $event->setEndtime($endtime);
+        $event->setClientId($clientid);
+        $event->setProjectId($projectid);
+        $event->setJobId($Jobid);
         $event->setUserId($userId);
         return $this->mapper->insert($event);
     }
 
-    public function update($id, $title, $content, $startdate, $starttime, $enddate, $endtime, $userId) {
+    public function update($id, $title, $content, $startdate, $starttime, $enddate, $endtime, $clientid, $projectid, $jobid,$userId) {
         try {
             $event = $this->mapper->find($id, $userId);
             $event->setTitle($title);
@@ -65,6 +68,9 @@ class EventService {
             $event->setStarttime($starttime);
             $event->setEnddate($enddate);
             $event->setEndtime($endtime);
+            $event->setClientId($clientid);
+            $event->setProjectId($projectid);
+            $event->setJobId($Jobid);
             return $this->mapper->update($event);
         } catch(Exception $e) {
             $this->handleException($e);
