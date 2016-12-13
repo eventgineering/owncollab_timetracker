@@ -11,14 +11,17 @@
 (function (OC, window, $, undefined) {
 'use strict';
 
-$.fn.changeSelect = function(url, route, field){
+$.fn.changeSelect = function(url, route){
+        var field = this;
         $.getJSON(url+route, function(result){
                 var items="";
                 $.each(result, function(i, data){
                         items+="<option value='"+data.id+"'>"+data.name+"</option>";
                 });
 		$(field).append(items);
+                console.log(this);
 	});
+        // return this;
 }
 
 })(OC, window, jQuery);
