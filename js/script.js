@@ -220,7 +220,8 @@ View.prototype = {
                 	overflow_minutes:true
                 });
                 endtime.placeholder=now;
-                $('#select_client').changeSelect(instanceUrl, 'clients');
+		$('#select_client').changeSelect(instanceUrl, 'clients', '');
+		$('#select_client').change(function () {$('#select_project').changeSelect(instanceUrl, 'clients', this.value);});
                 $('#editor textarea').focus();
             }).fail(function () {
                 alert('Could not create event');

@@ -11,17 +11,31 @@
 (function (OC, window, $, undefined) {
 'use strict';
 
-$.fn.changeSelect = function(url, route){
+$.fn.changeSelect = function(url, route, value){
         var field = this;
+	if (value == ''){
         $.getJSON(url+route, function(result){
                 var items="";
+		console.log(url);
                 $.each(result, function(i, data){
                         items+="<option value='"+data.id+"'>"+data.name+"</option>";
                 });
 		$(field).append(items);
-                console.log(this);
-	});
-        // return this;
+	});}
+	if (value != ''){
+        $.getJSON(url+route+'/'+value, function(result){
+                var items="";
+		console.log(url+route+'/'+value);
+		console.log('result: ',result);
+//                $.each(result, function(i, data){
+                        items+="<option value='"+result.id+"'>"+result.name+"</option>";
+			console.log('items: ', items);
+//			console.log('data: ', data);
+//                });
+                $(field).append(items);
+        });}
+
+        return field;
 }
 
 })(OC, window, jQuery);
