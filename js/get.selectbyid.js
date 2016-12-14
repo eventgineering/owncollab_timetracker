@@ -28,6 +28,7 @@ $.fn.changeSelectbyID = function(url, route, id, selector, selectorid){
                                         		items+="<option value='"+data.id+"'>"+data.name+"</option>";
                                 		}
 					}
+				}
 				else{
 					if(data.id == id){
 						items+="<option selected value='"+data.id+"'>"+data.name+"</option>";

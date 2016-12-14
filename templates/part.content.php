@@ -11,17 +11,17 @@
 	<tr>
 	<td><?php p($l->t('Client')); ?></td>
 	<td colspan="3"><select id ="select_client" name="select_client" style="width: calc(100% - 3px);">
-		<option label="Client1">Select Client</option></select>
+		<option value="" label="Client1">Select Client</option></select>
 	</td></tr>
 	        <tr>
         <td><?php p($l->t('Project')); ?></td>
         <td colspan="3"><select id ="select_project" name="select_project" style="width: calc(100% - 3px);">
-                <option label="Project1">Select Project</option></select>
+                <option value="" label="Project1">Select Project</option></select>
         </td></tr>
         <tr>
         <td><?php p($l->t('Job')); ?></td>
         <td colspan="3"><select id ="select_job" name="select_job" style="width: calc(100% - 3px);">
-                <option label="Job1">Select Job</option></select>
+                <option value="" label="Job1">Select Job</option></select>
         </td></tr>
         <tr style="height:200px">
 	<td colspan="4"><div class="input"><textarea style="width: calc(100% -  3px); height: 200px;" placeholder="{{{ event.content }}}"></textarea></div></td></tr>

@@ -14,7 +14,7 @@
 $.fn.changebySelect = function(url, route, value){
     var field = this;
     $.getJSON(url+route, function(result){
-        var items="<option>Select Project</option>";
+        var items="<option value=''>Select Project</option>";
                 $.each(result, function(i, data){
                         if (data.clientid == value){
                             items+="<option value='"+data.id+"'>"+data.name+"</option>";

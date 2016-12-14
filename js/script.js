@@ -137,20 +137,25 @@ View.prototype = {
         var html = template({event: this._events.getActive()});
         $('#editor').html(html);
         if (this._events.getActive()){
-                if (this._events.getActive().clientid == 0){
-                        $('#select_client').changeSelect(instanceUrl, 'clients');
-			$('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
-                }
-		    else{
-			    $('#select_client').changeSelectbyID(instanceUrl, 'clients', this._events.getActive().clientid, '', '');
-                $('#select_project').changeSelectbyID(instanceUrl, 'projects', this._events.getActive().projectid, 'clientid', this._events.getActive().clientid);
-		    }
-            if (this._events.getActive().jobid == 0){
-                $('#select_job').changeSelect(instanceUrl, 'jobs');
-		    }
-            else{
-                $('#select_job').changeSelectbyID(instanceUrl, 'jobs', this._events.getActive().jobid, '', '');
-            }
+		if (this._events.getActive().clientid) {
+                	if (this._events.getActive().clientid == 0){
+                        	$('#select_client').changeSelect(instanceUrl, 'clients');
+				$('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
+                	}
+		    	else{
+				$('#select_client').changeSelectbyID(instanceUrl, 'clients', this._events.getActive().clientid, '', '');
+                		$('#select_project').changeSelectbyID(instanceUrl, 'projects', this._events.getActive().projectid, 'clientid', this._events.getActive().clientid);
+				$('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
+		    	}
+		}
+		if (this._events.getActive().jobid){
+			if (this._events.getActive().jobid == 0){
+				$('#select_job').changeSelect(instanceUrl, 'jobs');
+			}
+			else{
+                		$('#select_job').changeSelectbyID(instanceUrl, 'jobs', this._events.getActive().jobid, '', '');
+            		}
+		}
         }
 
 
@@ -158,47 +163,53 @@ View.prototype = {
         var textarea = $('#app-content textarea');
         var self = this;
         $('#app-content button').click(function () {
-            if ($('#startdate').val()==''){
-                var startdate = $('#startdate').attr('placeholder');
-            }
-            else{
-                var startdate = $('#startdate').val();
-            }
-            if ($('#starttime').val()==''){
-                var starttime = $('#starttime').attr('placeholder');
-            }
-            else{
-                var starttime = $('#starttime').val();
-            }
-            if ($('#enddate').val()==''){
-                var enddate = $('#enddate').attr('placeholder');
-            }
-            else{
-                var enddate = $('#enddate').val();
-            }
-            if ($('#endtime').val()==''){
-                var endtime = $('#endtime').attr('placeholder');
-            }
-            else{
-                var endtime = $('#endtime').val();
-            }
-            if (textarea.val()==''){
-                var content = textarea.attr('placeholder');
-            }
-            else{
-                var content = textarea.val();
-            }
+	    console.log('project-value: ', $('#select_project').val());
+	    if ($('#select_client').val() != '' && $('#select_project').val() != ''){
+	            if ($('#startdate').val()==''){
+	                var startdate = $('#startdate').attr('placeholder');
+	            }
+	            else{
+	                var startdate = $('#startdate').val();
+	            }
+	            if ($('#starttime').val()==''){
+	                var starttime = $('#starttime').attr('placeholder');
+	            }
+	            else{
+	                var starttime = $('#starttime').val();
+	            }
+	            if ($('#enddate').val()==''){
+	                var enddate = $('#enddate').attr('placeholder');
+	            }
+	            else{
+	                var enddate = $('#enddate').val();
+	            }
+	            if ($('#endtime').val()==''){
+	                var endtime = $('#endtime').attr('placeholder');
+	            }
+	            else{
+	                var endtime = $('#endtime').val();
+	            }
+	            if (textarea.val()==''){
+	                var content = textarea.attr('placeholder');
+	            }
+	            else{
+	                var content = textarea.val();
+	            }
 
-            var title = content.split('\n')[0]; // first line is the title
-            var clientid = $('#select_client').val();
-            var projectid = $('#select_project').val();
-            var jobid = $('#select_job').val();
-            self._events.updateActive(title, content, startdate, starttime, enddate, endtime, clientid, projectid, jobid).done(function () {
-                self.render();
-            }).fail(function () {
-                alert('Could not update event, not found');
-            });
-        });
+	            var title = content.split('\n')[0]; // first line is the title
+	            var clientid = $('#select_client').val();
+	            var projectid = $('#select_project').val();
+	            var jobid = $('#select_job').val();
+	            self._events.updateActive(title, content, startdate, starttime, enddate, endtime, clientid, projectid, jobid).done(function () {
+	                self.render();
+	            }).fail(function () {
+	                alert('Could not update event, not found');
+	            });
+	    }
+	    else{
+		alert('Please provide client, project and job');
+	    }
+	 });
     },
     renderNavigation: function () {
         var d = new Date();
