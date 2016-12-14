@@ -141,21 +141,17 @@ View.prototype = {
                         $('#select_client').changeSelect(instanceUrl, 'clients');
 			$('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
                 }
-		else{
-			$('#select_client').changeSelectbyID(instanceUrl, 'clients', this._events.getActive().clientid);
-//			$.getJSON(instanceUrl+'clients', function(result){
-//				var items="";
-//				$.each(result, function(i, data){
-//					if(data.id == this._events.getActive().clientid){
-//						console.log('id equal');
-//					}
-//				});
-//			});
-		}
-                if (this._events.getActive().jobid == 0){
-                        $('#select_job').changeSelect(instanceUrl, 'jobs');
-		};
-        };
+		    else{
+			    $('#select_client').changeSelectbyID(instanceUrl, 'clients', this._events.getActive().clientid);
+                $('#select_project').changeSelectbyID(instanceUrl, 'projects', this._events.getActive().projectid);
+		    }
+            if (this._events.getActive().jobid == 0){
+                $('#select_job').changeSelect(instanceUrl, 'jobs');
+		    }
+            else{
+                $('#select_job').changeSelectbyID(instanceUrl, 'jobs', this._events.getActive().jobid);
+            }
+        }
 
 
         // handle saves
