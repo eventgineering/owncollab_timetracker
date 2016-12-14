@@ -37,9 +37,7 @@
         <div class="input"><textarea disabled></textarea></div>
         <div class="save"><button disabled><?php p($l->t('Save')); ?></button></div>
     {{/if}}
-    {{#if client}}
-        <?php print_unescaped($this->inc('part.content.clients')); ?>
-    {{/if}}
+
 </script>
 <div id="editor"></div>
 
