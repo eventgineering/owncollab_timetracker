@@ -2,6 +2,9 @@
 <div style="display:none" id="new-event-string"><?php p($l->t('New event')); ?></div>
 <script id="navigation-tpl" type="text/x-handlebars-template">
     <li id="new-event"><a href="#"><?php p($l->t('Add event')); ?></a></li>
+    <li id="edit-clients"><a href="#"><?php p($l->t('Edit clients')); ?></a></li>
+    <li id="edit-projects"><a href="#"><?php p($l->t('Edit projects')); ?></a></li>
+    <li id="edit-jobs"><a href="#"><?php p($l->t('Edit jobs')); ?></a></li>
     {{#each events}}
         <li class="event with-menu {{#if active}}active{{/if}}"  data-id="{{ id }}">
             <a href="#">{{ title }}</a>

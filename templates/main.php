@@ -10,6 +10,7 @@ script('owncollab_timetracker', 'get.bySelection');
 script('owncollab_timetracker', 'get.selectbyid');
 script('owncollab_timetracker', 'script');
 style('owncollab_timetracker', 'timepicki/timepicki');
+style('owncollab_timetracker', 'subnavigation');
 style('owncollab_timetracker', 'style');
 ?>
 
@@ -21,6 +22,7 @@ style('owncollab_timetracker', 'style');
 
 	<div id="app-content">
 		<div id="app-content-wrapper">
+			<?php print_unescaped($this->inc('part.content.clients')); ?>
 			<?php print_unescaped($this->inc('part.content')); ?>
 		</div>
 	</div>
