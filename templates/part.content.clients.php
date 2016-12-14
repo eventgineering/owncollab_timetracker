@@ -1,6 +1,7 @@
 <!-- translation strings -->
 <div style="display:none" id="new-client-string"><?php p($l->t('New client')); ?></div>
 <script id="clients-tpl" type="text/x-handlebars-template">
+    <li id="new-client"><a href="#"><?php p($l->t('Add client')); ?></a></li>
     {{#each clients}}
         <li class="client with-menu {{#if active}}active{{/if}}"  data-id="{{ id }}">
             <a href="#">{{ name }}</a>

@@ -8,6 +8,7 @@ script('owncollab_timetracker', 'timepicki/timepicki');
 script('owncollab_timetracker', 'get.select');
 script('owncollab_timetracker', 'get.bySelection');
 script('owncollab_timetracker', 'get.selectbyid');
+script('owncollab_timetracker', 'handle.clients');
 script('owncollab_timetracker', 'script');
 style('owncollab_timetracker', 'timepicki/timepicki');
 style('owncollab_timetracker', 'subnavigation');
