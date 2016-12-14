@@ -40,4 +40,4 @@
 </script>
 <div id="editor"></div>
 
-
+<?php print_unescaped($this->inc('part.content.clients')); ?>
