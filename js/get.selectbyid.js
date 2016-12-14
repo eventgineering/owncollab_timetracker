@@ -11,22 +11,32 @@
 (function (OC, window, $, undefined) {
 'use strict';
 
-$.fn.changeSelectbyID = function(url, route, id){
+$.fn.changeSelectbyID = function(url, route, id, selector, selectorid){
         var field = this;
         var id = id;
+	var selector = selector;
+	var selectorid = selectorid
         $.getJSON(url+route, function(result){
                 var items="";
-                if (result.cliendid == id){
                         $.each(result, function(i, data){
-                                console.log(result);
-                                if(data.id == id){
-                                        items+="<option selected value='"+data.id+"'>"+data.name+"</option>";
-                                }
-                                else{
-                                        items+="<option value='"+data.id+"'>"+data.name+"</option>";
-                                }
+				if (selector != ''){
+					if (data[selector] == selectorid){
+		                                if(data.id == id){
+                		                        items+="<option selected value='"+data.id+"'>"+data.name+"</option>";
+                                		}
+                                		else{
+                                        		items+="<option value='"+data.id+"'>"+data.name+"</option>";
+                                		}
+					}
+				else{
+					if(data.id == id){
+						items+="<option selected value='"+data.id+"'>"+data.name+"</option>";
+					}
+					else{
+						items+="<option value='"+data.id+"'>"+data.name+"</option>";
+					}
+				}
                         });
-                }
                 $(field).html(items);
 	});
         return field;

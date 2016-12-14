@@ -142,14 +142,14 @@ View.prototype = {
 			$('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
                 }
 		    else{
-			    $('#select_client').changeSelectbyID(instanceUrl, 'clients', this._events.getActive().clientid);
-                $('#select_project').changeSelectbyID(instanceUrl, 'projects', this._events.getActive().projectid);
+			    $('#select_client').changeSelectbyID(instanceUrl, 'clients', this._events.getActive().clientid, '', '');
+                $('#select_project').changeSelectbyID(instanceUrl, 'projects', this._events.getActive().projectid, 'clientid', this._events.getActive().clientid);
 		    }
             if (this._events.getActive().jobid == 0){
                 $('#select_job').changeSelect(instanceUrl, 'jobs');
 		    }
             else{
-                $('#select_job').changeSelectbyID(instanceUrl, 'jobs', this._events.getActive().jobid);
+                $('#select_job').changeSelectbyID(instanceUrl, 'jobs', this._events.getActive().jobid, '', '');
             }
         }
 
