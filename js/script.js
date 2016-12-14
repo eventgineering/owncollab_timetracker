@@ -142,7 +142,7 @@ View.prototype = {
 			$('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
                 }
 		else{
-			$('#select_client').changeSelectbyID(instanceUrl, 'clients'), this._events.getActive().clientid);
+			$('#select_client').changeSelectbyID(instanceUrl, 'clients', this._events.getActive().clientid));
 //			$.getJSON(instanceUrl+'clients', function(result){
 //				var items="";
 //				$.each(result, function(i, data){
