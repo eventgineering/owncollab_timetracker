@@ -13,6 +13,9 @@ var instanceUrl = OC.generateUrl('/apps/owncollab_timetracker/');
 'use strict';
 
 $(document).ready(function () {
+    $('#edit-clients').click(function () {
+        $('#sub-navigation').toggle(display)
+    };
 
 var translations = {
     newEvent: $('#new-event-string').text()
