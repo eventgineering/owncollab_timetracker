@@ -29,6 +29,9 @@
 	<tr><td colspan="4"><div class="save" style="width: calc(100% -  3px);"><button><?php p($l->t('Save')); ?></button></div></td></tr></table>
 	</p>
     {{else}}
+        {{#if client}}
+        <?php print_unescaped($this->inc('part.content.clients')); ?>
+    {{/if}}
     <p>Hello <?php p($_['user']) ?>! Hier wird irgendwann die Statistik zu finden sein.</p>
 
         <input type="text" name="startdate" id="startdate" placeholder="<?php p($l->t('startdate date')); ?>" disabled>
