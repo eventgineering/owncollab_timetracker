@@ -18,9 +18,14 @@ $.fn.changeSelectbyID = function(url, route, id){
                 var items="";
                 $.each(result, function(i, data){
                         if(data.id == id){
-                                console.log('id equal');
-                        }                      
+                                items+="<option selected value='"+data.id+"'>"+data.name+"</option>";
+                                console.log('id equal');                                
+                        }
+                        else{
+                                items+="<option value='"+data.id+"'>"+data.name+"</option>";
+                        }
                 });
+                console.log(items);
 	});
         return field;
 }
