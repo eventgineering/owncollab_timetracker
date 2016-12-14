@@ -3,11 +3,10 @@
 }
 #app-content-wrapper {
     width: calc(100% - 11px);
-    margin-top: 11px;
+    margin-top: 0px;
     margin-left: 11px;
-    height: calc(100% - 11px);;
+    height: 100%;;
     min-width: calc(100% - 11px);
-    min-height: calc(100% - 11px);
 }
 
 #editor {

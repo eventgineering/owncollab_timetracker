@@ -29,7 +29,7 @@
 	<tr><td colspan="4"><div class="save" style="width: calc(100% -  3px);"><button><?php p($l->t('Save')); ?></button></div></td></tr></table>
 	</p>
     {{else}}
-    <p>Hello <?php p($_['user']) ?>! Hier wird irgendwann die Statistik zu finden sein.</p>
+    <p></p><p>Hello <?php p($_['user']) ?>! Hier wird irgendwann die Statistik zu finden sein.</p>
 
         <input type="text" name="startdate" id="startdate" placeholder="<?php p($l->t('startdate date')); ?>" disabled>
         <input type="text" name="enddate" id="enddate" placeholder="<?php p($l->t('enddate date')); ?>" disabled>
