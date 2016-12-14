@@ -16,15 +16,17 @@ $.fn.changeSelectbyID = function(url, route, id){
         var id = id;
         $.getJSON(url+route, function(result){
                 var items="";
-                $.each(result, function(i, data){
-                        console.log(result);
-                        if(data.id == id){
-                                items+="<option selected value='"+data.id+"'>"+data.name+"</option>";
-                        }
-                        else{
-                                items+="<option value='"+data.id+"'>"+data.name+"</option>";
-                        }
-                });
+                if (result.cliendid == id){
+                        $.each(result, function(i, data){
+                                console.log(result);
+                                if(data.id == id){
+                                        items+="<option selected value='"+data.id+"'>"+data.name+"</option>";
+                                }
+                                else{
+                                        items+="<option value='"+data.id+"'>"+data.name+"</option>";
+                                }
+                        });
+                }
                 $(field).html(items);
 	});
         return field;
