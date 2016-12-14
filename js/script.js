@@ -135,8 +135,28 @@ View.prototype = {
         var source = $('#content-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({event: this._events.getActive()});
-
         $('#editor').html(html);
+        if (this._events.getActive()){
+                if (this._events.getActive().clientid == 0){
+                        $('#select_client').changeSelect(instanceUrl, 'clients');
+			$('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
+                }
+		else{
+			$('#select_client').changeSelectbyID(instanceUrl, 'clients'), this._events.getActive().clientid);
+//			$.getJSON(instanceUrl+'clients', function(result){
+//				var items="";
+//				$.each(result, function(i, data){
+//					if(data.id == this._events.getActive().clientid){
+//						console.log('id equal');
+//					}
+//				});
+//			});
+		}
+                if (this._events.getActive().jobid == 0){
+                        $('#select_job').changeSelect(instanceUrl, 'jobs');
+		};
+        };
+
 
         // handle saves
         var textarea = $('#app-content textarea');
@@ -177,8 +197,6 @@ View.prototype = {
             var clientid = $('#select_client').val();
             var projectid = $('#select_project').val();
             var jobid = $('#select_job').val();
-		console.log(clientid);            
-
             self._events.updateActive(title, content, startdate, starttime, enddate, endtime, clientid, projectid, jobid).done(function () {
                 self.render();
             }).fail(function () {
