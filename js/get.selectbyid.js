@@ -26,6 +26,7 @@ $.fn.changeSelectbyID = function(url, route, id){
                         }
                 });
                 console.log(items);
+                $(field).html(items);
 	});
         return field;
 }

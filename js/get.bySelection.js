@@ -22,6 +22,7 @@ $.fn.changebySelect = function(url, route, value){
                 });
                 $(field).html(items);
         });
+         return field;
 }
 
 })(OC, window, jQuery);
