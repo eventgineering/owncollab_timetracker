@@ -4,8 +4,6 @@
 
 $(document).ready(function () {
 
-console.log('document ready');
-
 var translations = {
     newClient: $('#new-client-string').text()
 };
@@ -122,8 +120,6 @@ View.prototype = {
         var template = Handlebars.compile(source);
         var html = template({clients: this._clients.getAll()});
 	
-	console.log(source);
-	console.log(this._clients.getAll());
         $('#sub-navigation ul').html(html);
 
         // create a new client
