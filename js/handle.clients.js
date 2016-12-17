@@ -119,6 +119,8 @@ View.prototype = {
         var source = $('#clients-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({clients: this._clients.getAll()});
+        var test = this._clients.getActive();
+        console.log(test);
 	
         $('#sub-navigation ul').html(html);
 
