@@ -155,6 +155,19 @@ View.prototype = {
             });
         });
 
+        // rename a client
+        $('#sub-navigation .client .rename').click(function () {
+            var entry = $(this).closest('.client');
+            entry.find('.sub-navigation-entry-menu').removeClass('open');
+
+            self._clients.removeActive().done(function () {
+                self.render();
+            }).fail(function () {
+                alert('Could not rename client, not found');
+            });
+        });
+
+
         // load a client
         $('#sub-navigation .client > a').click(function () {
             var id = parseInt($(this).parent().data('id'), 10);
