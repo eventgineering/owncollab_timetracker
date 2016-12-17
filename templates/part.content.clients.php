@@ -4,7 +4,7 @@
 <script id="clients-tpl" type="text/x-handlebars-template">
     <li id="new-client"><a href="#"><?php p($l->t('Add client')); ?></a></li>
     {{#each clients}}
-        <li class="client with-menu {{#if active}}active{{/if}}"  data-id="{{ id }}">
+        <li class="client with-menu" data-id="{{ id }}">
             <a href="#">{{ name }}</a>
             <div class="sub-navigation-entry-utils">
                 <ul>
@@ -12,9 +12,10 @@
                 </ul>
             </div>
 
-            <div class="sub-navigation-entry-menu">
+            <div class="sub-navigation-entry-menu bubble menu">
                 <ul>
-                    <li><button class="delete icon-delete svg" title="delete"></button></li>
+                    <li><a class="menuitem action permanent" href="#"><span><button class="delete icon-delete svg" title="delete"></button></span><span><?php p($l->t('Delete')); ?></span></a></li><br />
+                    <li><a class="menuitem action permanent" href="#"><span><button class="delete icon-rename svg" title="rename"></button></span><?php p($l->t('Rename')); ?></a></li>
                 </ul>
             </div>
         </li>

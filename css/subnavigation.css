@@ -233,9 +233,6 @@
 		float: left;
 	}
 
-	#sub-navigation .sub-navigation-entry-utils-menu-button {
-		display: none;
-	}
 	#sub-navigation .sub-navigation-entry-utils-menu-button button {
 		border: 0;
 		opacity: .5;
