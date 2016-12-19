@@ -32,35 +32,6 @@ Clients.prototype = {
         return this._activeClient;
     },
 
-    renameActive: function () {
-	    console.log('running rename');
-	    var client = this._activeClient;
-	    var id = client.id;
-            $("input[data-id='" + id +"']").toggle();
-            $("input[data-id='" + id +"']").focus();
-            $("a[data-id='" + id +"']").toggle();
-            $("input[data-id='" + id +"']").keydown(function(e) {
-                if (e.keyCode == 13){
-                    $("input[data-id='" + id +"']").blur();
-                    var name = $("input[data-id='" + id +"']").val();
-                    console.log(name);
-                    //self._clients.load(id);
-                    self._clients.updateActive(name).done(function () {
-                        self.render();
-                    }).fail(function () {
-                        alert('Could not update client, not found');
-                    });
-                }
-                if (e.keyCode == 27){
-                    $("input[data-id='" + id +"']").blur();
-                }
-            });
-            $("input[data-id='" + id +"']").blur(function () {
-                $("input[data-id='" + id +"']").toggle();
-                $("a[data-id='" + id +"']").toggle();
-            });
-    },
-
     removeActive: function () {
         var index;
         var deferred = $.Deferred();
@@ -213,28 +184,28 @@ View.prototype = {
             entry.find('.sub-navigation-entry-menu').removeClass('open');
             var id = parseInt($(this).parent().data('id'), 10);
             self._clients.load(id);
-            //$("input[data-id='" + id +"']").toggle();
-            //$("input[data-id='" + id +"']").focus();
-            //$("a[data-id='" + id +"']").toggle();
-            //$("input[data-id='" + id +"']").keydown(function(e) {
-                //if (e.keyCode == 13){
-                    //$("input[data-id='" + id +"']").blur();
-                    //var name = $("input[data-id='" + id +"']").val();
-                    //self._clients.load(id);
-                    //self._clients.updateActive(name).done(function () {
-                        //self.render();
-                    //}).fail(function () {
-                        //alert('Could not update client, not found');
-                    //});
-                //}
-                //if (e.keyCode == 27){
-                    //$("input[data-id='" + id +"']").blur();
-                //}
-            //});
-            //$("input[data-id='" + id +"']").blur(function () {
-                //$("input[data-id='" + id +"']").toggle();
-                //$("a[data-id='" + id +"']").toggle();
-            //});
+            $("input[data-id='" + id +"']").toggle();
+            $("input[data-id='" + id +"']").focus();
+            $("a[data-id='" + id +"']").toggle();
+            $("input[data-id='" + id +"']").keydown(function(e) {
+                if (e.keyCode == 13){
+                    $("input[data-id='" + id +"']").blur();
+                    var name = $("input[data-id='" + id +"']").val();
+                    self._clients.load(id);
+                    self._clients.updateActive(name).done(function () {
+                        self.render();
+                    }).fail(function () {
+                        alert('Could not update client, not found');
+                    });
+                }
+                if (e.keyCode == 27){
+                    $("input[data-id='" + id +"']").blur();
+                }
+            });
+            $("input[data-id='" + id +"']").blur(function () {
+                $("input[data-id='" + id +"']").toggle();
+                $("a[data-id='" + id +"']").toggle();
+            });
         });
 
 
