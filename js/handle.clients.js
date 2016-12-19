@@ -158,6 +158,25 @@ View.prototype = {
 		$("input[data-id='" + id +"']").toggle();
 		$("input[data-id='" + id +"']").focus();
 		$("a[data-id='" + id +"']").toggle();
+		$("input[data-id='" + id +"']").keydown(function(e) {
+			if (e.keyCode == 13){
+				$("input[data-id='" + id +"']").blur();
+				var name = $("input[data-id='" + id +"']").val();
+				self._clients.load(id);
+				self._clients.updateActive(name).done(function () {
+					self.render();
+				}).fail(function () {
+					alert('Could not update client, not found');
+				});
+			}
+			if (e.keyCode == 27){
+				$("input[data-id='" + id +"']").blur();
+			}
+		});
+		$("input[data-id='" + id +"']").blur(function () {
+			$("input[data-id='" + id +"']").toggle();
+			$("a[data-id='" + id +"']").toggle();
+		});
 		console.log(id);
                 //$('#editor textarea').focus();
             }).fail(function () {
