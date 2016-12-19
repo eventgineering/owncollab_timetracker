@@ -360,9 +360,9 @@
 #sub-navigation .sub-navigation-entry-edit {
 	padding-left: 5px;
 	padding-right: 5px;
-	display: inline-block;
+	display: none;
 	height: 39px;
-	width: 100%;
+	width: calc(100% - 42px);
 }
 
 	#sub-navigation .sub-navigation-entry-edit input {

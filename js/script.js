@@ -162,7 +162,7 @@ View.prototype = {
         // handle saves
         var textarea = $('#app-content textarea');
         var self = this;
-        $('#app-content button').click(function () {
+        $('#save').click(function () {
 	    console.log('project-value: ', $('#select_project').val());
 	    if ($('#select_client').val() != '' && $('#select_project').val() != ''){
 	            if ($('#startdate').val()==''){

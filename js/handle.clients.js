@@ -31,6 +31,15 @@ Clients.prototype = {
     getActive: function () {
         return this._activeClient;
     },
+
+    renameActive: function () {
+	console.log('running rename');
+	var client = this._activeClient;
+	var id = client.id;
+	$("input[data-id='" + id +"']").toggle();
+	$("a[data-id='" + id +"']").toggle();
+    },
+
     removeActive: function () {
         var index;
         var deferred = $.Deferred();
@@ -62,6 +71,29 @@ Clients.prototype = {
         }
         return deferred.promise();
     },
+
+    removebyId: function (id) {
+	var deferred = $.Deferred();
+	var self = this;
+	this._clients.forEach(function (client){
+		if(client.id === id) {
+			client.active = true;
+			$.ajax({
+				url: clients._baseUrl + '/' + id,
+				method: 'DELETE'
+			}).done(function () {
+				deferred.resolve();
+			}).fail(function () {
+				deferred.reject();
+			});
+		} else {
+			deferred.reject();
+		}
+	});
+	return deferred.promise();
+    },
+	
+
     create: function (client) {
         var deferred = $.Deferred();
         var self = this;
@@ -119,7 +151,6 @@ View.prototype = {
         var source = $('#clients-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({clients: this._clients.getAll()});
-	
         $('#sub-navigation ul').html(html);
 
         // create a new client
@@ -144,27 +175,28 @@ View.prototype = {
         });
 
         // delete a client
-        $('#sub-navigation .client .delete').click(function () {
-            var entry = $(this).closest('.client');
-            entry.find('.sub-navigation-entry-menu').removeClass('open');
-
-            self._clients.removeActive().done(function () {
-                self.render();
-            }).fail(function () {
-                alert('Could not delete client, not found');
-            });
+        $('#sub-navigation .delete').click(function () {
+		var entry = $(this).closest('.client');
+		entry.find('.sub-navigation-entry-menu').removeClass('open');
+		var id = parseInt($(this).parent().data('id'), 10);
+		self._clients.removebyId(id);
+		self._clients.loadAll().done(function () {
+			view.render();
+		});
+		self.render();
         });
 
         // rename a client
         $('#sub-navigation .client .rename').click(function () {
-            var entry = $(this).closest('.client');
-            entry.find('.sub-navigation-entry-menu').removeClass('open');
-
-            self._clients.removeActive().done(function () {
-                self.render();
-            }).fail(function () {
-                alert('Could not rename client, not found');
-            });
+//            var entry = $(this).closest('.client');
+//            entry.find('.sub-navigation-entry-menu').removeClass('open');
+            var id = parseInt($(this).parent().data('id'), 10);
+            self._clients.load(id);
+//            self._clients.renameActive().done(function () {
+//                self.render();
+//            }).fail(function () {
+//                alert('Could not rename client, not found');
+//            });
         });
 
 

@@ -26,7 +26,7 @@
         </td></tr>
         <tr style="height:200px">
 	<td colspan="4"><div class="input"><textarea style="width: calc(100% -  3px); height: 200px;" placeholder="{{{ event.content }}}"></textarea></div></td></tr>
-	<tr><td colspan="4"><div class="save" style="width: calc(100% -  3px);"><button><?php p($l->t('Save')); ?></button></div></td></tr></table>
+	<tr><td colspan="4"><div class="save" style="width: calc(100% -  3px);"><button id="save" name="save"><?php p($l->t('Save')); ?></button></div></td></tr></table>
 	</p>
     {{else}}
     <p></p><p>Hello <?php p($_['user']) ?>! Hier wird irgendwann die Statistik zu finden sein.</p>
@@ -35,7 +35,7 @@
         <input type="text" name="enddate" id="enddate" placeholder="<?php p($l->t('enddate date')); ?>" disabled>
 	</p>
         <div class="input"><textarea disabled></textarea></div>
-        <div class="save"><button disabled><?php p($l->t('Save')); ?></button></div>
+        <div class="save"><button disabled id="save" name="save"><?php p($l->t('Save')); ?></button></div>
     {{/if}}
 
 </script>
