@@ -154,6 +154,11 @@ View.prototype = {
 
             self._clients.create(client).done(function() {
                 self.render();
+		var id = $('li.active').data('id');
+		$("input[data-id='" + id +"']").toggle();
+		$("input[data-id='" + id +"']").focus();
+		$("a[data-id='" + id +"']").toggle();
+		console.log(id);
                 //$('#editor textarea').focus();
             }).fail(function () {
                 alert('Could not create client');

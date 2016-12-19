@@ -4,7 +4,7 @@
 <script id="clients-tpl" type="text/x-handlebars-template">
     <li id="new-client"><a href="#"><?php p($l->t('Add client')); ?></a></li>
     {{#each clients}}
-        <li class="client with-menu" {{#if active}}active{{/if}} data-id="{{ id }}">
+        <li class="client with-menu {{#if active}}active{{/if}}" {{#if active}}active{{/if}} data-id="{{ id }}">
             <input class="sub-navigation-entry-edit" type="text" name="{{ name }}" value="{{ name }}" data-id="{{ id }}"/><a href="#" name="{{ name }}" data-id="{{ id }}">{{ name }}</a>
             <div class="sub-navigation-entry-utils">
                 <ul>
