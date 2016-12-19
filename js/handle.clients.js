@@ -8,6 +8,8 @@ var translations = {
     newClient: $('#new-client-string').text()
 };
 
+var e =
+
 // this clients object holds all our clients
 
 var Clients = function (baseUrl) {
@@ -33,11 +35,20 @@ Clients.prototype = {
     },
 
     renameActive: function () {
-	console.log('running rename');
-	var client = this._activeClient;
-	var id = client.id;
-	$("input[data-id='" + id +"']").toggle();
-	$("a[data-id='" + id +"']").toggle();
+	    console.log('running rename');
+	    var client = this._activeClient;
+	    var id = client.id;
+	    $("input[data-id='" + id +"']").toggle();
+	    $("a[data-id='" + id +"']").toggle();
+        $("input[data-id='" + id +"']").keaydown(function(e)) {
+            if (e.keyCode == 13){
+                alert('enter')
+            }
+            if (e.keyCode == 27){
+                alert('escape')
+            }
+            console.log('pressed: ', e)
+        }
     },
 
     removeActive: function () {
