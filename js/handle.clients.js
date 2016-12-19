@@ -8,8 +8,6 @@ var translations = {
     newClient: $('#new-client-string').text()
 };
 
-var e =
-
 // this clients object holds all our clients
 
 var Clients = function (baseUrl) {
@@ -40,15 +38,20 @@ Clients.prototype = {
 	    var id = client.id;
 	    $("input[data-id='" + id +"']").toggle();
 	    $("a[data-id='" + id +"']").toggle();
-        $("input[data-id='" + id +"']").keaydown(function(e)) {
-            if (e.keyCode == 13){
-                alert('enter')
-            }
-            if (e.keyCode == 27){
-                alert('escape')
-            }
-            console.log('pressed: ', e)
-        }
+	    $("input[data-id='" + id +"']").focus();
+	    $("input[data-id='" + id +"']").keydown(function(e) {
+            	if (e.keyCode == 13){
+			$("input[data-id='" + id +"']").blur();
+            	}
+           	if (e.keyCode == 27){
+			$("input[data-id='" + id +"']").blur();
+            	}
+            console.log('pressed: ', e.key, 'id: ', id);
+	    });
+	    $("input[data-id='" + id +"']").blur( function() {
+		$("input[data-id='" + id +"']").toggle();
+		$("a[data-id='" + id +"']").toggle();
+	    });
     },
 
     removeActive: function () {
@@ -199,15 +202,31 @@ View.prototype = {
 
         // rename a client
         $('#sub-navigation .client .rename').click(function () {
-//            var entry = $(this).closest('.client');
-//            entry.find('.sub-navigation-entry-menu').removeClass('open');
+            var entry = $(this).closest('.client');
+            entry.find('.sub-navigation-entry-menu').removeClass('open');
             var id = parseInt($(this).parent().data('id'), 10);
-            self._clients.load(id);
-//            self._clients.renameActive().done(function () {
-//                self.render();
-//            }).fail(function () {
-//                alert('Could not rename client, not found');
-//            });
+	    $("input[data-id='" + id +"']").toggle();
+	    $("input[data-id='" + id +"']").focus();
+	    $("a[data-id='" + id +"']").toggle();
+	    $("input[data-id='" + id +"']").keydown(function(e) {
+		if (e.keyCode == 13){
+			$("input[data-id='" + id +"']").blur();
+			var name = $("input[data-id='" + id +"']").val();
+			self._clients.load(id);
+			self._clients.updateActive(name).done(function () {
+				self.render();
+			}).fail(function () {
+				alert('Could not update client, not found');
+			});
+		}
+		if (e.keyCode == 27){
+			$("input[data-id='" + id +"']").blur();
+		}
+	    });
+	    $("input[data-id='" + id +"']").blur(function () {
+		$("input[data-id='" + id +"']").toggle();
+		$("a[data-id='" + id +"']").toggle();
+	    });
         });
 
 
