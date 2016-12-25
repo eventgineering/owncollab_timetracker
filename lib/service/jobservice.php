@@ -48,16 +48,16 @@ class JobService {
         $job = new Job();
         $job->setName($name);
         $job->setRate($rate);
-        $job->setCurrency($curency);
+        $job->setCurrency($currency);
         return $this->mapper->insert($job);
     }
 
-    public function update($id, $name, $rate, currency) {
+    public function update($id, $name, $rate, $currency) {
         try {
             $job = $this->mapper->find($id);
             $job->setName($name);
             $job->setRate($rate);
-            $job->setCurrency(currency);
+            $job->setCurrency($currency);
             return $this->mapper->update($job);
         } catch(Exception $e) {
             $this->handleException($e);
