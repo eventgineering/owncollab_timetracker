@@ -25,9 +25,9 @@ style('owncollab_timetracker', 'style');
 	<div id="app-content">
 		<div id="app-content-wrapper">
 			<?php print_unescaped($this->inc('part.content.clients')); ?>
-			// <?php print_unescaped($this->inc('part.content.projects')); ?>
+			<?php //print_unescaped($this->inc('part.content.projects')); ?>
 			<?php print_unescaped($this->inc('part.content')); ?>
-			// <?php print_unescaped($this->inc('part.content.projects.editor')); ?>
+			<?php //print_unescaped($this->inc('part.content.projects.editor')); ?>
 		</div>
 	</div>
 </div>
