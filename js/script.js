@@ -163,7 +163,6 @@ View.prototype = {
         var textarea = $('#app-content textarea');
         var self = this;
         $('#save').click(function () {
-	    console.log('project-value: ', $('#select_project').val());
 	    if ($('#select_client').val() != '' && $('#select_project').val() != ''){
 	            if ($('#startdate').val()==''){
 	                var startdate = $('#startdate').attr('placeholder');

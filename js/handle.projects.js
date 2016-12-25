@@ -66,7 +66,6 @@ Projects.prototype = {
     create: function (project) {
         var deferred = $.Deferred();
         var self = this;
-        console.log(project);
         $.ajax({
             url: this._baseUrl,
             method: 'POST',
@@ -101,7 +100,6 @@ Projects.prototype = {
         var project = this.getActive();
         project.name = name;
         project.clientid = clientid;
-        console.log('clientid: ', clientid)
         return $.ajax({
             url: this._baseUrl + '/' + project.id,
             method: 'PUT',
@@ -138,9 +136,7 @@ View.prototype = {
         // handle saves
         var self = this;
         $('#project-save').click(function () {
-	    console.log('client-value: ', $('#select_client').val());
 	    if ($('#select_client').val() != '' && $('#select_project').val() != ''){
-
 	            var name = $('#name').val();
 	            var clientid = $('#select_client').val();
 	            self._projects.updateActive(name, clientid).done(function () {
