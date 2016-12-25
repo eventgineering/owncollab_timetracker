@@ -14,7 +14,8 @@
 	display: none;
 }
 
-#sub-navigation {
+#project-sub-navigation,
+#client-sub-navigation {
 	width: 250px;
 	height: 100%;
 	float: left;
@@ -27,37 +28,46 @@
 	user-select: none;
 	border-right: 1px solid #eee;
 }
-#sub-navigation > ul {
+#project-sub-navigation > ul,
+#client-sub-navigation > ul {
 	position: relative;
 	height: 100%;
 	width: inherit;
 	overflow: auto;
 	box-sizing: border-box;
 }
-#sub-navigation li {
+#project-sub-navigation li,
+#client-sub-navigation li {
 	position: relative;
 	width: 100%;
 	box-sizing: border-box;
 }
 
-#sub-navigation .active.with-menu > a,
-#sub-navigation .with-counter > a {
+#project-sub-navigation .active.with-menu > a,
+#project-sub-navigation .with-counter > a,
+#client-sub-navigation .active.with-menu > a,
+#client-sub-navigation .with-counter > a {
 	padding-right: 50px;
 }
 
-#sub-navigation .active.with-menu.with-counter > a {
+#project-sub-navigation .active.with-menu.with-counter > a, 
+#client-sub-navigation .active.with-menu.with-counter > a {
 	padding-right: 90px;
 }
 
-#sub-navigation .with-icon a,
-#sub-navigation .sub-navigation-entry-loading a {
+
+#project-sub-navigation .with-icon a,
+#project-sub-navigation .sub-navigation-entry-loading a,
+#client-sub-navigation .with-icon a,
+#client-sub-navigation .sub-navigation-entry-loading a {
 	padding-left: 44px;
 	background-size: 16px 16px;
 	background-position: 14px center;
 	background-repeat: no-repeat;
 }
 
-#sub-navigation li > a {
+#project-sub-navigation li > a,
+#client-sub-navigation li > a {
 	display: block;
 	width: 100%;
 	line-height: 44px;
@@ -70,20 +80,29 @@
 	color: #000;
 	opacity: .57;
 }
-#sub-navigation .active,
-#sub-navigation .active a,
-#sub-navigation li:hover > a,
-#sub-navigation li:focus > a,
-#sub-navigation a:focus,
-#sub-navigation .selected,
-#sub-navigation .selected a {
+#project-sub-navigation .active,
+#project-sub-navigation .active a,
+#project-sub-navigation li:hover > a,
+#project-sub-navigation li:focus > a,
+#project-sub-navigation a:focus,
+#project-sub-navigation .selected,
+#project-sub-navigation .selected a,
+#client-sub-navigation .active,
+#client-sub-navigation .active a,
+#client-sub-navigation li:hover > a,
+#client-sub-navigation li:focus > a,
+#client-sub-navigation a:focus,
+#client-sub-navigation .selected,
+#client-sub-navigation .selected a {
 	opacity: 1;
 }
 
-#sub-navigation .collapse {
+#project-sub-navigation .collapse,
+#client-sub-navigation .collapse {
 	display: none; /* hide collapse button initially */
 }
-#sub-navigation .collapsible > .collapse {
+#project-sub-navigation .collapsible > .collapse,
+#client-sub-navigation .collapsible > .collapse {
 	position: absolute;
 	height: 44px;
 	width: 44px;
@@ -96,63 +115,74 @@
 	outline: none !important;
 	box-shadow: none;
 }
-#sub-navigation .collapsible:hover > a,
-#sub-navigation .collapsible:focus > a {
+#project-sub-navigation .collapsible:hover > a,
+#project-sub-navigation .collapsible:focus > a,
+#client-sub-navigation .collapsible:hover > a,
+#client-sub-navigation .collapsible:focus > a {
 	background-image: none;
 }
-#sub-navigation .collapsible:hover > .collapse,
-#sub-navigation .collapsible:focus > .collapse {
+#project-sub-navigation .collapsible:hover > .collapse,
+#project-sub-navigation .collapsible:focus > .collapse,
+#client-sub-navigation .collapsible:hover > .collapse,
+#client-sub-navigation .collapsible:focus > .collapse {
 	display: block;
 }
-
-#sub-navigation .collapsible .collapse {
+#project-sub-navigation .collapsible .collapse,
+#client-sub-navigation .collapsible .collapse {
 	-webkit-transform: rotate(-90deg);
 	-ms-transform:rotate(-90deg);
 	transform: rotate(-90deg);
 }
-#sub-navigation .collapsible.open .collapse {
+#project-sub-navigation .collapsible.open .collapse,
+#client-sub-navigation .collapsible.open .collapse {
 	-webkit-transform: rotate(0);
 	-ms-transform:rotate(0);
 	transform: rotate(0);
 }
 
 /* Second level nesting for lists */
-#sub-navigation > ul ul {
+#project-sub-navigation > ul ul,
+#client-sub-navigation > ul ul {
 	display: none;
 }
-#sub-navigation > ul ul li > a {
+#project-sub-navigation > ul ul li > a,
+#client-sub-navigation > ul ul li > a {
 	padding-left: 32px;
 }
-#sub-navigation > .with-icon ul li > a,
-#sub-navigation > .with-icon ul li.sub-navigation-entry-loading > a {
+#project-sub-navigation > .with-icon ul li > a,
+#project-sub-navigation > .with-icon ul li.sub-navigation-entry-loading > a,
+#client-sub-navigation > .with-icon ul li > a,
+#client-sub-navigation > .with-icon ul li.sub-navigation-entry-loading > a {
 	padding-left: 68px;
 	background-position: 44px center;
 }
-
-#sub-navigation .collapsible.open {
+#project-sub-navigation .collapsible.open,
+#client-sub-navigation .collapsible.open {
 	background-image: linear-gradient(top, rgb(238,238,238) 0%, rgb(245,245,245) 100%);
 	background-image: -webkit-linear-gradient(top, rgb(238,238,238) 0%, rgb(245,245,245) 100%);
 	background-image: -ms-linear-gradient(top, rgb(238,238,238) 0%, rgb(245,245,245) 100%);
 }
-
-#sub-navigation > ul .collapsible.open:hover,
-#sub-navigation > ul .collapsible.open:focus {
+#project-sub-navigation > ul .collapsible.open:hover,
+#project-sub-navigation > ul .collapsible.open:focus,
+#client-sub-navigation > ul .collapsible.open:hover,
+#client-sub-navigation > ul .collapsible.open:focus {
 	box-shadow: inset 0 0 3px #ddd;
 }
-
-#sub-navigation > ul .collapsible.open ul {
+#project-sub-navigation > ul .collapsible.open ul,
+#client-sub-navigation > ul .collapsible.open ul {
 	display: block;
 }
 
 
 /* Deleted entries with undo button */
-#sub-navigation .sub-navigation-entry-deleted {
+#project-sub-navigation .sub-navigation-entry-deleted,
+#client-sub-navigation .sub-navigation-entry-deleted {
 	display: inline-block;
 	height: 44px;
 	width: 100%;
 }
-
-	#sub-navigation .sub-navigation-entry-deleted-description {
+	#project-sub-navigation .sub-navigation-entry-deleted-description,
+	#client-sub-navigation .sub-navigation-entry-deleted-description {
 		padding-left: 12px;
 		position: relative;
 		white-space: nowrap;
@@ -163,8 +193,8 @@
 		line-height: 44px;
 		float: left;
 	}
-
-	#sub-navigation .sub-navigation-entry-deleted-button {
+	#project-sub-navigation .sub-navigation-entry-deleted-button,
+	#client-sub-navigation .sub-navigation-entry-deleted-button {
 		margin: 0;
 		height: 44px;
 		width: 44px;
@@ -174,14 +204,16 @@
 		background-color: transparent;
 		opacity: .5;
 	}
-
-	#sub-navigation .sub-navigation-entry-deleted-button:hover,
-	#sub-navigation .sub-navigation-entry-deleted-button:focus {
+	#project-sub-navigation .sub-navigation-entry-deleted-button:hover,
+	#project-sub-navigation .sub-navigation-entry-deleted-button:focus,
+	#client-sub-navigation .sub-navigation-entry-deleted-button:hover,
+	#client-sub-navigation .sub-navigation-entry-deleted-button:focus {
 		opacity: 1;
 	}
 
 /* counter and actions, legacy code */
-#sub-navigation .utils {
+#project-sub-navigation .utils,
+#client-sub-navigation .utils {
 	position: absolute;
 	padding: 7px 7px 0 0;
 	right: 0;
@@ -189,8 +221,10 @@
 	bottom: 0;
 	font-size: 12px;
 }
-	#sub-navigation .utils button,
-	#sub-navigation .utils .counter {
+	#project-sub-navigation .utils button,
+	#project-sub-navigation .utils .counter,
+	#client-sub-navigation .utils button,
+	#client-sub-navigation .utils .counter {
 		width: 44px;
 		height: 44px;
 		padding-top: 12px;
@@ -198,53 +232,56 @@
 
 
 /* drag and drop */
-#sub-navigation .drag-and-drop {
+#project-sub-navigation .drag-and-drop,
+#client-sub-navigation .drag-and-drop {
 	-webkit-transition: padding-bottom 500ms ease 0s;
 	transition: padding-bottom 500ms ease 0s;
 	padding-bottom: 40px;
 }
-#sub-navigation .error {
+#project-sub-navigation .error,
+#client-sub-navigation .error {
 	color: #dd1144;
 }
-
-#sub-navigation .sub-navigation-separator {
+#project-sub-navigation .sub-navigation-separator,
+#client-sub-navigation .sub-navigation-separator {
 	border-bottom: 1px solid #ddd;
 }
 
 /**
  * App navigation utils, buttons and counters for drop down menu
  */
-#sub-navigation .sub-navigation-entry-utils {
+#project-sub-navigation .sub-navigation-entry-utils,
+#client-sub-navigation .sub-navigation-entry-utils {
 	position: absolute;
 	top: 0;
 	right: 0;
 	z-index: 105;
 }
-
-	#sub-navigation .sub-navigation-entry-utils ul {
+#project-sub-navigation .sub-navigation-entry-utils ul,
+	#client-sub-navigation .sub-navigation-entry-utils ul {
 		display: block !important;
 	}
 
-
-	#sub-navigation .sub-navigation-entry-utils li {
+	#project-sub-navigation .sub-navigation-entry-utils li,
+	#client-sub-navigation .sub-navigation-entry-utils li {
 		float: left;
 		width: 44px !important;
 		height: 44px;
 		line-height: 44px;
 	}
-
-	#sub-navigation .active > .sub-navigation-entry-utils li {
+	#project-sub-navigation .active > .sub-navigation-entry-utils li,
+	#client-sub-navigation .active > .sub-navigation-entry-utils li {
 		display: inline-block;
 	}
-
-	#sub-navigation .sub-navigation-entry-utils button {
+	#project-sub-navigation .sub-navigation-entry-utils button,
+	#client-sub-navigation .sub-navigation-entry-utils button {
 		height: 38px;
 		width: 38px;
 		line-height: 38px;
 		float: left;
 	}
-
-	#sub-navigation .sub-navigation-entry-utils-menu-button button {
+	#project-sub-navigation .sub-navigation-entry-utils-menu-button button,
+	#client-sub-navigation .sub-navigation-entry-utils-menu-button button {
 		border: 0;
 		opacity: .5;
 		background-color: transparent;
@@ -252,14 +289,15 @@
 		background-position: center;
 		background-image: url('../img/actions/more.svg');
 	}
-
-	#sub-navigation .sub-navigation-entry-utils-menu-button:hover button,
-	#sub-navigation .sub-navigation-entry-utils-menu-button:focus button {
+	#project-sub-navigation .sub-navigation-entry-utils-menu-button:hover button,
+	#project-sub-navigation .sub-navigation-entry-utils-menu-button:focus button,
+	#client-sub-navigation .sub-navigation-entry-utils-menu-button:hover button,
+	#client-sub-navigation .sub-navigation-entry-utils-menu-button:focus button {
 		background-color: transparent;
 		opacity: 1;
 	}
-
-	#sub-navigation .sub-navigation-entry-utils-counter {
+	#project-sub-navigation .sub-navigation-entry-utils-counter,
+	#client-sub-navigation .sub-navigation-entry-utils-counter {
 		overflow: hidden;
 		text-overflow: hidden;
 		text-align: right;
@@ -268,15 +306,17 @@
 		line-height: 44px;
 		padding: 0 10px;
 	}
-
-	#sub-navigation .sub-navigation-entry-utils ul,
-	#sub-navigation .sub-navigation-entry-menu ul {
+	#project-sub-navigation .sub-navigation-entry-utils ul,
+	#project-sub-navigation .sub-navigation-entry-menu ul,
+	#client-sub-navigation .sub-navigation-entry-utils ul,
+	#client-sub-navigation .sub-navigation-entry-menu ul {
 		list-style-type: none;
 	}
 
 /* menu bubble / popover */
 .bubble,
-#sub-navigation .sub-navigation-entry-menu {
+#project-sub-navigation .sub-navigation-entry-menu,
+#client-sub-navigation .sub-navigation-entry-menu {
 	position: absolute;
 	background-color: #fff;
 	color: #333;
@@ -293,18 +333,23 @@
 }
 
 .ie .bubble,
-.ie #sub-navigation .sub-navigation-entry-menu,
+.ie #project-sub-navigation .sub-navigation-entry-menu,
+.ie #client-sub-navigation .sub-navigation-entry-menu,
 .ie .bubble:after,
-.ie #sub-navigation .sub-navigation-entry-menu:after,
+.ie #project-sub-navigation .sub-navigation-entry-menu:after,
+.ie #client-sub-navigation .sub-navigation-entry-menu:after,
 .edge .bubble,
-.edge #sub-navigation .sub-navigation-entry-menu,
+.edge #project-sub-navigation .sub-navigation-entry-menu,
+.edge #client-sub-navigation .sub-navigation-entry-menu,
 .edge .bubble:after,
-.edge #sub-navigation .sub-navigation-entry-menu:after {
+.edge #project-sub-navigation .sub-navigation-entry-menu:after,
+.edge #client-sub-navigation .sub-navigation-entry-menu:after {
 	border: 1px solid #eee;
 }
 /* miraculous border arrow stuff */
 .bubble:after,
-#sub-navigation .sub-navigation-entry-menu:after {
+#project-sub-navigation .sub-navigation-entry-menu:after,
+#client-sub-navigation .sub-navigation-entry-menu:after {
 	bottom: 100%;
 	right: 0; /* change this to adjust the arrow position */
 	border: solid transparent;
@@ -315,7 +360,8 @@
 	pointer-events: none;
 }
 .bubble:after,
-#sub-navigation .sub-navigation-entry-menu:after {
+#project-sub-navigation .sub-navigation-entry-menu:after,
+#client-sub-navigation .sub-navigation-entry-menu:after {
 	border-color: rgba(238, 238, 238, 0);
 	border-bottom-color: #fff;
 	border-width: 10px;
@@ -332,26 +378,28 @@
 	filter: alpha(opacity=100) !important;
 	opacity: 1 !important;
 }
-
-#sub-navigation .sub-navigation-entry-menu {
+#project-sub-navigation .sub-navigation-entry-menu,
+#client-sub-navigation .sub-navigation-entry-menu {
 	display: none;
 }
 
-#sub-navigation .sub-navigation-entry-menu.open {
+#project-sub-navigation .sub-navigation-entry-menu.open,
+#client-sub-navigation .sub-navigation-entry-menu.open {
 	display: block;
 }
 
 	/* list of options for an entry */
-	#sub-navigation .sub-navigation-entry-menu ul {
+	#project-sub-navigation .sub-navigation-entry-menu ul,
+	#client-sub-navigation .sub-navigation-entry-menu ul {
 		display: block !important;
 	}
-
-	#sub-navigation .sub-navigation-entry-menu li {
+	#project-sub-navigation .sub-navigation-entry-menu li,
+	#client-sub-navigation .sub-navigation-entry-menu li {
 		float: left;
 		width: 38px !important;
 	}
-
-		#sub-navigation .sub-navigation-entry-menu li button {
+		#project-sub-navigation .sub-navigation-entry-menu li button,
+		#client-sub-navigation .sub-navigation-entry-menu li button {
 			float: right;
 			width: 36px !important;
 			height: 36px;
@@ -360,23 +408,25 @@
 			opacity: .5;
 			background-color: transparent;
 		}
-
-		#sub-navigation .sub-navigation-entry-menu li button:hover,
-		#sub-navigation .sub-navigation-entry-menu li button:focus {
+		#project-sub-navigation .sub-navigation-entry-menu li button:hover,
+		#project-sub-navigation .sub-navigation-entry-menu li button:focus,
+		#client-sub-navigation .sub-navigation-entry-menu li button:hover,
+		#client-sub-navigation .sub-navigation-entry-menu li button:focus {
 			opacity: 1;
 			background-color: transparent;
 		}
 
 /* editing an entry */
-#sub-navigation .sub-navigation-entry-edit {
+#project-sub-navigation .sub-navigation-entry-edit,
+#client-sub-navigation .sub-navigation-entry-edit {
 	padding-left: 5px;
 	padding-right: 5px;
 	display: none;
 	height: 39px;
 	width: calc(100% - 42px);
 }
-
-	#sub-navigation .sub-navigation-entry-edit input {
+	#project-sub-navigation .sub-navigation-entry-edit input,
+	#client-sub-navigation .sub-navigation-entry-edit input {
 		border-bottom-right-radius: 0;
 		border-top-right-radius: 0;
 		width: calc(100% - 36px);
@@ -386,15 +436,16 @@
 		float: left;
 		border: 1px solid rgba(190,190,190,.9);
 	}
-
-	#sub-navigation .sub-navigation-entry-edit button,
-	#sub-navigation .sub-navigation-entry-edit input[type="submit"] {
+	#project-sub-navigation .sub-navigation-entry-edit button,
+	#project-sub-navigation .sub-navigation-entry-edit input[type="submit"],
+	#client-sub-navigation .sub-navigation-entry-edit button,
+	#client-sub-navigation .sub-navigation-entry-edit input[type="submit"] {
 		width: 36px;
 		height: 38px;
 		float: left;
 	}
-
-	#sub-navigation .sub-navigation-entry-edit .icon-checkmark {
+	#project-sub-navigation .sub-navigation-entry-edit .icon-checkmark,
+	#client-sub-navigation .sub-navigation-entry-edit .icon-checkmark {
 		border-bottom-left-radius: 0;
 		border-top-left-radius: 0;
 		border-left: 0;

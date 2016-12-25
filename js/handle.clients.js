@@ -143,7 +143,7 @@ View.prototype = {
         var source = $('#clients-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({clients: this._clients.getAll()});
-        $('#sub-navigation ul').html(html);
+        $('#client-sub-navigation ul').html(html);
 
         // create a new client
         var self = this;
@@ -183,13 +183,13 @@ View.prototype = {
         });
 
         // show app menu
-        $('#sub-navigation .sub-navigation-entry-utils-menu-button').click(function () {
+        $('#cliet-sub-navigation .sub-navigation-entry-utils-menu-button').click(function () {
             var entry = $(this).closest('.client');
             entry.find('.sub-navigation-entry-menu').toggleClass('open');
         });
 
         // delete a client
-        $('#sub-navigation .delete').click(function () {
+        $('#client-sub-navigation .delete').click(function () {
 		var entry = $(this).closest('.client');
 		entry.find('.sub-navigation-entry-menu').removeClass('open');
 		var id = parseInt($(this).parent().data('id'), 10);
@@ -201,7 +201,7 @@ View.prototype = {
         });
 
         // rename a client
-        $('#sub-navigation .client .rename').click(function () {
+        $('#client-sub-navigation .client .rename').click(function () {
             var entry = $(this).closest('.client');
             entry.find('.sub-navigation-entry-menu').removeClass('open');
             var id = parseInt($(this).parent().data('id'), 10);
@@ -232,11 +232,10 @@ View.prototype = {
 
 
         // load a client
-        $('#sub-navigation .client > a').click(function () {
+        $('#client-sub-navigation .client > a').click(function () {
             var id = parseInt($(this).parent().data('id'), 10);
             self._clients.load(id);
             self.render();
-            // $('#editor textarea').focus();
         });
     },
     render: function () {

@@ -1,6 +1,5 @@
 <!-- translation strings -->
-<div id="client-navigation">
-<div id="sub-navigation">
+<div id="project-sub-navigation">
 <div style="display:none" id="new-project-string"><?php p($l->t('New project')); ?></div>
 <script id="projects-tpl" type="text/x-handlebars-template">
     <li id="new-project"><a href="#"><?php p($l->t('Add project')); ?></a></li>
@@ -23,5 +22,4 @@
     {{/each}}
 </script>
 <ul></ul>
-</div>
 </div>

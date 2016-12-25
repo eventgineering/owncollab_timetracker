@@ -222,11 +222,11 @@ View.prototype = {
         $('#app-navigation ul').html(html);
 
 	$('#edit-clients').click(function () {
-        	$('#client-navigation').toggle();
+        	$('#client-sub-navigation').toggle();
 		$('#editor').toggle();
     	});
     $('#edit-projects').click(function () {
-        	$('#project-navigation').toggle();
+        	$('#project-sub-navigation').toggle();
             $('#project-editor').toggle();
 		$('#editor').toggle();
     	});

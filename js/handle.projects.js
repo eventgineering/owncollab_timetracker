@@ -156,7 +156,7 @@ View.prototype = {
         var source = $('#projects-tpl').html();
         var template = Handlebars.compile(source);
         var html = template({projects: this._projects.getAll()});
-        $('#sub-navigation ul').html(html);
+        $('#project-sub-navigation ul').html(html);
 
         // create a new project
         var self = this;
@@ -177,13 +177,13 @@ View.prototype = {
         });
 
         // show app menu
-        $('#sub-navigation .sub-navigation-entry-utils-menu-button').click(function () {
+        $('# .sub-navigation-entry-utils-menu-button').click(function () {
             var entry = $(this).closest('.project');
             entry.find('.app-navigation-entry-menu').toggleClass('open');
         });
 
         // delete a project
-        $('#sub-navigation .project .delete').click(function () {
+        $('#project-sub-navigation .project .delete').click(function () {
             var entry = $(this).closest('.project');
             entry.find('.sub-navigation-entry-menu').removeClass('open');
 
@@ -195,7 +195,7 @@ View.prototype = {
         });
 
         // load a project
-        $('#sub-navigation .project > a').click(function () {
+        $('#project-sub-navigation .project > a').click(function () {
 
             var id = parseInt($(this).parent().data('id'), 10);
             self._projects.load(id);

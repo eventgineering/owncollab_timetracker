@@ -1,6 +1,5 @@
 <!-- translation strings -->
-<div id="client-navigation">
-<div id="sub-navigation">
+<div id="client-sub-navigation">
 <div style="display:none" id="new-client-string"><?php p($l->t('New client')); ?></div>
 <script id="clients-tpl" type="text/x-handlebars-template">
     <li id="new-client"><a href="#"><?php p($l->t('Add client')); ?></a></li>
@@ -23,5 +22,4 @@
     {{/each}}
 </script>
 <ul></ul>
-</div>
 </div>
