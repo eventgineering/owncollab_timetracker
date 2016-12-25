@@ -53,33 +53,33 @@ input[type="time"]{
 	z-index: 105;
 }
 
-	#sub-navigation.app-navigation-entry-utils ul {
+	#sub-navigation .app-navigation-entry-utils ul {
 		display: block !important;
 	}
 
 
-	#sub-navigation.app-navigation-entry-utils li {
+	#sub-navigation .app-navigation-entry-utils li {
 		float: left;
 		width: 44px !important;
 		height: 44px;
 		line-height: 44px;
 	}
 
-	#sub-navigation.active > .app-navigation-entry-utils li {
+	#sub-navigation .active > .app-navigation-entry-utils li {
 		display: inline-block;
 	}
 
-	#sub-navigation.app-navigation-entry-utils button {
+	#sub-navigation .app-navigation-entry-utils button {
 		height: 38px;
 		width: 38px;
 		line-height: 38px;
 		float: left;
 	}
 
-	#sub-navigation.app-navigation-entry-utils-menu-button {
+	#sub-navigation .app-navigation-entry-utils-menu-button {
 		display: none;
 	}
-	#sub-navigation.app-navigation-entry-utils-menu-button button {
+	#sub-navigation .app-navigation-entry-utils-menu-button button {
 		border: 0;
 		opacity: .5;
 		background-color: transparent;
@@ -88,13 +88,13 @@ input[type="time"]{
 		background-image: url('../img/actions/more.svg');
 	}
 
-	#sub-navigation.app-navigation-entry-utils-menu-button:hover button,
-	#sub-navigation.app-navigation-entry-utils-menu-button:focus button {
+	#sub-navigation .app-navigation-entry-utils-menu-button:hover button,
+	#sub-navigation .app-navigation-entry-utils-menu-button:focus button {
 		background-color: transparent;
 		opacity: 1;
 	}
 
-	#sub-navigation.app-navigation-entry-utils-counter {
+	#sub-navigation .app-navigation-entry-utils-counter {
 		overflow: hidden;
 		text-overflow: hidden;
 		text-align: right;
@@ -104,7 +104,7 @@ input[type="time"]{
 		padding: 0 10px;
 	}
 
-	#sub-navigation.app-navigation-entry-utils ul,
-	#sub-navigation.app-navigation-entry-menu ul {
+	#sub-navigation .app-navigation-entry-utils ul,
+	#sub-navigation .app-navigation-entry-menu ul {
 		list-style-type: none;
 	}
