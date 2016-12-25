@@ -9,7 +9,7 @@ script('owncollab_timetracker', 'get.select');
 script('owncollab_timetracker', 'get.bySelection');
 script('owncollab_timetracker', 'get.selectbyid');
 script('owncollab_timetracker', 'handle.clients');
-//script('owncollab_timetracker', 'handle.projects');
+script('owncollab_timetracker', 'handle.projects');
 script('owncollab_timetracker', 'script');
 style('owncollab_timetracker', 'timepicki/timepicki');
 style('owncollab_timetracker', 'subnavigation');
@@ -25,9 +25,9 @@ style('owncollab_timetracker', 'style');
 	<div id="app-content">
 		<div id="app-content-wrapper">
 			<?php print_unescaped($this->inc('part.content.clients')); ?>
-			<?php //print_unescaped($this->inc('part.content.projects')); ?>
+			<?php print_unescaped($this->inc('part.content.projects')); ?>
 			<?php print_unescaped($this->inc('part.content')); ?>
-			<?php //print_unescaped($this->inc('part.content.projects.editor')); ?>
+			<?php print_unescaped($this->inc('part.content.projects.editor')); ?>
 		</div>
 	</div>
 </div>
