@@ -222,9 +222,15 @@ View.prototype = {
         $('#app-navigation ul').html(html);
 
 	$('#edit-clients').click(function () {
-        	$('#sub-navigation').toggle();
+        	$('#client-navigation').toggle();
 		$('#editor').toggle();
     	});
+    $('#edit-projects').click(function () {
+        	$('#project-navigation').toggle();
+            $('#project-editor').toggle();
+		$('#editor').toggle();
+    	});
+
 
         // create a new event
         var self = this;

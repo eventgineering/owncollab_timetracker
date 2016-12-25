@@ -177,15 +177,15 @@ View.prototype = {
         });
 
         // show app menu
-        $('#app-navigation .app-navigation-entry-utils-menu-button').click(function () {
+        $('#sub-navigation .sub-navigation-entry-utils-menu-button').click(function () {
             var entry = $(this).closest('.project');
             entry.find('.app-navigation-entry-menu').toggleClass('open');
         });
 
         // delete a project
-        $('#app-navigation .project .delete').click(function () {
+        $('#sub-navigation .project .delete').click(function () {
             var entry = $(this).closest('.project');
-            entry.find('.app-navigation-entry-menu').removeClass('open');
+            entry.find('.sub-navigation-entry-menu').removeClass('open');
 
             self._projects.removeActive().done(function () {
                 self.render();
@@ -195,34 +195,12 @@ View.prototype = {
         });
 
         // load a project
-        $('#app-navigation .project > a').click(function () {
+        $('#sub-navigation .project > a').click(function () {
 
-	    var d = new Date();
-            var now = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
-            var today = ("0" + d.getDate()).slice(-2) + "." + ("0"+(d.getMonth()+1)).slice(-2) + "." + d.getFullYear();
             var id = parseInt($(this).parent().data('id'), 10);
             self._projects.load(id);
             self.render();
-            if ($('#startdate').val()==''){startdate.placeholder=today;}
-            if ($('#enddate').val()==''){enddate.placeholder=today;}
-            $( "#startdate" ).datepicker({
-                minDate: new Date(2016, 1 - 1, 1)});
-            $( "#enddate" ).datepicker();
-            $('#starttime').timepicki({
-                show_meridian:false,
-                min_hour_value:0,
-                max_hour_value:23,
-                overflow_minutes:true
-                });
-            if ($('#starttime').val()==''){starttime.placeholder=now;}
-            $('#endtime').timepicki({
-                show_meridian:false,
-                min_hour_value:0,
-                max_hour_value:23,
-                overflow_minutes:true
-                });
-            if ($('#endtime').val()==''){endtime.placeholder=now;}
-            $('#editor textarea').focus();
+            $('#name').focus();
 
         });
     },
