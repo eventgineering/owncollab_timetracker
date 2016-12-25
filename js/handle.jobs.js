@@ -160,7 +160,6 @@ View.prototype = {
         $('#job-sub-navigation .sub-navigation-entry-utils-menu-button').click(function () {
             var entry = $(this).closest('.job');
             entry.find('.sub-navigation-entry-menu').toggleClass('open');
-            console.log(entry.find('.sub-navigation-entry-menu'));
         });
 
         // delete a job

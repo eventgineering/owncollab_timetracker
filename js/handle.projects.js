@@ -177,7 +177,6 @@ View.prototype = {
         $('#project-sub-navigation .sub-navigation-entry-utils-menu-button').click(function () {
             var entry = $(this).closest('.project');
             entry.find('.sub-navigation-entry-menu').toggleClass('open');
-            console.log(entry.find('.sub-navigation-entry-menu'));
         });
 
         // delete a project
