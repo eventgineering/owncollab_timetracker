@@ -140,12 +140,12 @@ View.prototype = {
 		if (this._events.getActive().clientid) {
                 	if (this._events.getActive().clientid == 0){
                         	$('#select_client').changeSelect(instanceUrl, 'clients');
-				$('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
+                            $('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
                 	}
 		    	else{
-				$('#select_client').changeSelectbyID(instanceUrl, 'clients', this._events.getActive().clientid, '', '');
-                		$('#select_project').changeSelectbyID(instanceUrl, 'projects', this._events.getActive().projectid, 'clientid', this._events.getActive().clientid);
-				$('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
+				    $('#select_client').changeSelectbyID(instanceUrl, 'clients', this._events.getActive().clientid, '', '');
+                    $('#select_project').changeSelectbyID(instanceUrl, 'projects', this._events.getActive().projectid, 'clientid', this._events.getActive().clientid);
+                    $('#select_client').change(function () {$('#select_project').changebySelect(instanceUrl, 'projects', this.value);});
 		    	}
 		}
 		if (this._events.getActive().jobid){
