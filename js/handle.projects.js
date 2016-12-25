@@ -174,15 +174,15 @@ View.prototype = {
         });
 
         // show app menu
-        $('#project-sub-navigation .app-navigation-entry-utils-menu-button').click(function () {
+        $('#project-sub-navigation .sub-navigation-entry-utils-menu-button').click(function () {
             var entry = $(this).closest('.project');
-            entry.find('.app-navigation-entry-menu').toggleClass('open');
+            entry.find('.sub-navigation-entry-menu').toggleClass('open');
         });
 
         // delete a project
         $('#project-sub-navigation .project .delete').click(function () {
             var entry = $(this).closest('.project');
-            entry.find('.app-navigation-entry-menu').removeClass('open');
+            entry.find('.sub-navigation-entry-menu').removeClass('open');
 
             self._projects.removeActive().done(function () {
                 self.render();
