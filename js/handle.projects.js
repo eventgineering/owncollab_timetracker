@@ -100,6 +100,7 @@ Projects.prototype = {
         var project = this.getActive();
         project.name = name;
         project.clientid = clientid;
+        console.log('clientid: ', clientid)
         return $.ajax({
             url: this._baseUrl + '/' + project.id,
             method: 'PUT',

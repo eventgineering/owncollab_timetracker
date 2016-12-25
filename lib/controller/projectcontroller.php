@@ -61,10 +61,11 @@ class ProjectController extends Controller {
      *
      * @param int $id
      * @param string $name
+     * @param string $clientid
      */
-    public function update($id, $name) {
-        return $this->handleNotFound(function () use ($id, $name) {
-            return $this->service->update($id, $name);
+    public function update($id, $name, $clientid) {
+        return $this->handleNotFound(function () use ($id, $name, $clientid) {
+            return $this->service->update($id, $name, $clientid);
         });
     }
 

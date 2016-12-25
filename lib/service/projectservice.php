@@ -50,7 +50,7 @@ class ProjectService {
         return $this->mapper->insert($project);
     }
 
-    public function update($id, $name) {
+    public function update($id, $name, $clientid) {
         try {
             $project = $this->mapper->find($id);
             $project->setName($name);
