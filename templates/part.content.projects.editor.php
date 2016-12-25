@@ -8,7 +8,7 @@
 	<div class="save" style="width: calc(100% -  3px);"><button id="project-save" name="project-save"><?php p($l->t('Save')); ?></button></div>
 	</p>
     {{else}}
-        <p>
+        <p>Hello Hello!
         <input disabled type="text" name="name" id="name" placeholder="<?php p($l->t('Project name')); ?>" />
         <select disabled id ="select_client" name="select_client">
 		<option value="" label="Client1">Select Client</option></select>

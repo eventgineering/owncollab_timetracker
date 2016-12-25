@@ -177,7 +177,7 @@ View.prototype = {
         });
 
         // show app menu
-        $('# .sub-navigation-entry-utils-menu-button').click(function () {
+        $('#project-sub-navigation .sub-navigation-entry-utils-menu-button').click(function () {
             var entry = $(this).closest('.project');
             entry.find('.app-navigation-entry-menu').toggleClass('open');
         });
