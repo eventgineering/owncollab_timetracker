@@ -273,6 +273,11 @@
 		line-height: 38px;
 		float: left;
 	}
+
+	#project-sub-navigation .sub-navigation-entry-utils-menu-button {
+		display: none;
+	}
+
 	#project-sub-navigation .sub-navigation-entry-utils-menu-button button,
 	#client-sub-navigation .sub-navigation-entry-utils-menu-button button {
 		border: 0;
