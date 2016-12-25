@@ -125,7 +125,7 @@ View.prototype = {
         // handle saves
         var self = this;
         $('#job-save').click(function () {
-	            var name = $('#name').val();
+	            var name = $('#job-name').val();
                 var rate = $('#rate').val();
                 var currency = $('#currency').val();
 	            self._jobs.updateActive(name, rate, currency).done(function () {
@@ -150,7 +150,7 @@ View.prototype = {
 
             self._jobs.create(job).done(function() {
                 self.render();
-                $('#name').focus();
+                $('#job-name').focus();
             }).fail(function () {
                 alert('Could not create job');
             });
@@ -181,7 +181,7 @@ View.prototype = {
             var id = parseInt($(this).parent().data('id'), 10);
             self._jobs.load(id);
             self.render();
-            $('#name').focus();
+            $('#job-name').focus();
 
         });
     },

@@ -137,7 +137,7 @@ View.prototype = {
         var self = this;
         $('#project-save').click(function () {
 	    if ($('#select_client').val() != ''){
-	            var name = $('#name').val();
+	            var name = $('#project-name').val();
 	            var clientid = $('#select_client').val();
 	            self._projects.updateActive(name, clientid).done(function () {
 	                self.render();
@@ -167,7 +167,7 @@ View.prototype = {
             self._projects.create(project).done(function() {
                 self.render();
                 $('#select_client').changeSelect(instanceUrl, 'clients');
-                $('#name').focus();
+                $('#project-name').focus();
             }).fail(function () {
                 alert('Could not create project');
             });
@@ -198,7 +198,7 @@ View.prototype = {
             var id = parseInt($(this).parent().data('id'), 10);
             self._projects.load(id);
             self.render();
-            $('#name').focus();
+            $('#project-name').focus();
 
         });
     },
