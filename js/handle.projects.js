@@ -155,7 +155,7 @@ View.prototype = {
     renderNavigation: function () {
         var source = $('#projects-tpl').html();
         var template = Handlebars.compile(source);
-        var html = template({clients: this._clients.getAll()});
+        var html = template({projects: this._projects.getAll()});
         $('#sub-navigation ul').html(html);
 
         // create a new project

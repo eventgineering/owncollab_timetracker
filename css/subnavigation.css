@@ -26,7 +26,6 @@
 	-ms-user-select: none;
 	user-select: none;
 	border-right: 1px solid #eee;
-	display: none;
 }
 #sub-navigation > ul {
 	position: relative;
