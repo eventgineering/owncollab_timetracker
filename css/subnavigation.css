@@ -2,6 +2,18 @@
 
 
 /* Navigation: folder like structure */
+#client-navigation {
+	display: none;
+}
+
+#project-navigation {
+	display: none;
+}
+
+#project-editor {
+	display: none;
+}
+
 #sub-navigation {
 	width: 250px;
 	height: 100%;

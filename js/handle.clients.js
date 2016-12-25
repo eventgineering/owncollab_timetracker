@@ -177,11 +177,9 @@ View.prototype = {
 			$("input[data-id='" + id +"']").toggle();
 			$("a[data-id='" + id +"']").toggle();
 		});
-		console.log(id);
-                //$('#editor textarea').focus();
-            }).fail(function () {
+        }).fail(function () {
                 alert('Could not create client');
-            });
+        });
         });
 
         // show app menu

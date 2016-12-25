@@ -1,10 +1,10 @@
 <!-- translation strings -->
-<div id="client-sub-navigation">
-<div style="display:none" id="new-client-string"><?php p($l->t('New client')); ?></div>
-<script id="clients-tpl" type="text/x-handlebars-template">
-    <li id="new-client"><a href="#"><?php p($l->t('Add client')); ?></a></li>
-    {{#each clients}}
-        <li class="client with-menu {{#if active}}active{{/if}}" {{#if active}}active{{/if}} data-id="{{ id }}">
+<div id="project-sub-navigation">
+<div style="display:none" id="new-project-string"><?php p($l->t('New project')); ?></div>
+<script id="projects-tpl" type="text/x-handlebars-template">
+    <li id="new-project"><a href="#"><?php p($l->t('Add project')); ?></a></li>
+    {{#each projects}}
+        <li class="project with-menu {{#if active}}active{{/if}}" {{#if active}}active{{/if}} data-id="{{ id }}">
             <input class="sub-navigation-entry-edit" type="text" name="{{ name }}" value="{{ name }}" data-id="{{ id }}"/><a href="#" name="{{ name }}" data-id="{{ id }}">{{ name }}</a>
             <div class="sub-navigation-entry-utils">
                 <ul>
