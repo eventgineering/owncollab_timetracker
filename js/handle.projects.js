@@ -136,7 +136,7 @@ View.prototype = {
         // handle saves
         var self = this;
         $('#project-save').click(function () {
-	    if ($('#select_client').val() != '' && $('#select_project').val() != ''){
+	    if ($('#select_client').val() != ''){
 	            var name = $('#name').val();
 	            var clientid = $('#select_client').val();
 	            self._projects.updateActive(name, clientid).done(function () {
