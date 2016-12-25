@@ -6,13 +6,13 @@
     {{#each projects}}
         <li class="project with-menu {{#if active}}active{{/if}}" data-id="{{ id }}">
             <a href="#">{{ name }}</a>
-            <div class="sub-navigation-entry-utils">
+            <div class="app-navigation-entry-utils">
                 <ul>
-                    <li class="sub-navigation-entry-utils-menu-button svg"><button></button></li>
+                    <li class="app-navigation-entry-utils-menu-button svg"><button></button></li>
                 </ul>
             </div>
 
-            <div class="sub-navigation-entry-menu">
+            <div class="app-navigation-entry-menu">
                 <ul>
                     <li><button class="delete icon-delete svg" title="delete"></button></li>
                 </ul>
