@@ -44,9 +44,10 @@ class ProjectService {
         }
     }
 
-    public function create($name) {
+    public function create($name, $clientid) {
         $project = new Project();
         $project->setName($name);
+        $project->setClientid($clientid);
         return $this->mapper->insert($project);
     }
 
@@ -54,6 +55,7 @@ class ProjectService {
         try {
             $project = $this->mapper->find($id);
             $project->setName($name);
+            $project->setClientid($clientid);
             return $this->mapper->update($project);
         } catch(Exception $e) {
             $this->handleException($e);
