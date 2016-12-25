@@ -2,14 +2,6 @@
 
 
 /* Navigation: folder like structure */
-#client-navigation {
-	display: none;
-}
-
-#project-navigation {
-	display: none;
-}
-
 #project-editor {
 	display: none;
 }
@@ -27,6 +19,7 @@
 	-ms-user-select: none;
 	user-select: none;
 	border-right: 1px solid #eee;
+	display: none;
 }
 #project-sub-navigation > ul,
 #client-sub-navigation > ul {
