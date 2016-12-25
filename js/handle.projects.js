@@ -66,6 +66,7 @@ Projects.prototype = {
     create: function (project) {
         var deferred = $.Deferred();
         var self = this;
+        console.log(project);
         $.ajax({
             url: this._baseUrl,
             method: 'POST',

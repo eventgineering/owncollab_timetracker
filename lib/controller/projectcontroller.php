@@ -51,9 +51,10 @@ class ProjectController extends Controller {
      * @NoAdminRequired
      *
      * @param string $name
+     * @param string $clientid
      */
-    public function create($name) {
-        return $this->service->create($name);
+    public function create($name, $clientid) {
+        return $this->service->create($name, $clientid);
     }
 
     /**
