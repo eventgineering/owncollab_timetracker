@@ -44,7 +44,7 @@ class JobService {
         }
     }
 
-    public function create($name) {
+    public function create($name, $rate, $currency) {
         $job = new Job();
         $job->setName($name);
         $job->setRate($rate);
@@ -52,7 +52,7 @@ class JobService {
         return $this->mapper->insert($job);
     }
 
-    public function update($id, $name) {
+    public function update($id, $name, $rate, currency) {
         try {
             $job = $this->mapper->find($id);
             $job->setName($name);

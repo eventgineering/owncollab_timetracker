@@ -229,7 +229,11 @@ View.prototype = {
             $('#project-editor').toggle();
 		$('#editor').toggle();
     	});
-
+    $('#edit-jobs').click(function () {
+        	$('#job-sub-navigation').toggle();
+            $('#job-editor').toggle();
+		$('#editor').toggle();
+    	});
 
         // create a new event
         var self = this;
