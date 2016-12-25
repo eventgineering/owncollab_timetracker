@@ -164,8 +164,8 @@ View.prototype = {
         var self = this;
         $('#new-project').click(function () {
             var project = {
-                title: translations.newProject,
-                name: 'Project name . . .'
+                name: translations.newProject,
+                clientid: ''
             };
 
             self._projects.create(project).done(function() {
@@ -175,7 +175,6 @@ View.prototype = {
             }).fail(function () {
                 alert('Could not create project');
             });
-
         });
 
         // show app menu
