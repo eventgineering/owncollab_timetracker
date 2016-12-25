@@ -183,7 +183,7 @@ View.prototype = {
         });
 
         // show app menu
-        $('#cliet-sub-navigation .sub-navigation-entry-utils-menu-button').click(function () {
+        $('#client-sub-navigation .sub-navigation-entry-utils-menu-button').click(function () {
             var entry = $(this).closest('.client');
             entry.find('.sub-navigation-entry-menu').toggleClass('open');
         });
