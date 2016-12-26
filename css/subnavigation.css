@@ -3,7 +3,8 @@
 
 /* Navigation: folder like structure */
 #project-editor,
-#job-editor {
+#job-editor,
+#event-editor {
 	display: none;
 }
 
@@ -11,7 +12,8 @@
 #project-sub-navigation.open,
 #client-sub-navigation.open,
 #project-editor.open,
-#job-editor.open {
+#job-editor.open,
+#event-editor.open {
 	display: block;
 }
 

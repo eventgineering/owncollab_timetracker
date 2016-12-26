@@ -35,7 +35,7 @@ style('owncollab_timetracker', 'ag-grid/theme-fresh');
 			<?php print_unescaped($this->inc('part.content')); ?>
 			<?php print_unescaped($this->inc('part.content.projects.editor')); ?>
 			<?php print_unescaped($this->inc('part.content.jobs.editor')); ?>
-			<?php print_unescaped($this->inc('part.content.events')); ?>
+			<?php print_unescaped($this->inc('part.content.events.editor')); ?>
 		</div>
 	</div>
 </div>
