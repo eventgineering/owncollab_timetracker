@@ -17,7 +17,8 @@ var gridOptions = {
 
 // wait for the document to be loaded, otherwise
 // ag-Grid will not find the div in the document.
-
+(function (OC, window, $, undefined) {
+'use strict';
     $('#edit-events').click(function () {
 		$('#client-sub-navigation').removeClass('open');
         $('#project-sub-navigation').removeClass('open');
@@ -29,4 +30,4 @@ var gridOptions = {
         var eGridDiv = document.querySelector('#event-editor');
         new agGrid.Grid(eGridDiv, gridOptions);
     	});
-
+})(OC, window, jQuery);
