@@ -226,23 +226,26 @@ View.prototype = {
 		$('#project-editor').removeClass('open');
 		$('#job-sub-navigation').removeClass('open');
 		$('#job-editor').removeClass('open');
+        $('#event-editor').removeClass('open');
 		$('#editor').removeClass('open');
     	});
     $('#edit-projects').click(function () {
-        	$('#client-sub-navigation').removeClass('open');
-                $('#project-sub-navigation').addClass('open');
+        $('#client-sub-navigation').removeClass('open');
+        $('#project-sub-navigation').addClass('open');
 		$('#project-editor').addClass('open');
-                $('#job-sub-navigation').removeClass('open');
+        $('#job-sub-navigation').removeClass('open');
 		$('#job-editor').removeClass('open');
-                $('#editor').removeClass('open');
+        $('#event-editor').removeClass('open');
+        $('#editor').removeClass('open');
     	});
     $('#edit-jobs').click(function () {
 		$('#client-sub-navigation').removeClass('open');
-                $('#project-sub-navigation').removeClass('open');
+        $('#project-sub-navigation').removeClass('open');
 		$('#project-editor').removeClass('open');
-                $('#job-sub-navigation').addClass('open');
+        $('#job-sub-navigation').addClass('open');
 		$('#job-editor').addClass('open');
-                $('#editor').removeClass('open');
+        $('#event-editor').removeClass('open');
+        $('#editor').removeClass('open');
     	});
 
         // create a new event
@@ -320,6 +323,7 @@ View.prototype = {
 	    $('#project-editor').removeClass('open');
 	    $('#job-sub-navigation').removeClass('open');
 	    $('#job-editor').removeClass('open');
+        $('#event-editor').removeClass('open');
 	    var d = new Date();
             var now = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
             var today = ("0" + d.getDate()).slice(-2) + "." + ("0"+(d.getMonth()+1)).slice(-2) + "." + d.getFullYear();

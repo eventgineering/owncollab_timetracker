@@ -5,6 +5,7 @@
     <li id="edit-clients"><a href="#"><?php p($l->t('Edit clients')); ?></a></li>
     <li id="edit-projects"><a href="#"><?php p($l->t('Edit projects')); ?></a></li>
     <li id="edit-jobs"><a href="#"><?php p($l->t('Edit jobs')); ?></a></li>
+    <li id="edit-events"><a href="#"><?php p($l->t('Edit events')); ?></a></li>
     {{#each events}}
         <li class="event with-menu {{#if active}}active{{/if}}"  data-id="{{ id }}">
             <a href="#">{{ title }}</a>
