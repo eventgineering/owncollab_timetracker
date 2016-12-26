@@ -187,6 +187,10 @@ View.prototype = {
             var entry = $(this).closest('.client');
             entry.find('.sub-navigation-entry-menu').toggleClass('open');
         });
+	$('#client-sub-navigation .sub-navigation-entry-utils-menu-button').focusout(function () {
+            var entry = $(this).closest('.client');
+            entry.find('.sub-navigation-entry-menu').toggleClass('open');
+        });
 
         // delete a client
         $('#client-sub-navigation .delete').click(function () {

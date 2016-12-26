@@ -2,12 +2,17 @@
 
 
 /* Navigation: folder like structure */
-#project-editor {
+#project-editor,
+#job-editor {
 	display: none;
 }
 
-#job-editor {
-	display: none;
+#job-sub-navigation.open,
+#project-sub-navigation.open,
+#client-sub-navigation.open,
+#project-editor.open,
+#job-editor.open {
+	display: block;
 }
 
 #job-sub-navigation,
@@ -485,7 +490,7 @@
 	#project-sub-navigation .sub-navigation-entry-menu li,
 	#client-sub-navigation .sub-navigation-entry-menu li {
 		float: left;
-		width: 38px !important;
+		width: 138px !important;
 	}
 
 		#job-sub-navigation .sub-navigation-entry-menu li button,

@@ -221,23 +221,39 @@ View.prototype = {
         $('#app-navigation ul').html(html);
 
 	$('#edit-clients').click(function () {
-        	$('#client-sub-navigation').toggle();
-		$('#editor').toggle();
+		$('#client-sub-navigation').addClass('open');
+		$('#project-sub-navigation').removeClass('open');
+		$('#project-editor').removeClass('open');
+		$('#job-sub-navigation').removeClass('open');
+		$('#job-editor').removeClass('open');
+		$('#editor').removeClass('open');
     	});
     $('#edit-projects').click(function () {
-        	$('#project-sub-navigation').toggle();
-            $('#project-editor').toggle();
-		$('#editor').toggle();
+        	$('#client-sub-navigation').removeClass('open');
+                $('#project-sub-navigation').addClass('open');
+		$('#project-editor').addClass('open');
+                $('#job-sub-navigation').removeClass('open');
+		$('#job-editor').removeClass('open');
+                $('#editor').removeClass('open');
     	});
     $('#edit-jobs').click(function () {
-        	$('#job-sub-navigation').toggle();
-            $('#job-editor').toggle();
-		$('#editor').toggle();
+		$('#client-sub-navigation').removeClass('open');
+                $('#project-sub-navigation').removeClass('open');
+		$('#project-editor').removeClass('open');
+                $('#job-sub-navigation').addClass('open');
+		$('#job-editor').addClass('open');
+                $('#editor').removeClass('open');
     	});
 
         // create a new event
         var self = this;
         $('#new-event').click(function () {
+	    $('#client-sub-navigation').removeClass('open');
+	    $('#project-sub-navigation').removeClass('open');
+	    $('#project-editor').removeClass('open');
+	    $('#job-sub-navigation').removeClass('open');
+	    $('#job-editor').removeClass('open');
+	    $('#editor').addClass('open');
             var event = {
                 title: translations.newEvent,
                 content: 'content here . . .'
@@ -276,6 +292,10 @@ View.prototype = {
 
         // show app menu
         $('#app-navigation .app-navigation-entry-utils-menu-button').click(function () {
+	    var entry = $(this).closest('.event');
+            entry.find('.app-navigation-entry-menu').toggleClass('open');
+        });
+	 $('#app-navigation .app-navigation-entry-utils-menu-button').focusout(function () {
             var entry = $(this).closest('.event');
             entry.find('.app-navigation-entry-menu').toggleClass('open');
         });
@@ -294,7 +314,12 @@ View.prototype = {
 
         // load a event
         $('#app-navigation .event > a').click(function () {
-
+	    $('#editor').addClass('open');
+	    $('#client-sub-navigation').removeClass('open');
+	    $('#project-sub-navigation').removeClass('open');
+	    $('#project-editor').removeClass('open');
+	    $('#job-sub-navigation').removeClass('open');
+	    $('#job-editor').removeClass('open');
 	    var d = new Date();
             var now = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
             var today = ("0" + d.getDate()).slice(-2) + "." + ("0"+(d.getMonth()+1)).slice(-2) + "." + d.getFullYear();

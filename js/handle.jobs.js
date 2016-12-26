@@ -161,6 +161,11 @@ View.prototype = {
             var entry = $(this).closest('.job');
             entry.find('.sub-navigation-entry-menu').toggleClass('open');
         });
+	$('#job-sub-navigation .sub-navigation-entry-utils-menu-button').focusout(function () {
+            var entry = $(this).closest('.job');
+            entry.find('.sub-navigation-entry-menu').toggleClass('open');
+        });
+
 
         // delete a job
         $('#job-sub-navigation .job .delete').click(function () {

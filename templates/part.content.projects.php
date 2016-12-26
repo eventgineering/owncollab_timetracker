@@ -14,7 +14,7 @@
 
             <div class="sub-navigation-entry-menu">
                 <ul>
-                    <li><button class="delete icon-delete svg" title="delete"></button></li>
+		    <li><a class="delete" href="#"><button class="icon-delete svg" title="delete"></button><?php p($l->t('Delete')); ?></a></li>
                 </ul>
             </div>
         </li>
