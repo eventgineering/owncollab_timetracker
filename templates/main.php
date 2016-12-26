@@ -18,7 +18,6 @@ style('owncollab_timetracker', 'timepicki/timepicki');
 style('owncollab_timetracker', 'subnavigation');
 style('owncollab_timetracker', 'style');
 style('owncollab_timetracker', 'ag-grid/ag-grid');
-style('owncollab_timetracker', 'ag-grid/theme-fresh');
 ?>
 
 <div id="app">
