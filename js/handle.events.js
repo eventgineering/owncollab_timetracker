@@ -14,20 +14,3 @@ var gridOptions = {
     columnDefs: columnDefs,
     rowData: rowData
 };
-
-// wait for the document to be loaded, otherwise
-// ag-Grid will not find the div in the document.
-(function (OC, window, $, undefined) {
-'use strict';
-    $('#edit-events').click(function () {
-		$('#client-sub-navigation').removeClass('open');
-        $('#project-sub-navigation').removeClass('open');
-		$('#project-editor').removeClass('open');
-        $('#job-sub-navigation').removeClass('open');
-		$('#job-editor').removeClass('open');
-        $('#event-editor').addClass('open');
-        $('#editor').removeClass('open');
-        var eGridDiv = document.querySelector('#event-editor');
-        new agGrid.Grid(eGridDiv, gridOptions);
-    	});
-})(OC, window, jQuery);

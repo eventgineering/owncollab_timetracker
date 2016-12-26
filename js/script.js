@@ -247,7 +247,17 @@ View.prototype = {
         $('#event-editor').removeClass('open');
         $('#editor').removeClass('open');
     	});
-
+    $('#edit-events').click(function () {
+		$('#client-sub-navigation').removeClass('open');
+        $('#project-sub-navigation').removeClass('open');
+		$('#project-editor').removeClass('open');
+        $('#job-sub-navigation').removeClass('open');
+		$('#job-editor').removeClass('open');
+        $('#event-editor').addClass('open');
+        $('#editor').removeClass('open');
+        var eGridDiv = document.querySelector('#event-editor');
+        new agGrid.Grid(eGridDiv, gridOptions);
+    	});
         // create a new event
         var self = this;
         $('#new-event').click(function () {
